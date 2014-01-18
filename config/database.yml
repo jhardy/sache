@@ -1,0 +1,6 @@
+development:
+    adapter: postgresql
+    database: sachein_dev
+    username: <%= ENV['PG_USER'] %>
+    password: <%= ENV['PG_PASS'] %>
+    host: localhost
