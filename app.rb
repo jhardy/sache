@@ -59,11 +59,10 @@ end
 
 post '/extensions' do
 
-    project_url = params[:project_url]
+    project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])
 
-
-    username = project_url[/\:(.*?)\//, 1]
-    reponame = project_url[/\/(.*?).git/, 1]
+    username = project_url[1]
+    reponame = project_url[2]
 
 
     repo_info = Octokit.repo("#{username}/#{reponame}")
