@@ -34,9 +34,36 @@
         %button{:type => "submit", :class => "btn"}
           Submit
 
-    %section
-      - @extensions.each do  |e|
-        = e.name
+    .extension-list
+      %table
+        %thead
+          %tr        
+            %td
+              Name
+            %td
+              Description
+            %td
+              Tags
+            %td
+              Author
+            %td
+              Stars
+        %tbody
+          - @extensions.each do  |e|
+            %tr
+              %td
+                = e.name
+              %td
+                = e.description
+              %td
+                - e.tags.each do |tag|
+                  %a{:href => "tags/#{tag}"}
+                    = tag
+              %td
+                = e.author
+              %td
+                = e.watchers
+    
     %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     :javascript
       window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
