@@ -64,9 +64,9 @@ post '/extensions' do
     username = project_url[1]
     reponame = project_url[2]
 
-
     repo_info = Octokit.repo("#{username}/#{reponame}")
-    parsed_params = { name: reponame, author: username, url: project_url, last_commit: repo_info.updated_at, watchers: repo_info.watchers}
+
+    parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers}
 
 
     manifest_data = Octokit.contents("#{username}/#{reponame}", :path => 'sassmanifest.json', :accept => "application/vnd.github-blob.raw")
