@@ -12,7 +12,7 @@ require './config/environments' #database configuration
 enable :sessions
 
 class Extension < ActiveRecord::Base
-    serialize :tags
+    #serialize :tags
     validates_uniqueness_of :url, {:message => 'This extension already exists.'}
 end
 

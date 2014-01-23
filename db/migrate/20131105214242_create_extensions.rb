@@ -3,7 +3,7 @@ class CreateExtensions < ActiveRecord::Migration
     create_table :extensions do |t|
         t.string    :name
         t.text      :description
-        t.text      :tags
+        t.text      :tags, array: true, defaut: []
         t.string    :author
         t.string    :watchers
         t.string    :website

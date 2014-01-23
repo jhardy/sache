@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20131105220709) do
   create_table "extensions", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.text     "tags"
+    t.text     "tags",         array: true
     t.string   "author"
     t.string   "watchers"
     t.string   "website"
