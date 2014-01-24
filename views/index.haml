@@ -8,12 +8,12 @@
   %head
     %meta{charset: "utf-8"}/
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %title
-    %meta{content: "", name: "description"}/
+    %title Sache: Find Sass and Compass Extensions for your next project
+    %meta{content: "Find Sass and Compass Extensions for your next project", name: "description"}/
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     / Place favicon.ico and apple-touch-icon.png in the root directory
-    %link{href: "css/normalize.css", rel: "stylesheet"}/
-    %link{href: "css/main.css", rel: "stylesheet"}/
+    %link{href: "stylesheets/normalize.css", rel: "stylesheet"}/
+    %link{href: "stylesheets/main.css", rel: "stylesheet"}/
     %script{src: "js/vendor/modernizr-2.6.2.min.js"}
   %body
     /[if lt IE 7]
@@ -28,7 +28,16 @@
       %p{class: "alert alert-error"}
         = flash[:error]
 
-    %form{:action =>"/extensions", :method=> "post", :role => "form", :id => 'submit-form'}
+    %section{:class => "sache-bar"}
+      %h1{:class => "logo"} Sache
+      %ul{:class => "sache-bar-actions"}
+        %li{:class => "sache-search"}
+          %a{:href => "#", :data => {:search_reveal => ""}} Search
+          %input{:type => "search", :data => {:search_box => ""}}
+        %li{:class => "sache-add-extension"}
+          %a{:href => "#", :data => {:add_project => ""}} Add Extension
+
+    %form{:action =>"/extensions", :method => "post", :role => "form", :id => 'submit-form'}
       .form-group
         %input{:id => "extension-url", :name => "project_url", :placeholder => "Github SSH URL"}
         %button{:type => "submit", :class => "btn"}
@@ -37,7 +46,7 @@
     .extension-list
       %table
         %thead
-          %tr        
+          %tr
             %td
               Name
             %td
@@ -63,7 +72,7 @@
                 = e.author
               %td
                 = e.watchers
-    
+
     %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     :javascript
       window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
