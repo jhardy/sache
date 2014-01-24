@@ -1,7 +1,11 @@
 // Page Styles
-*, * * { @include box-sizing(border-box); }
+*, * * {
+  @include box-sizing(border-box);
+}
 
-body { font-size: px2em(16px); }
+body {
+  font-size: px2em(16px);
+}
 
 a {
   text-decoration: none;
@@ -10,7 +14,6 @@ a {
 
 p {
   font-weight: 400;
-  @extend %open-sans-font;
 }
 
 pre {
@@ -19,7 +22,9 @@ pre {
   margin-bottom: px2em(30px);
   @include border-radius(2px);
 
-  code { color: lighten($sass-pink, 35%); }
+  code {
+    color: lighten($sass-pink, 35%);
+  }
 }
 
 header {
@@ -42,41 +47,39 @@ header {
   margin: 0;
   color: #fff;
   float: left;
-  line-height: 60px;
-  @extend %bigshot-one-font;
+  @include vertical-align;
 }
 
 .sache-bar-actions {
   float: right;
+  height: px2em(60px);
   @extend %list-reset;
 
   li {
     float: left;
     margin-left: px2em(40px);
     color: rgba(#fff, 0.6);
-    cursor: pointer;
     overflow: hidden;
-    @extend %open-sans-font;
+    height: 100%;
     @include single-transition(color, 200ms, linear);
-    &:hover {
-      color: rgba(#fff, 1);
-      a { color: rgba(#fff, 1); }
-    }
 
     a {
       color: rgba(#fff, 1);
-      line-height: px2em(60px);
+      display: inline-block;
+      height: 100%;
+      line-height: 60px;
       @include opacity(0.5);
       @include single-transition(opacity, 200ms, linear);
-      &:hover { @include opacity(1.0); }
+      &:hover {
+        @include opacity(1.0);
+      }
     }
-
   }
 }
 
 .sache-add-extension {
   a {
-    background: url('../img/icons.svg') 40px -123px no-repeat;
+    background: url('../img/icons.svg') 40px -105px no-repeat;
     position: relative;
     padding-left: px2em(70px);
     border-left: solid 1px rgba(#fff, 0.2);
@@ -85,7 +88,7 @@ header {
 
 .sache-search {
   a {
-    background: url('../img/icons.svg') 0 -80px no-repeat;
+    background: url('../img/icons.svg') 0 -62px no-repeat;
     position: relative;
     left: 270px;
     padding-left: px2em(30px);
@@ -122,7 +125,6 @@ header {
   font-size: px2em(26px);
   color: #706c69;
   @extend %reset-margin-top;
-  @extend %open-sans-font;
   @include mq(medium) { font-size: px2em(35px); }
   @include mq(large) { font-size: px2em(40px); }
 }
@@ -152,7 +154,6 @@ header {
   color: #fff;
   line-height: px2em(39px);
   border: none;
-  @extend %open-sans-font;
   @include border-right-radius(2px);
   @include single-transition(background-color, $transition-speed);
 
@@ -210,7 +211,6 @@ header {
   width: 100%;
   font-size: 13px;
   padding-left: 5px;
-  @extend %open-sans-font;
   @include border-left-radius(2px);
 
   &:focus {
@@ -241,7 +241,7 @@ header {
     font-size: 16px;
     text-align: center;
     margin-bottom: 30px;
-    @extend %open-sans-font;
+
   }
 
   ul {
@@ -271,51 +271,10 @@ header {
   }
 }
 
-// .filter-tag {
-//   height: 36px;
-//   padding: 0 0 0 14px !important;
-//   line-height: 36px;
-//   padding-right: 47px !important;
-//   display: inline-block;
-//   margin-bottom: 30px;
-//   position: relative;
-//   left: 0;
-//   @extend %tag-style;
-//   @include mq(small) { left: 10px; }
-//   &:hover {
-//     background-color: #f3f3f3 !important;
-//     color: #888 !important;
-//   }
-//   &.hover {
-//     background-color: $sass-pink !important;
-//     color: #fff !important;
-//   }
-// }
-
-// .filter-cancel {
-//   background: #ddd;
-//   color: #bbb;
-//   padding: 0 10px;
-//   font-size: px2em(20px);
-//   line-height: 35px;
-//   height: 36px;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   @include border-right-radius(4px);
-//   @include single-transition(all, 200ms);
-
-//   &:hover, &:active {
-//     background: darken($sass-pink, 5%);
-//     color: #fff;
-//   }
-// }
-
 .card-title {
   display: block;
   font-size: px2em(22px);
   line-height: 1.2;
-  @extend %open-sans-font;
   @extend %reset-margin-top;
 }
 
@@ -378,7 +337,6 @@ header {
   margin-left: -20px !important;
   margin-right: -20px !important;
   color: #888;
-  @extend %open-sans-font;
   @extend %list-reset;
 
  li {
@@ -455,11 +413,9 @@ footer {
   }
 }
 
-
 .footer-title {
   font-size: px2em(28px);
   margin-bottom: 0;
-  @extend %bigshot-one-font;
 }
 
 .authors {
@@ -467,3 +423,44 @@ footer {
   margin-top: px2em(4px);
 }
 
+
+
+// .filter-tag {
+//   height: 36px;
+//   padding: 0 0 0 14px !important;
+//   line-height: 36px;
+//   padding-right: 47px !important;
+//   display: inline-block;
+//   margin-bottom: 30px;
+//   position: relative;
+//   left: 0;
+//   @extend %tag-style;
+//   @include mq(small) { left: 10px; }
+//   &:hover {
+//     background-color: #f3f3f3 !important;
+//     color: #888 !important;
+//   }
+//   &.hover {
+//     background-color: $sass-pink !important;
+//     color: #fff !important;
+//   }
+// }
+
+// .filter-cancel {
+//   background: #ddd;
+//   color: #bbb;
+//   padding: 0 10px;
+//   font-size: px2em(20px);
+//   line-height: 35px;
+//   height: 36px;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   @include border-right-radius(4px);
+//   @include single-transition(all, 200ms);
+
+//   &:hover, &:active {
+//     background: darken($sass-pink, 5%);
+//     color: #fff;
+//   }
+// }

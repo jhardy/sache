@@ -29,6 +29,14 @@ $mq-xlarge: 1500px;
   }
 }
 
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 %list-reset {
   list-style: none;
   margin: 0;
@@ -43,13 +51,9 @@ $mq-xlarge: 1500px;
   &:after { clear: both; }
 }
 
-%open-sans-font { font-family: "Open Sans", Helvetica, Arial, sans-serif; }
-%bigshot-one-font { font-family: "Bigshot One", Helvetica, Arial, sans-serif; }
-
 %tag-style {
   color: $link-blue;
   font-size: 13px;
-  @extend %open-sans-font;
   @include single-transition(color, $transition-speed);
   &:hover { color: $sass-pink; }
 }
