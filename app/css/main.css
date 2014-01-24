@@ -1,304 +1,647 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
+/* line 32, ../../sass/_helpers.scss */
+.sache-bar-actions, #featured ul, .ghub-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-html {
+/* line 39, ../../sass/_helpers.scss */
+.page-title, .card-title {
+  margin-top: 0;
+}
+
+/* line 42, ../../sass/_helpers.scss */
+#featured ul:before, #featured ul:after {
+  content: " ";
+  display: table;
+}
+/* line 43, ../../sass/_helpers.scss */
+#featured ul:after {
+  clear: both;
+}
+
+/* line 46, ../../sass/_helpers.scss */
+.tag, p, .sache-bar-actions li, .page-title, .button, .add-url, #featured h3, .card-title, .ghub-info {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+/* line 47, ../../sass/_helpers.scss */
+.logo, .footer-title {
+  font-family: "Bigshot One", Helvetica, Arial, sans-serif;
+}
+
+/* line 49, ../../sass/_helpers.scss */
+.tag {
+  color: #7ca4ab;
+  font-size: 13px;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+/* line 54, ../../sass/_helpers.scss */
+.tag:hover {
+  color: #c6538c;
+}
+
+/* line 2, ../../sass/_design.scss */
+*, * * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 4, ../../sass/_design.scss */
+body {
+  font-size: 1em;
+}
+
+/* line 6, ../../sass/_design.scss */
+a {
+  text-decoration: none;
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
+  transition: color 200ms linear;
+}
+
+/* line 11, ../../sass/_design.scss */
+p {
+  font-weight: 400;
+}
+
+/* line 16, ../../sass/_design.scss */
+pre {
+  background-color: #a1356b;
+  padding: 0.875em;
+  margin-bottom: 1.875em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+/* line 22, ../../sass/_design.scss */
+pre code {
+  color: #f2d9e6;
+}
+
+/* line 25, ../../sass/_design.scss */
+header {
+  background: #f8f8fa url("../img/circle-pattern.png") 50% 45% no-repeat;
+  margin-bottom: 1.875em;
+  padding: 1.25em 20px;
+}
+@media all and (min-width: 1024px) {
+  /* line 25, ../../sass/_design.scss */
+  header {
+    padding: 3.75em 10%;
+  }
+}
+@media all and (min-width: 1500px) {
+  /* line 25, ../../sass/_design.scss */
+  header {
+    padding: 5em 15%;
+  }
+}
+
+/* line 34, ../../sass/_design.scss */
+.sache-bar {
+  background: #c6538c url("../img/wave-pattern.png") 0 0 repeat-x;
+  overflow: hidden;
+  padding: 0 5em;
+  height: 3.75em;
+}
+
+/* line 41, ../../sass/_design.scss */
+.logo {
+  margin: 0;
+  color: #fff;
+  float: left;
+  line-height: 60px;
+}
+
+/* line 49, ../../sass/_design.scss */
+.sache-bar-actions {
+  float: right;
+}
+/* line 53, ../../sass/_design.scss */
+.sache-bar-actions li {
+  float: left;
+  margin-left: 2.5em;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
+  transition: color 200ms linear;
+}
+/* line 61, ../../sass/_design.scss */
+.sache-bar-actions li:hover {
+  color: white;
+}
+/* line 63, ../../sass/_design.scss */
+.sache-bar-actions li:hover a {
+  color: white;
+}
+/* line 66, ../../sass/_design.scss */
+.sache-bar-actions li a {
+  color: white;
+  line-height: 3.75em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+  -o-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
+}
+/* line 71, ../../sass/_design.scss */
+.sache-bar-actions li a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 78, ../../sass/_design.scss */
+.sache-add-extension a {
+  background: url("../img/icons.svg") 40px -123px no-repeat;
+  position: relative;
+  padding-left: 4.375em;
+  border-left: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+/* line 87, ../../sass/_design.scss */
+.sache-search a {
+  background: url("../img/icons.svg") 0 -80px no-repeat;
+  position: relative;
+  left: 270px;
+  padding-left: 1.875em;
+}
+/* line 94, ../../sass/_design.scss */
+.sache-search input {
+  background-color: #c6538c;
+  border: 0;
+  padding: 5px 5px 4px;
+  width: 250px;
+  font-size: 13px;
+  margin-left: 10px;
+  position: relative;
+  left: 260px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: left 400ms ease-in-out, background-color 400ms ease-in-out;
+  -moz-transition: left 400ms ease-in-out, background-color 400ms ease-in-out;
+  -o-transition: left 400ms ease-in-out, background-color 400ms ease-in-out;
+  transition: left 400ms ease-in-out, background-color 400ms ease-in-out;
+}
+/* line 105, ../../sass/_design.scss */
+.sache-search input.activated {
+  left: 0;
+  background-color: #d98cb2;
+}
+/* line 109, ../../sass/_design.scss */
+.sache-search input:focus {
+  outline: none;
+  border: solid 1px #ad3972;
+  background-color: #f2d9e6;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* line 118, ../../sass/_design.scss */
+.title-cta {
+  text-align: center;
+}
+
+/* line 120, ../../sass/_design.scss */
+.page-title {
+  margin-bottom: 0;
+  font-size: 1.625em;
+  color: #706c69;
+}
+@media all and (min-width: 768px) {
+  /* line 120, ../../sass/_design.scss */
+  .page-title {
+    font-size: 2.1875em;
+  }
+}
+@media all and (min-width: 1024px) {
+  /* line 120, ../../sass/_design.scss */
+  .page-title {
+    font-size: 2.5em;
+  }
+}
+
+/* line 130, ../../sass/_design.scss */
+.page-description {
+  font-size: 0.875em;
+  font-weight: 300;
+  margin-top: 0.375em;
+  color: #706c69;
+}
+@media all and (min-width: 768px) {
+  /* line 130, ../../sass/_design.scss */
+  .page-description {
     font-size: 1em;
-    line-height: 1.4;
+  }
+}
+@media all and (min-width: 1024px) {
+  /* line 130, ../../sass/_design.scss */
+  .page-description {
+    font-size: 1.125em;
+  }
+}
+/* line 138, ../../sass/_design.scss */
+.page-description a {
+  color: #7ca4ab;
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
+  transition: color 200ms linear;
+}
+/* line 141, ../../sass/_design.scss */
+.page-description a:hover {
+  color: #c6538c;
 }
 
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+/* line 145, ../../sass/_design.scss */
+.button {
+  background-color: #862d59;
+  display: inline-block;
+  padding: 0 1.375em;
+  margin-bottom: 1.25em;
+  font-size: 0.875em;
+  font-weight: bold;
+  color: #fff;
+  line-height: 2.4375em;
+  border: none;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  -webkit-transition: background-color 200ms;
+  -moz-transition: background-color 200ms;
+  -o-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+/* line 159, ../../sass/_design.scss */
+.button:hover {
+  background-color: #9a3366;
+}
+/* line 160, ../../sass/_design.scss */
+.button:active {
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+/* line 163, ../../sass/_design.scss */
+.modal-tarp {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+/* line 173, ../../sass/_design.scss */
+.add-project {
+  background: #ad3972;
+  display: none;
+  padding: 30px;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 60%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -30%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+@media all and (min-width: 768px) {
+  /* line 173, ../../sass/_design.scss */
+  .add-project {
+    width: 90%;
+  }
+}
+@media all and (min-width: 1024px) {
+  /* line 173, ../../sass/_design.scss */
+  .add-project {
+    width: 80%;
+  }
 }
 
-/*
- * Remove the gap between images, videos, audio and canvas and the bottom of
- * their containers: h5bp.com/i/440
- */
-
-audio,
-canvas,
-img,
-video {
-    vertical-align: middle;
+/* line 190, ../../sass/_design.scss */
+.add-project-title {
+  margin-top: 0;
+  font-size: 1.125em;
+  color: #fff;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+/* line 196, ../../sass/_design.scss */
+.instruction-list {
+  padding-left: 20px;
+  color: #fff;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
+/* line 201, ../../sass/_design.scss */
+.field {
+  float: left;
+  width: 50%;
 }
 
-/* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+/* line 206, ../../sass/_design.scss */
+.add-url {
+  border: solid 1px #ad3972;
+  color: #333;
+  line-height: 30px;
+  width: 100%;
+  font-size: 13px;
+  padding-left: 5px;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+/* line 216, ../../sass/_design.scss */
+.add-url:focus {
+  border: solid 1px #73264c;
+  outline: none;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Image replacement
- */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+/* line 222, ../../sass/_design.scss */
+.cancel-button {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  font-size: 1.875em;
+  color: rgba(255, 255, 255, 0.6);
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+/* line 231, ../../sass/_design.scss */
+.cancel-button:hover, .cancel-button:active {
+  color: white;
 }
 
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
+/* line 234, ../../sass/_design.scss */
+#featured {
+  padding: 0 20px 10px;
+}
+@media all and (min-width: 1024px) {
+  /* line 234, ../../sass/_design.scss */
+  #featured {
+    padding: 0 10% 10px;
+  }
+}
+@media all and (min-width: 1500px) {
+  /* line 234, ../../sass/_design.scss */
+  #featured {
+    padding: 0 15% 10px;
+  }
+}
+/* line 239, ../../sass/_design.scss */
+#featured h3 {
+  color: #706c69;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+/* line 247, ../../sass/_design.scss */
+#featured ul {
+  display: block;
 }
 
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
- */
-
-.hidden {
-    display: none !important;
-    visibility: hidden;
+/* line 254, ../../sass/_design.scss */
+.feature-card {
+  margin: 0 0 1.25em;
+  width: 100%;
+  height: auto;
+}
+@media all and (min-width: 520px) {
+  /* line 254, ../../sass/_design.scss */
+  .feature-card {
+    float: left;
+    padding: 0 1em 0;
+    width: 50%;
+  }
+}
+@media all and (min-width: 768px) {
+  /* line 254, ../../sass/_design.scss */
+  .feature-card {
+    width: 33.33%;
+  }
+}
+/* line 265, ../../sass/_design.scss */
+.feature-card > span {
+  display: block;
+  border: solid 1px #ddd;
+  padding: 1.25em 1.25em 0;
+  padding-bottom: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
 }
 
-/*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
- */
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+/* line 314, ../../sass/_design.scss */
+.card-title {
+  display: block;
+  font-size: 1.375em;
+  line-height: 1.2;
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+/* line 322, ../../sass/_design.scss */
+.title-link {
+  display: block;
+  width: 100%;
+  color: #c6538c;
+  font-weight: 600;
+}
+/* line 328, ../../sass/_design.scss */
+.title-link:hover, .title-link:active {
+  color: #862d59;
 }
 
-/*
- * Hide visually and from screenreaders, but maintain layout
- */
-
-.invisible {
-    visibility: hidden;
+/* line 331, ../../sass/_design.scss */
+.author-filter {
+  display: inline-block;
+  color: #888;
+  font-weight: 300;
+  font-size: 1em;
+}
+/* line 337, ../../sass/_design.scss */
+.author-filter:hover, .author-filter:active {
+  color: #222;
 }
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+/* line 340, ../../sass/_design.scss */
+.card-description {
+  line-height: 1.5;
+  font-size: 0.875em;
+  margin-bottom: 20px;
+  margin-top: 0;
+  color: #706c69;
 }
 
-.clearfix:after {
-    clear: both;
+/* line 348, ../../sass/_design.scss */
+.card-description-wrapper {
+  overflow: hidden;
+  padding-bottom: 16px;
+  position: relative;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
+/* line 355, ../../sass/_design.scss */
+.read-more {
+  background: #fff;
+  color: #ccc;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  z-index: 2;
+}
+/* line 365, ../../sass/_design.scss */
+.read-more:after {
+  background: #fff;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: -10px;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+/* line 376, ../../sass/_design.scss */
+.ghub-info {
+  font-size: 0.75em !important;
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  color: #888;
+}
+/* line 384, ../../sass/_design.scss */
+.ghub-info li {
+  background-color: #fbfbfc;
+  float: left;
+  border-top: solid 1px #eee;
+  width: 50%;
+  text-align: center;
+  padding: 12px 0;
 }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+/* line 394, ../../sass/_design.scss */
+.author {
+  position: relative;
+  text-indent: 5px;
+}
+/* line 397, ../../sass/_design.scss */
+.author:before {
+  content: " ";
+  background: url("../img/icons.svg") 0 -42px no-repeat;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 3px;
+  left: -5px;
+}
+/* line 407, ../../sass/_design.scss */
+.author a:hover {
+  color: #c6538c;
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
+/* line 410, ../../sass/_design.scss */
+.ghub-stars {
+  float: right;
+  border-left: solid 1px #eee;
+  position: relative;
+  text-indent: 10px;
+}
+/* line 415, ../../sass/_design.scss */
+.ghub-stars:before {
+  content: " ";
+  background: url("../img/icons.svg") 0 0 no-repeat;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+}
 
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+/* line 427, ../../sass/_design.scss */
+.tags {
+  padding-bottom: 0;
+  font-size: 0.6875em;
+  color: #7ca4ab;
+}
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+/* line 435, ../../sass/_design.scss */
+footer {
+  background: #f8f8fa url('/app/img/circle-pattern.png?1390007133') 50% 44% no-repeat;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media all and (min-width: 1024px) {
+  /* line 435, ../../sass/_design.scss */
+  footer {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+@media all and (min-width: 1500px) {
+  /* line 435, ../../sass/_design.scss */
+  footer {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+/* line 450, ../../sass/_design.scss */
+footer * {
+  text-align: center;
+}
+/* line 452, ../../sass/_design.scss */
+footer a {
+  color: inherit;
+}
+/* line 454, ../../sass/_design.scss */
+footer a:hover, footer a:active {
+  color: #c6538c;
+}
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+/* line 459, ../../sass/_design.scss */
+.footer-title {
+  font-size: 1.75em;
+  margin-bottom: 0;
+}
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+/* line 465, ../../sass/_design.scss */
+.authors {
+  color: #888;
+  margin-top: 0.25em;
 }

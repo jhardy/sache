@@ -12,8 +12,8 @@
     %meta{content: "Find Sass and Compass Extensions for your next project", name: "description"}/
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     / Place favicon.ico and apple-touch-icon.png in the root directory
-    %link{href: "stylesheets/normalize.css", rel: "stylesheet"}/
-    %link{href: "stylesheets/main.css", rel: "stylesheet"}/
+    %link{href: "css/normalize.css", rel: "stylesheet"}/
+    %link{href: "css/main.css", rel: "stylesheet"}/
     %script{src: "js/vendor/modernizr-2.6.2.min.js"}
   %body
     /[if lt IE 7]
@@ -36,6 +36,40 @@
           %input{:type => "search", :data => {:search_box => ""}}
         %li{:class => "sache-add-extension"}
           %a{:href => "#", :data => {:add_project => ""}} Add Extension
+
+    .container
+      %header
+        .title-cta
+          %h2{:class => "page-title"} Discover Sass &amp; Compass Extensions
+          %p{:class => "page-description"}
+            Find the perfect tool for your next project
+            %a{:href => "http://www.sass-lang.com"} Sass
+            or
+            %a{:href => "http://www.compass-style.org"} Compass
+            project.
+
+    #featured
+      / .filtered
+      /   %span{:class => "filter-tag"}
+      /     Filter Name
+      /     %a{:href => "#", :class => "filter-cancel"} &times;
+      %h3 Featured Extensions
+      %ul
+        %li{:class => "feature-card"}
+          %span
+            %h1{:class => "card-title"}
+              %a{:href => "#", :class => "title-link"} Tool Title
+            .card-description-wrapper
+              %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
+              %p{:class => "tags"}
+                %a{:href => "#", :class => "tag"} Animation,
+                %a{:href => "#", :class => "tag"} Plugin,
+                %a{:href => "#", :class => "tag"} Mixin
+            %ul{:class => "ghub-info"}
+              %li{:class => "author"}
+                %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
+              %li{:class => "ghub-stars"} 9,999
+
 
     %form{:action =>"/extensions", :method => "post", :role => "form", :id => 'submit-form'}
       .form-group

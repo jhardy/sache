@@ -1,0 +1,55 @@
+$base-size: 16px;
+$container-padding-default: 20px;
+$container-padding-large: 10%;
+$container-padding-xlarge: 15%;
+$transition-speed: 200ms;
+$sass-pink: #c6538c;
+$link-blue: #7ca4ab;
+$mq-small: 520px;
+$mq-medium: 768px;
+$mq-large: 1024px;
+$mq-xlarge: 1500px;
+
+@function px2em($target, $context:$base-size){
+  @return ($target/$context) + 0em;
+}
+
+@mixin mq($min-value) {
+  @if $min-value == small {
+    @media all and (min-width: $mq-small) { @content; }
+  }
+  @else if $min-value == medium {
+    @media all and (min-width: $mq-medium) { @content; }
+  }
+  @else if $min-value == large {
+    @media all and (min-width: $mq-large) { @content; }
+  }
+  @else if $min-value == xlarge {
+    @media all and (min-width: $mq-xlarge) { @content; }
+  }
+}
+
+%list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+%reset-margin-top { margin-top: 0; }
+
+%clear-float {
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+%open-sans-font { font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+%bigshot-one-font { font-family: "Bigshot One", Helvetica, Arial, sans-serif; }
+
+%tag-style {
+  color: $link-blue;
+  font-size: 13px;
+  @extend %open-sans-font;
+  @include single-transition(color, $transition-speed);
+  &:hover { color: $sass-pink; }
+}
