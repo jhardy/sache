@@ -33,7 +33,7 @@
       %ul{:class => "sache-bar-actions"}
         %li{:class => "sache-search"}
           %a{:href => "#", :data => {:search_reveal => ""}} Search
-          %input{:type => "search", :data => {:search_box => ""}}
+          %input{:type => "search", :placeholder => "Find extensions", :data => {:search_box => ""}}
         %li{:class => "sache-add-extension"}
           %a{:href => "#", :data => {:add_project => ""}} Add Extension
 
@@ -48,70 +48,97 @@
             %a{:href => "http://www.compass-style.org"} Compass
             project.
 
-    #featured
-      / .filtered
-      /   %span{:class => "filter-tag"}
-      /     Filter Name
-      /     %a{:href => "#", :class => "filter-cancel"} &times;
-      %h3 Featured Extensions
-      %ul
-        %li{:class => "feature-card"}
-          %span
-            %h1{:class => "card-title"}
-              %a{:href => "#", :class => "title-link"} Tool Title
-            .card-description-wrapper
-              %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
-              %p{:class => "tags"}
-                %a{:href => "#", :class => "tag"} Animation,
-                %a{:href => "#", :class => "tag"} Plugin,
-                %a{:href => "#", :class => "tag"} Mixin
-            %ul{:class => "ghub-info"}
-              %li{:class => "author"}
-                %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
-              %li{:class => "ghub-stars"} 9,999
+      #featured
+        %h3 Featured Extensions
+        %ul
+          %li{:class => "feature-card"}
+            %span
+              %h1{:class => "card-title"}
+                %a{:href => "#", :class => "title-link"} Tool Title
+              .card-description-wrapper
+                %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
+                %p{:class => "tags"}
+                  %a{:href => "#", :class => "tag"} Animation,
+                  %a{:href => "#", :class => "tag"} Plugin,
+                  %a{:href => "#", :class => "tag"} Mixin
+              %ul{:class => "ghub-info"}
+                %li{:class => "author"}
+                  %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
+                %li{:class => "ghub-stars"} 9,999
 
-
-    %form{:action =>"/extensions", :method => "post", :role => "form", :id => 'submit-form'}
-      .form-group
-        %input{:id => "extension-url", :name => "project_url", :placeholder => "Github SSH URL"}
-        %button{:type => "submit", :class => "btn"}
-          Submit
-
-    .extension-list
-      %table
-        %thead
-          %tr
-            %td
-              Name
-            %td
-              Description
-            %td
-              Tags
-            %td
-              Author
-            %td
-              Stars
-        %tbody
-          - @extensions.each do  |e|
+      .extension-list
+        %table
+          %thead
             %tr
               %td
-                = e.name
+                Name
               %td
-                = e.description
+                Description
               %td
-                - e.tags.each do |tag|
-                  %a{:href => "tags/#{tag}"}
-                    = tag
+                Tags
               %td
-                = e.author
+                Author
               %td
-                = e.watchers
+                Stars
+          %tbody
+            - @extensions.each do  |e|
+              %tr
+                %td
+                  = e.name
+                %td
+                  = e.description
+                %td
+                  - e.tags.each do |tag|
+                    %a{:href => "tags/#{tag}"}
+                      = tag
+                %td
+                  = e.author
+                %td
+                  = e.watchers
+
+      %footer
+        %h1{:class => "footer-title"} Sache
+        %p{:class => "authors"}
+          Made by
+          %a{:href => "https://github.com/hatefulcrawdad"} Chris Michel
+          and
+          %a{:href => "https://github.com/jhardy"} Jared Hardy
+          for the love of the amazing Sass Community.
+
+    .modal-tarp
+      .add-project
+        %h4{:class => "add-project-title"} Adding a Project
+        %ol{:class => "instruction-list"}
+          %li
+            %p
+              Add
+              %code sassmanifest.json
+              to your public repo and include the required info:
+              %pre
+                %code
+                  :preserve
+                    {
+                      "name": "project-name",
+                      "description": "Description of project",
+                      "version": "x.y.z",
+                      "tags": ["ui", "buttons", "etc"]
+                    }
+          %li
+            %p Enter your project SSH clone URL:
+            %form{:action =>"/extensions", :method => "post", :role => "form", :id => 'submit-form'}
+              .field
+                %input{:class => "add-url", :id => "extension-url", :name => "project_url", :type => "text", :placeholder => "Github SSH URL"}
+              .actions
+                %button{:class => "button", :type => "submit"} Add
+
+        %a{:class => "cancel-button", :title => "Cancel", :href => "#", :data => {:cancel_project => ""}} &times;
+
 
     %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
     :javascript
       window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
     %script{src: "js/plugins.js"}
-    /%script{src: "app/js/main.js"}
+    %script{src: "js/main.js"}
     != js :app
     / Google Analytics: change UA-XXXXX-X to be your site's ID.
     :javascript

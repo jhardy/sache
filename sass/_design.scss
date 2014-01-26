@@ -1,4 +1,6 @@
-// Page Styles
+// -
+// Global styles
+
 *, * * {
   @include box-sizing(border-box);
 }
@@ -9,7 +11,7 @@ body {
 
 a {
   text-decoration: none;
-  @include single-transition(color, 200ms, linear);
+  @include single-transition(color, $transition-speed, linear);
 }
 
 p {
@@ -20,27 +22,47 @@ pre {
   background-color: darken($sass-pink, 13%);
   padding: px2em(14px);
   margin-bottom: px2em(30px);
-  @include border-radius(2px);
+  @include border-radius($border-radius);
 
   code {
     color: lighten($sass-pink, 35%);
   }
 }
 
-header {
-  background: #f8f8fa url('../img/circle-pattern.png') 50% 45% no-repeat;
-  margin-bottom: px2em(30px);
-  padding: px2em(20px) $container-padding-default;
-  @include mq(large) { padding: px2em(60px) $container-padding-large; }
-  @include mq(xlarge) { padding: px2em(80px) $container-padding-xlarge; }
+
+// -
+// Button style
+
+.button {
+  background-color: darken($sass-pink, 20%);
+  display: inline-block;
+  padding: 0 px2em(22px);
+  margin-bottom: px2em(20px);
+  font-size: px2em(14px);
+  font-weight: bold;
+  color: #fff;
+  line-height: px2em(39px);
+  border: none;
+  @include border-right-radius($border-radius);
+  @include single-transition(background-color, $transition-speed, linear);
+
+  &:hover {
+    background-color: darken($sass-pink, 15%);
+  }
+  &:active {
+    @include box-shadow(0 2px 2px rgba(black, 0.1) inset, 0 1px 0 rgba(white, 0.15));
+  }
 }
 
+
+// -
+// Sache action bar
 
 .sache-bar {
   background: $sass-pink url('../img/wave-pattern.png') 0 0 repeat-x;
   overflow: hidden;
   padding: 0 px2em(80px);
-  height: px2em(60px);
+  height: px2em($sache-bar-height);
 }
 
 .logo {
@@ -52,7 +74,7 @@ header {
 
 .sache-bar-actions {
   float: right;
-  height: px2em(60px);
+  height: px2em($sache-bar-height);
   @extend %list-reset;
 
   li {
@@ -61,15 +83,17 @@ header {
     color: rgba(#fff, 0.6);
     overflow: hidden;
     height: 100%;
-    @include single-transition(color, 200ms, linear);
+    @include single-transition(color, $transition-speed, linear);
 
     a {
       color: rgba(#fff, 1);
       display: inline-block;
       height: 100%;
-      line-height: 60px;
+      line-height: $sache-bar-height;
       @include opacity(0.5);
-      @include single-transition(opacity, 200ms, linear);
+      @include single-transition(opacity, $transition-speed, linear);
+
+
       &:hover {
         @include opacity(1.0);
       }
@@ -79,6 +103,7 @@ header {
 
 .sache-add-extension {
   border-left: solid 1px rgba(#fff, 0.1);
+
   a {
     background: url('../img/icons.svg') 40px -105px no-repeat;
     position: relative;
@@ -103,63 +128,84 @@ header {
     margin-left: 10px;
     position: relative;
     left: 260px;
-    @include border-radius(2px);
-    @include transition(left 400ms ease-in-out, background-color 400ms ease-in-out);
+    color: $sass-pink;
+    @include border-radius($border-radius);
+    @include transition(left $transition-speed ease-in-out, background-color $transition-speed ease-in-out);
+
     &.activated {
       left: 0;
       background-color: lighten($sass-pink, 15%);
     }
+
     &:focus {
       outline: none;
-      border: solid 1px darken($sass-pink, 10%);
       background-color: lighten($sass-pink, 35%);
-      @include box-shadow(0 1px 0 rgba(255,255,255,0.2));
+      color: $text-color;
     }
   }
 }
 
-.title-cta { text-align: center; }
+
+// -
+// Title header area
+
+header {
+  background: #f8f8fa url('../img/circle-pattern.png') 50% 45% no-repeat;
+  margin-bottom: px2em(30px);
+  padding: px2em(20px) $container-padding-default;
+  text-align: center;
+
+  @include mq(large) {
+    padding: px2em($sache-bar-height) $container-padding-large;
+  }
+
+  @include mq(xlarge) {
+    padding: px2em(80px) $container-padding-xlarge;
+  }
+}
 
 .page-title {
   margin-bottom: 0;
   font-size: px2em(26px);
-  color: #706c69;
+  color: $text-color;
   @extend %reset-margin-top;
-  @include mq(medium) { font-size: px2em(35px); }
-  @include mq(large) { font-size: px2em(40px); }
+
+  @include mq(medium) {
+    font-size: px2em(35px);
+  }
+
+  @include mq(large) {
+    font-size: px2em(40px);
+  }
 }
 
 .page-description {
   font-size: px2em(14px);
   font-weight: 300;
   margin-top: px2em(6px);
-  color: #706c69;
-  @include mq(medium) { font-size: px2em(16px); }
-  @include mq(large) { font-size: px2em(18px); }
+  color: $text-color;
+
+  @include mq(medium) {
+    font-size: px2em(16px);
+  }
+
+  @include mq(large) {
+    font-size: px2em(18px);
+  }
 
   a {
     color: $link-blue;
-    @include single-transition(color, 200ms, linear);
-    &:hover { color: $sass-pink; }
+    @include single-transition(color, $transition-speed, linear);
+
+    &:hover {
+      color: $sass-pink;
+    }
   }
 }
 
-.button {
-  background-color: darken($sass-pink, 20%);
-  display: inline-block;
-  padding: 0 px2em(22px);
-  margin-bottom: px2em(20px);
-  font-size: px2em(14px);
-  font-weight: bold;
-  color: #fff;
-  line-height: px2em(39px);
-  border: none;
-  @include border-right-radius(2px);
-  @include single-transition(background-color, $transition-speed);
 
-  &:hover { background-color: darken($sass-pink, 15%); }
-  &:active { @include box-shadow(0 2px 2px rgba(black, 0.1) inset, 0 1px 0 rgba(white, 0.15)); }
-}
+// -
+// Modal
 
 .modal-tarp {
   display: none;
@@ -174,7 +220,7 @@ header {
 .add-project {
   background: darken($sass-pink, 10%);
   display: none;
-  padding: 30px;
+  padding: px2em(30px);
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -183,9 +229,15 @@ header {
   top: 100px;
   left: 50%;
   margin-left: -30%;
-  @include border-radius(4px);
-  @include mq(medium) { width: 90%; }
-  @include mq(large) { width: 80%; }
+  @include border-radius($border-radius);
+
+  @include mq(medium) {
+    width: 90%;
+  }
+
+  @include mq(large) {
+    width: 80%;
+  }
 }
 
 .add-project-title {
@@ -209,9 +261,9 @@ header {
   color: #333;
   line-height: 30px;
   width: 100%;
-  font-size: 13px;
+  font-size: px2em(13px);
   padding-left: 5px;
-  @include border-left-radius(2px);
+  @include border-left-radius($border-radius);
 
   &:focus {
     border: solid 1px darken($sass-pink, 25%);
@@ -228,20 +280,30 @@ header {
   @include single-transition(color, $transition-speed);
 
   &:hover,
-  &:active { color: rgba(#fff, 1); }
+  &:active {
+    color: rgba(#fff, 1);
+  }
 }
+
+
+// -
+// Feature cards
 
 #featured {
   padding: 0 $container-padding-default 10px;
-  @include mq(large) { padding: 0 $container-padding-large 10px; }
-  @include mq(xlarge) { padding: 0 $container-padding-xlarge 10px; }
+
+  @include mq(large) {
+    padding: 0 $container-padding-large 10px;
+  }
+  @include mq(xlarge) {
+    padding: 0 $container-padding-xlarge 10px;
+  }
 
   h3 {
-    color: #706c69;
-    font-size: 16px;
+    color: $text-color;
+    font-size: px2em(16px);
     text-align: center;
-    margin-bottom: 30px;
-
+    margin-bottom: px2em(30px);
   }
 
   ul {
@@ -255,19 +317,19 @@ header {
   margin: 0 0 px2em(20px);
   width: 100%;
   height: auto;
+
   @include mq(small) {
     float: left;
     padding: 0 px2em(16px) 0;
-    width: 50%;
+    width: 33.33%;
   }
-  @include mq(medium) { width: 33.33%; }
 
   > span {
     display: block;
     border: solid 1px #ddd;
-    padding: px2em(20px) px2em(20px) 0;
+    // padding: px2em(20px) px2em(20px) 0;
     padding-bottom: 0;
-    @include border-radius(4px);
+    @include border-radius($border-radius);
   }
 }
 
@@ -275,6 +337,7 @@ header {
   display: block;
   font-size: px2em(22px);
   line-height: 1.2;
+  padding: 20px 20px 0;
   @extend %reset-margin-top;
 }
 
@@ -284,60 +347,35 @@ header {
   color: $sass-pink;
   font-weight: 600;
 
-  &:hover, &:active { color: darken($sass-pink, 20%); }
+  &:hover,
+  &:active {
+    color: darken($sass-pink, 20%);
+  }
 }
 
-.author-filter {
-  display: inline-block;
-  color: #888;
-  font-weight: 300;
-  font-size: px2em(16px);
-
-  &:hover, &:active { color: #222; }
+.card-description-wrapper {
+  overflow: hidden;
+  padding-bottom: px2em(16px);
+  position: relative;
+  padding: 0 20px 20px;
+  @include box-sizing(content-box);
 }
 
 .card-description {
   line-height: 1.5;
   font-size: px2em(14px);
-  margin-bottom: 20px;
+  margin-bottom: px2em(20px);
   margin-top: 0;
-  color: #706c69;
-}
-
-.card-description-wrapper {
-  overflow: hidden;
-  padding-bottom: 16px;
-  position: relative;
-  @include box-sizing(content-box);
-}
-
-.read-more {
-  background: #fff;
-  color: #ccc;
-  display: block;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
-  right: 0;
-  z-index: 2;
-
-  &:after {
-    background: #fff;
-    content: " ";
-    display: block;
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    top: -10px;
-  }
+  color: $text-color;
 }
 
 .ghub-info {
-  font-size: px2em(12px) !important;
-  margin-left: -20px !important;
-  margin-right: -20px !important;
+  font-size: px2em(12px);
+  margin-left: -20px;
+  margin-right: -20px;
   color: #888;
   @extend %list-reset;
+  @include border-bottom-radius($border-radius);
 
  li {
     background-color: #fbfbfc;
@@ -349,27 +387,42 @@ header {
   }
 }
 
+.author-filter {
+  display: inline-block;
+  color: #888;
+  font-weight: 300;
+  font-size: px2em(16px);
+
+  &:hover,
+  &:active {
+    color: #222;
+  }
+}
+
 .author {
   position: relative;
-  text-indent: 5px;
+
   &:before {
     content: " ";
     background: url('../img/icons.svg') 0 -42px no-repeat;
     display: inline-block;
     width: 14px;
     height: 14px;
+    margin-right: 3px;
     position: relative;
-    top: 3px;
-    left: -5px;
+    top: 2px;
   }
-  a:hover { color: $sass-pink; }
+
+  a:hover {
+    color: $sass-pink;
+  }
 }
 
 .ghub-stars {
   float: right;
   border-left: solid 1px #eee;
   position: relative;
-  text-indent: 10px;
+
   &:before {
     content: " ";
     background: url('../img/icons.svg') 0 0 no-repeat;
@@ -384,32 +437,50 @@ header {
 
 .tags {
   padding-bottom: 0;
+  margin-bottom: 0;
   font-size: px2em(11px);
   color: $link-blue;
 }
 
-.tag { @extend %tag-style; }
+.tag {
+  color: $link-blue;
+  font-size: px2em(13px);
+  @include single-transition(color, $transition-speed);
+
+  &:hover {
+    color: $sass-pink;
+  }
+}
+
+
+// -
+// Footer styles
 
 footer {
   background: #f8f8fa image-url('circle-pattern.png') 50% 44% no-repeat;
   padding-top: px2em(40px);
   padding-bottom: px2em(40px);
+  text-align: center;
   padding-left: $container-padding-default;
   padding-right: $container-padding-default;
+
   @include mq(large) {
     padding-left: $container-padding-large;
     padding-right: $container-padding-large;
   }
+
   @include mq(xlarge) {
     padding-left: $container-padding-xlarge;
     padding-right: $container-padding-xlarge;
   }
 
-  * { text-align: center; }
+  a {
+    color: inherit;
 
-  a { color: inherit;
     &:hover,
-    &:active { color: $sass-pink; }
+    &:active {
+      color: $sass-pink;
+    }
   }
 }
 
@@ -422,45 +493,3 @@ footer {
   color: #888;
   margin-top: px2em(4px);
 }
-
-
-
-// .filter-tag {
-//   height: 36px;
-//   padding: 0 0 0 14px !important;
-//   line-height: 36px;
-//   padding-right: 47px !important;
-//   display: inline-block;
-//   margin-bottom: 30px;
-//   position: relative;
-//   left: 0;
-//   @extend %tag-style;
-//   @include mq(small) { left: 10px; }
-//   &:hover {
-//     background-color: #f3f3f3 !important;
-//     color: #888 !important;
-//   }
-//   &.hover {
-//     background-color: $sass-pink !important;
-//     color: #fff !important;
-//   }
-// }
-
-// .filter-cancel {
-//   background: #ddd;
-//   color: #bbb;
-//   padding: 0 10px;
-//   font-size: px2em(20px);
-//   line-height: 35px;
-//   height: 36px;
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   @include border-right-radius(4px);
-//   @include single-transition(all, 200ms);
-
-//   &:hover, &:active {
-//     background: darken($sass-pink, 5%);
-//     color: #fff;
-//   }
-// }
