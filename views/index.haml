@@ -28,30 +28,6 @@
       %p{class: "alert alert-error"}
         = flash[:error]
 
-<<<<<<< HEAD
-    %form{:action =>"/extensions", :method=> "post", :role => "form", :id => 'submit-form'}
-      .form-group
-        %input{:id => "extension-url", :name => "project_url", :placeholder => "Github SSH URL"}
-        %button{:type => "submit", :class => "btn"}
-          Submit
-    = haml :extension
-    .extension-list
-      %table
-        %thead
-          %tr        
-            %td
-              Name
-            %td
-              Description
-            %td
-              Tags
-            %td
-              Author
-            %td
-              Stars
-        %tbody
-          - @extensions.each do  |e|
-=======
     %section{:class => "sache-bar"}
       %h1{:class => "logo"} Sache
       %ul{:class => "sache-bar-actions"}
@@ -93,7 +69,6 @@
       .extension-list
         %table
           %thead
->>>>>>> 9673a5ae5d4657c2cd95ef4f8947e8fe94bbc22f
             %tr
               %td
                 Name
@@ -122,6 +97,7 @@
                     = e.author
                 %td{:class => "ghub-stars"}
                   = e.watchers
+
 
       %footer
         %h1{:class => "footer-title"} Sache
@@ -157,6 +133,7 @@
                 %input{:class => "add-url", :id => "extension-url", :name => "project_url", :type => "text", :placeholder => "Github SSH URL"}
               .actions
                 %button{:class => "button", :type => "submit"} Add
+            = haml :extension
 
         %a{:class => "cancel-button", :title => "Cancel", :href => "#", :data => {:cancel_project => ""}} &times;
 
