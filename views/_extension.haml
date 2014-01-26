@@ -21,9 +21,10 @@
             = e.description
           %td
             - e.tags.each do |tag|
-              %a{:href => "tags/#{tag}"}
+              %a{:href => "/tag/#{tag}"}
                 = tag
           %td
-            = e.author
+            %a{:href => "/user/#{e.author}"}
+              = e.author
           %td
             = e.watchers

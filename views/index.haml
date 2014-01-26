@@ -28,14 +28,7 @@
       %p{class: "alert alert-error"}
         = flash[:error]
 
-    %section{:class => "sache-bar"}
-      %h1{:class => "logo"} Sache
-      %ul{:class => "sache-bar-actions"}
-        %li{:class => "sache-search"}
-          %a{:href => "#", :data => {:search_reveal => ""}} Search
-          %input{:type => "search", :placeholder => "Find extensions", :data => {:search_box => ""}}
-        %li{:class => "sache-add-extension"}
-          %a{:href => "#", :data => {:add_project => ""}} Add Extension
+    = haml :_sache_bar
 
     .container
       %header
@@ -65,48 +58,12 @@
                 %li{:class => "author"}
                   %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
                 %li{:class => "ghub-stars"} 9,999
+      
 
-      .extension-list
-        %table
-          %thead
-            %tr
-              %td
-                Name
-              %td
-                Description
-              %td
-                Tags
-              %td
-                Author
-              %td
-                Stars
-          %tbody
-            - @extensions.each do  |e|
-              %tr
-                %td
-                  %a{:class => "title-link"}
-                    = e.name
-                %td{:class => "card-description"}
-                  = e.description
-                %td
-                  - e.tags.each do |tag|
-                    %a{:href => "tags/#{tag}", :class => "tag"}
-                      = tag
-                %td{:class => "author"}
-                  %a{:href => "", :class => "author-filter"}
-                    = e.author
-                %td{:class => "ghub-stars"}
-                  = e.watchers
+      = haml :_extension 
+    
 
-
-      %footer
-        %h1{:class => "footer-title"} Sache
-        %p{:class => "authors"}
-          Made by
-          %a{:href => "https://github.com/hatefulcrawdad"} Chris Michel
-          and
-          %a{:href => "https://github.com/jhardy"} Jared Hardy
-          for the love of the amazing Sass Community.
+      = haml :_footer
 
     .modal-tarp
       .add-project
@@ -133,7 +90,7 @@
                 %input{:class => "add-url", :id => "extension-url", :name => "project_url", :type => "text", :placeholder => "Github SSH URL"}
               .actions
                 %button{:class => "button", :type => "submit"} Add
-            = haml :extension
+    
 
         %a{:class => "cancel-button", :title => "Cancel", :href => "#", :data => {:cancel_project => ""}} &times;
 

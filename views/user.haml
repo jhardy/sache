@@ -1,4 +1,27 @@
-%h1
-	USER
+!!! 5
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Sache: Find Sass and Compass Extensions for your next project
+    %meta{content: "Find Sass and Compass Extensions for your next project", name: "description"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    / Place favicon.ico and apple-touch-icon.png in the root directory
+    %link{href: "/css/normalize.css", rel: "stylesheet"}/
+    %link{href: "/css/main.css", rel: "stylesheet"}/
+    %script{src: "/js/vendor/modernizr-2.6.2.min.js"}
+  %body
+    /[if lt IE 7]
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    / Add your site or application content here
 
-= haml :_extension
+    = haml :_sache_bar
+
+    = haml :_extension
+
+    = haml :_footer
