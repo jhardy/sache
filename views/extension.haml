@@ -1,0 +1,29 @@
+.extension-list
+  %table
+    %thead
+      %tr        
+        %td
+          Name
+        %td
+          Description
+        %td
+          Tags
+        %td
+          Author
+        %td
+          Stars
+    %tbody
+      - @extensions.each do  |e|
+        %tr
+          %td
+            = e.name
+          %td
+            = e.description
+          %td
+            - e.tags.each do |tag|
+              %a{:href => "tags/#{tag}"}
+                = tag
+          %td
+            = e.author
+          %td
+            = e.watchers

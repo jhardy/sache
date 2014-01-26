@@ -43,7 +43,6 @@ end
 
 get '/' do
     @extensions = Extension.all
-
     haml :index
 
 end
@@ -89,6 +88,16 @@ post '/extensions' do
         #render :success => false, :errors => @extension.errors.full_messages
         #redirect "/", :error => @extension.errors.first[1]
     end
+end
+
+get '/tag/:tag' do
+    @extensions = Extension.where("? = ANY (tags)", params[:tag]);
+    haml :tag
+end
+
+get '/user/:user' do
+    @extensions = Extension.where(:author => params[:user]);
+    haml :user
 end
 
 
