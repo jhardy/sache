@@ -152,12 +152,15 @@ header {
   opacity: 1;
 }
 
-/* line 81, ../../sass/_design.scss */
+/* line 80, ../../sass/_design.scss */
+.sache-add-extension {
+  border-left: solid 1px rgba(255, 255, 255, 0.1);
+}
+/* line 82, ../../sass/_design.scss */
 .sache-add-extension a {
   background: url("../img/icons.svg") 40px -105px no-repeat;
   position: relative;
   padding-left: 4.375em;
-  border-left: solid 1px rgba(255, 255, 255, 0.2);
 }
 
 /* line 90, ../../sass/_design.scss */

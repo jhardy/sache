@@ -78,11 +78,11 @@ header {
 }
 
 .sache-add-extension {
+  border-left: solid 1px rgba(#fff, 0.1);
   a {
     background: url('../img/icons.svg') 40px -105px no-repeat;
     position: relative;
     padding-left: px2em(70px);
-    border-left: solid 1px rgba(#fff, 0.2);
   }
 }
 
