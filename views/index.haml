@@ -84,16 +84,18 @@
             - @extensions.each do  |e|
               %tr
                 %td
-                  = e.name
-                %td
+                  %a{:class => "title-link"}
+                    = e.name
+                %td{:class => "card-description"}
                   = e.description
                 %td
                   - e.tags.each do |tag|
-                    %a{:href => "tags/#{tag}"}
+                    %a{:href => "tags/#{tag}", :class => "tag"}
                       = tag
-                %td
-                  = e.author
-                %td
+                %td{:class => "author"}
+                  %a{:href => "", :class => "author-filter"}
+                    = e.author
+                %td{:class => "ghub-stars"}
                   = e.watchers
 
       %footer
