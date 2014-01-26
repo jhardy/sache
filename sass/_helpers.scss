@@ -12,6 +12,7 @@ $mq-small: 520px;
 $mq-medium: 768px;
 $mq-large: 1024px;
 $mq-xlarge: 1500px;
+$border-style: solid 1px #ddd;
 
 @function px2em($target, $context:$base-size){
   @return ($target/$context) + 0em;
@@ -38,6 +39,12 @@ $mq-xlarge: 1500px;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+%container {
+  padding: 0 $container-padding-default 0px;
+  @include mq(large) { padding: 0 $container-padding-large 0px; }
+  @include mq(xlarge) { padding: 0 $container-padding-xlarge 0px; }
 }
 
 %list-reset {

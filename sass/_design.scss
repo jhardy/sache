@@ -290,14 +290,8 @@ header {
 // Feature cards
 
 #featured {
-  padding: 0 $container-padding-default 10px;
-
-  @include mq(large) {
-    padding: 0 $container-padding-large 10px;
-  }
-  @include mq(xlarge) {
-    padding: 0 $container-padding-xlarge 10px;
-  }
+  margin-bottom: 50px;
+  @extend %container;
 
   h3 {
     color: $text-color;
@@ -326,8 +320,7 @@ header {
 
   > span {
     display: block;
-    border: solid 1px #ddd;
-    // padding: px2em(20px) px2em(20px) 0;
+    border: $border-style;
     padding-bottom: 0;
     @include border-radius($border-radius);
   }
@@ -367,6 +360,10 @@ header {
   margin-bottom: px2em(20px);
   margin-top: 0;
   color: $text-color;
+
+  table & {
+    font-size: px2em(16px);
+  }
 }
 
 .ghub-info {
@@ -402,6 +399,12 @@ header {
 .author {
   position: relative;
 
+  table & {
+    &:before {
+      top: 1px;
+    }
+  }
+
   &:before {
     content: " ";
     background: url('../img/icons.svg') 0 -42px no-repeat;
@@ -423,6 +426,16 @@ header {
   border-left: solid 1px #eee;
   position: relative;
 
+  table & {
+    border-left: none;
+    float: none;
+    color: #888;
+
+    &:before {
+      top: 1px;
+    }
+  }
+
   &:before {
     content: " ";
     background: url('../img/icons.svg') 0 0 no-repeat;
@@ -438,17 +451,48 @@ header {
 .tags {
   padding-bottom: 0;
   margin-bottom: 0;
-  font-size: px2em(11px);
+  font-size: px2em(13px);
   color: $link-blue;
 }
 
 .tag {
   color: $link-blue;
-  font-size: px2em(13px);
   @include single-transition(color, $transition-speed);
 
   &:hover {
     color: $sass-pink;
+  }
+}
+
+
+// -
+// Extension table view
+.extension-list {
+  @extend %container;
+
+  table {
+    width: 100%;
+    margin: 0 15px 100px;
+
+    thead {
+      font-weight: bold;
+
+      tr {
+        line-height: 43px;
+        color: #a5a19c;
+      }
+    }
+
+    tbody {
+      td {
+        padding: 25px 0;
+      }
+    }
+
+    tr {
+      border-bottom: $border-style;
+      color: $text-color;
+    }
   }
 }
 
