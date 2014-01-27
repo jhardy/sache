@@ -254,46 +254,47 @@ h6 {
 header {
   background: #f8f8fa url("../img/circle-pattern.png") 50% 45% no-repeat;
   margin-bottom: 1.875em;
-  padding: 1.25em 20px;
+  padding: 1.25em 20px 1.625em;
   text-align: center;
 }
-@media all and (min-width: 1024px) {
+@media all and (min-width: 768px) {
   /* line 4, ../../sass/_header_title.scss */
   header {
-    padding: 3.75em 10%;
+    padding: 3.125em 10% 3.75em;
   }
 }
 @media all and (min-width: 1500px) {
   /* line 4, ../../sass/_header_title.scss */
   header {
-    padding: 5em 15%;
+    padding: 5em 15% 5.875em;
   }
 }
 
 /* line 19, ../../sass/_header_title.scss */
 .page-title {
-  margin-bottom: 0;
-  font-size: 1.625em;
+  margin-bottom: 0.5em;
+  font-size: 2em;
   color: #706c69;
 }
 @media all and (min-width: 768px) {
   /* line 19, ../../sass/_header_title.scss */
   .page-title {
-    font-size: 2.1875em;
+    font-size: 2.5em;
   }
 }
 @media all and (min-width: 1024px) {
   /* line 19, ../../sass/_header_title.scss */
   .page-title {
-    font-size: 2.5em;
+    font-size: 2.875em;
   }
 }
 
 /* line 34, ../../sass/_header_title.scss */
 .page-description {
   font-size: 0.875em;
-  margin-top: 0.375em;
   color: #706c69;
+  margin-bottom: 0;
+  line-height: 1.5;
 }
 @media all and (min-width: 768px) {
   /* line 34, ../../sass/_header_title.scss */
@@ -307,7 +308,7 @@ header {
     font-size: 1.125em;
   }
 }
-/* line 47, ../../sass/_header_title.scss */
+/* line 48, ../../sass/_header_title.scss */
 .page-description a {
   color: #7ca4ab;
   -webkit-transition: color 200ms linear;
@@ -315,7 +316,7 @@ header {
   -o-transition: color 200ms linear;
   transition: color 200ms linear;
 }
-/* line 51, ../../sass/_header_title.scss */
+/* line 52, ../../sass/_header_title.scss */
 .page-description a:hover {
   color: #c6538c;
 }

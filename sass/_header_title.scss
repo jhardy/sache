@@ -4,37 +4,38 @@
 header {
   background: #f8f8fa url('../img/circle-pattern.png') 50% 45% no-repeat;
   margin-bottom: px2em(30px);
-  padding: px2em(20px) $container-padding-default;
+  padding: px2em(20px) $container-padding-default px2em(26px);
   text-align: center;
 
-  @include mq(large) {
-    padding: px2em($sache-bar-height) $container-padding-large;
+  @include mq(medium) {
+    padding: px2em(50px) $container-padding-large px2em(60px);
   }
 
   @include mq(xlarge) {
-    padding: px2em(80px) $container-padding-xlarge;
+    padding: px2em(80px) $container-padding-xlarge px2em(94px);
   }
 }
 
 .page-title {
-  margin-bottom: 0;
-  font-size: px2em(26px);
+  margin-bottom: px2em(8px);
+  font-size: px2em(32px);
   color: $text-color;
   @extend %reset-margin-top;
 
   @include mq(medium) {
-    font-size: px2em(35px);
+    font-size: px2em(40px);
   }
 
   @include mq(large) {
-    font-size: px2em(40px);
+    font-size: px2em(46px);
   }
 }
 
 .page-description {
   font-size: px2em(14px);
-  margin-top: px2em(6px);
   color: $text-color;
+  margin-bottom: 0;
+  line-height: 1.5;
 
   @include mq(medium) {
     font-size: px2em(16px);
