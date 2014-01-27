@@ -35,9 +35,9 @@
 }
 
 .add-project-title {
-  margin-top: 0;
   font-size: px2em(18px);
   color: #fff;
+  @extend %reset-margin-top;
 }
 
 .instruction-list {

@@ -24,7 +24,7 @@
 }
 
 /* line 57, ../../sass/_helpers.scss */
-.page-title, .card-title {
+.page-title, .card-title, .card-description, .add-project-title {
   margin-top: 0;
 }
 
@@ -89,7 +89,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6, .title-link {
   font-family: "ff-tisa-web-pro", serif;
 }
 
@@ -126,6 +126,16 @@ pre {
 /* line 25, ../../sass/_type.scss */
 pre code {
   color: #f2d9e6;
+}
+
+/* line 35, ../../sass/_type.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 
 /* line 4, ../../sass/_sache_bar.scss */
@@ -282,7 +292,6 @@ header {
 /* line 34, ../../sass/_header_title.scss */
 .page-description {
   font-size: 0.875em;
-  font-weight: 300;
   margin-top: 0.375em;
   color: #706c69;
 }
@@ -298,7 +307,7 @@ header {
     font-size: 1.125em;
   }
 }
-/* line 48, ../../sass/_header_title.scss */
+/* line 47, ../../sass/_header_title.scss */
 .page-description a {
   color: #7ca4ab;
   -webkit-transition: color 200ms linear;
@@ -306,7 +315,7 @@ header {
   -o-transition: color 200ms linear;
   transition: color 200ms linear;
 }
-/* line 52, ../../sass/_header_title.scss */
+/* line 51, ../../sass/_header_title.scss */
 .page-description a:hover {
   color: #c6538c;
 }
@@ -366,7 +375,6 @@ header {
   display: block;
   width: 100%;
   color: #c6538c;
-  font-weight: 600;
 }
 /* line 56, ../../sass/_extensions.scss */
 .title-link:hover, .title-link:active {
@@ -386,10 +394,9 @@ header {
 
 /* line 69, ../../sass/_extensions.scss */
 .card-description {
-  line-height: 1.5;
-  font-size: 0.875em;
-  margin-bottom: 1.25em;
-  margin-top: 0;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1em;
   color: #706c69;
 }
 /* line 76, ../../sass/_extensions.scss */
@@ -399,7 +406,6 @@ table .card-description {
 
 /* line 81, ../../sass/_extensions.scss */
 .ghub-info {
-  font-size: 0.75em;
   margin-left: -20px;
   margin-right: -20px;
   color: #888;
@@ -410,7 +416,7 @@ table .card-description {
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* line 89, ../../sass/_extensions.scss */
+/* line 88, ../../sass/_extensions.scss */
 .ghub-info li {
   background-color: #fbfbfc;
   float: left;
@@ -420,27 +426,22 @@ table .card-description {
   padding: 12px 0;
 }
 
-/* line 99, ../../sass/_extensions.scss */
+/* line 98, ../../sass/_extensions.scss */
 .author-filter {
   display: inline-block;
   color: #888;
-  font-weight: 300;
-  font-size: 1em;
+  font-size: 0.875em;
 }
-/* line 106, ../../sass/_extensions.scss */
+/* line 104, ../../sass/_extensions.scss */
 .author-filter:hover, .author-filter:active {
   color: #222;
 }
 
-/* line 111, ../../sass/_extensions.scss */
+/* line 109, ../../sass/_extensions.scss */
 .author {
   position: relative;
 }
-/* line 115, ../../sass/_extensions.scss */
-table .author:before {
-  top: 1px;
-}
-/* line 120, ../../sass/_extensions.scss */
+/* line 112, ../../sass/_extensions.scss */
 .author:before {
   content: " ";
   background: url("../img/icons.svg") 0 -42px no-repeat;
@@ -451,28 +452,25 @@ table .author:before {
   position: relative;
   top: 2px;
 }
-/* line 131, ../../sass/_extensions.scss */
+/* line 123, ../../sass/_extensions.scss */
 .author a:hover {
   color: #c6538c;
 }
 
-/* line 136, ../../sass/_extensions.scss */
+/* line 128, ../../sass/_extensions.scss */
 .ghub-stars {
   float: right;
   border-left: solid 1px #eee;
   position: relative;
+  font-size: 0.8125em;
 }
-/* line 141, ../../sass/_extensions.scss */
+/* line 134, ../../sass/_extensions.scss */
 table .ghub-stars {
   border-left: none;
   float: none;
-  color: #888;
+  color: #888 !important;
 }
-/* line 146, ../../sass/_extensions.scss */
-table .ghub-stars:before {
-  top: 1px;
-}
-/* line 151, ../../sass/_extensions.scss */
+/* line 140, ../../sass/_extensions.scss */
 .ghub-stars:before {
   content: " ";
   background: url("../img/icons.svg") 0 0 no-repeat;
@@ -484,46 +482,46 @@ table .ghub-stars:before {
   top: 2px;
 }
 
-/* line 163, ../../sass/_extensions.scss */
+/* line 152, ../../sass/_extensions.scss */
 .tags {
   padding-bottom: 0;
-  margin-bottom: 0;
-  font-size: 0.8125em;
+  margin-bottom: 5px;
   color: #7ca4ab;
 }
 
-/* line 170, ../../sass/_extensions.scss */
+/* line 158, ../../sass/_extensions.scss */
 .tag {
   color: #7ca4ab;
+  font-size: 0.875em;
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;
   transition: color 200ms;
 }
-/* line 174, ../../sass/_extensions.scss */
+/* line 163, ../../sass/_extensions.scss */
 .tag:hover {
   color: #c6538c;
 }
 
-/* line 185, ../../sass/_extensions.scss */
+/* line 174, ../../sass/_extensions.scss */
 .extension-list table {
   width: 100%;
   margin: 0 15px 100px;
 }
-/* line 189, ../../sass/_extensions.scss */
+/* line 178, ../../sass/_extensions.scss */
 .extension-list table thead {
   font-weight: bold;
 }
-/* line 192, ../../sass/_extensions.scss */
+/* line 181, ../../sass/_extensions.scss */
 .extension-list table thead tr {
   line-height: 43px;
   color: #a5a19c;
 }
-/* line 199, ../../sass/_extensions.scss */
+/* line 188, ../../sass/_extensions.scss */
 .extension-list table tbody td {
   padding: 25px 0;
 }
-/* line 204, ../../sass/_extensions.scss */
+/* line 193, ../../sass/_extensions.scss */
 .extension-list table tr {
   border-bottom: solid 1px #dddddd;
   color: #706c69;
@@ -574,7 +572,6 @@ table .ghub-stars:before {
 
 /* line 37, ../../sass/_modal.scss */
 .add-project-title {
-  margin-top: 0;
   font-size: 1.125em;
   color: #fff;
 }

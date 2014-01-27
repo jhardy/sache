@@ -15,7 +15,7 @@
     %tbody
       - @extensions.each do  |e|
         %tr
-          %td
+          %td{:class => "card-title"}
             %a{:class => "title-link"}
               = e.name
           %td{:class => "card-description"}

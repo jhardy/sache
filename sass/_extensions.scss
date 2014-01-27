@@ -50,7 +50,7 @@
   display: block;
   width: 100%;
   color: $sass-pink;
-  font-weight: 600;
+  @extend %tisa-serif;
 
   &:hover,
   &:active {
@@ -67,11 +67,11 @@
 }
 
 .card-description {
-  line-height: 1.5;
-  font-size: px2em(14px);
-  margin-bottom: px2em(20px);
-  margin-top: 0;
+  font-size: px2em(16px);
+  line-height: 1.6;
+  margin-bottom: px2em(16px);
   color: $text-color;
+  @extend %reset-margin-top;
 
   table & {
     font-size: px2em(16px);
@@ -79,7 +79,6 @@
 }
 
 .ghub-info {
-  font-size: px2em(12px);
   margin-left: -20px;
   margin-right: -20px;
   color: #888;
@@ -99,8 +98,7 @@
 .author-filter {
   display: inline-block;
   color: #888;
-  font-weight: 300;
-  font-size: px2em(16px);
+  font-size: px2em(14px);
 
   &:hover,
   &:active {
@@ -110,12 +108,6 @@
 
 .author {
   position: relative;
-
-  table & {
-    &:before {
-      top: 1px;
-    }
-  }
 
   &:before {
     content: " ";
@@ -137,15 +129,12 @@
   float: right;
   border-left: solid 1px #eee;
   position: relative;
+  font-size: px2em(13px);
 
   table & {
     border-left: none;
     float: none;
-    color: #888;
-
-    &:before {
-      top: 1px;
-    }
+    color: #888 !important;
   }
 
   &:before {
@@ -162,13 +151,13 @@
 
 .tags {
   padding-bottom: 0;
-  margin-bottom: 0;
-  font-size: px2em(13px);
+  margin-bottom: 5px;
   color: $link-blue;
 }
 
 .tag {
   color: $link-blue;
+  font-size: px2em(14px);
   @include single-transition(color, $transition-speed);
 
   &:hover {
