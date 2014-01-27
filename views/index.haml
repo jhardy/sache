@@ -58,12 +58,8 @@
                 %li{:class => "author"}
                   %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
                 %li{:class => "ghub-stars"} 9,999
-      
 
-      = haml :_extension 
-    
-
-      = haml :_footer
+      = haml :_extension
 
     .modal-tarp
       .add-project
@@ -90,7 +86,7 @@
                 %input{:class => "add-url", :id => "extension-url", :name => "project_url", :type => "text", :placeholder => "Github SSH URL"}
               .actions
                 %button{:class => "button", :type => "submit"} Add
-    
+
 
         %a{:class => "cancel-button", :title => "Cancel", :href => "#", :data => {:cancel_project => ""}} &times;
 
