@@ -1,7 +1,7 @@
 .extension-list
   %table
     %thead
-      %tr        
+      %tr
         %td
           Name
         %td
@@ -16,15 +16,16 @@
       - @extensions.each do  |e|
         %tr
           %td
-            = e.name
-          %td
+            %a{:class => "title-link"}
+              = e.name
+          %td{:class => "card-description"}
             = e.description
           %td
             - e.tags.each do |tag|
-              %a{:href => "/tag/#{tag}"}
+              %a{:href => "tags/#{tag}", :class => "tag"}
                 = tag
-          %td
-            %a{:href => "/user/#{e.author}"}
+          %td{:class => "author"}
+            %a{:href => "/user/#{e.author}", :class => "author-filter"}
               = e.author
-          %td
+          %td{:class => "ghub-stars"}
             = e.watchers
