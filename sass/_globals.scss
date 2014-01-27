@@ -1,0 +1,31 @@
+// -
+// Global styles
+
+*, * * {
+  @include box-sizing(border-box);
+}
+
+body {
+  font-size: px2em(16px);
+}
+
+.button {
+  background-color: darken($sass-pink, 20%);
+  display: inline-block;
+  padding: 0 px2em(22px);
+  margin-bottom: px2em(20px);
+  font-size: px2em(14px);
+  font-weight: bold;
+  color: #fff;
+  line-height: px2em(39px);
+  border: none;
+  @include border-right-radius($border-radius);
+  @include single-transition(background-color, $transition-speed, linear);
+
+  &:hover {
+    background-color: darken($sass-pink, 15%);
+  }
+  &:active {
+    @include box-shadow(0 2px 2px rgba(black, 0.1) inset, 0 1px 0 rgba(white, 0.15));
+  }
+}

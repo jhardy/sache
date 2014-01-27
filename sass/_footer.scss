@@ -1,0 +1,40 @@
+// -
+// Footer styles
+
+footer {
+  background: #f8f8fa image-url('circle-pattern.png') 50% 44% no-repeat;
+  padding-top: px2em(40px);
+  padding-bottom: px2em(40px);
+  text-align: center;
+  padding-left: $container-padding-default;
+  padding-right: $container-padding-default;
+
+  @include mq(large) {
+    padding-left: $container-padding-large;
+    padding-right: $container-padding-large;
+  }
+
+  @include mq(xlarge) {
+    padding-left: $container-padding-xlarge;
+    padding-right: $container-padding-xlarge;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: $sass-pink;
+    }
+  }
+}
+
+.footer-title {
+  font-size: px2em(28px);
+  margin-bottom: 0;
+}
+
+.authors {
+  color: #888;
+  margin-top: px2em(4px);
+}

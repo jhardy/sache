@@ -1,0 +1,89 @@
+// -
+// Sache action bar
+
+.sache-bar {
+  background: $sass-pink url('../img/wave-pattern.png') 0 0 repeat-x;
+  overflow: hidden;
+  padding: 0 px2em(80px);
+  height: px2em($sache-bar-height);
+}
+
+.logo {
+  margin: 0;
+  color: #fff;
+  float: left;
+  @include vertical-align;
+}
+
+.sache-bar-actions {
+  float: right;
+  height: px2em($sache-bar-height);
+  @extend %list-reset;
+
+  li {
+    float: left;
+    margin-left: px2em(40px);
+    color: rgba(#fff, 0.6);
+    overflow: hidden;
+    height: 100%;
+    @include single-transition(color, $transition-speed, linear);
+
+    a {
+      color: rgba(#fff, 1);
+      display: inline-block;
+      height: 100%;
+      line-height: $sache-bar-height;
+      @include opacity(0.5);
+      @include single-transition(opacity, $transition-speed, linear);
+
+
+      &:hover {
+        @include opacity(1.0);
+      }
+    }
+  }
+}
+
+.sache-add-extension {
+  border-left: solid 1px rgba(#fff, 0.1);
+
+  a {
+    background: url('../img/icons.svg') 40px -105px no-repeat;
+    position: relative;
+    padding-left: px2em(70px);
+  }
+}
+
+.sache-search {
+  a {
+    background: url('../img/icons.svg') 0 -62px no-repeat;
+    position: relative;
+    left: 270px;
+    padding-left: px2em(30px);
+  }
+
+  input {
+    background-color: $sass-pink;
+    border: 0;
+    padding: 5px 5px 4px;
+    width: 250px;
+    font-size: 13px;
+    margin-left: 10px;
+    position: relative;
+    left: 260px;
+    color: $sass-pink;
+    @include border-radius($border-radius);
+    @include transition(left $transition-speed ease-in-out, background-color $transition-speed ease-in-out, color $transition-speed linear);
+
+    &.activated {
+      left: 0;
+      background-color: lighten($sass-pink, 15%);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: lighten($sass-pink, 35%);
+      color: $sass-pink;
+    }
+  }
+}

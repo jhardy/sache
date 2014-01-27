@@ -1,7 +1,37 @@
 %tisa-serif {
-	font-family: "ff-tisa-web-pro", serif;
+  font-family: "ff-tisa-web-pro", serif;
 }
 
 %tisa-sans-serif {
-	font-family: "ff-tisa-sans-web-pro", sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  @include single-transition(color, $transition-speed, linear);
+}
+
+p {
+  font-weight: 400;
+  @extend %tisa-sans-serif;
+}
+
+pre {
+  background-color: darken($sass-pink, 13%);
+  padding: px2em(14px);
+  margin-bottom: px2em(30px);
+  @include border-radius($border-radius);
+
+  code {
+    color: lighten($sass-pink, 35%);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %tisa-serif;
 }

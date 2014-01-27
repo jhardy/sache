@@ -1,0 +1,56 @@
+// -
+// Title header area
+
+header {
+  background: #f8f8fa url('../img/circle-pattern.png') 50% 45% no-repeat;
+  margin-bottom: px2em(30px);
+  padding: px2em(20px) $container-padding-default;
+  text-align: center;
+
+  @include mq(large) {
+    padding: px2em($sache-bar-height) $container-padding-large;
+  }
+
+  @include mq(xlarge) {
+    padding: px2em(80px) $container-padding-xlarge;
+  }
+}
+
+.page-title {
+  margin-bottom: 0;
+  font-size: px2em(26px);
+  color: $text-color;
+  @extend %reset-margin-top;
+
+  @include mq(medium) {
+    font-size: px2em(35px);
+  }
+
+  @include mq(large) {
+    font-size: px2em(40px);
+  }
+}
+
+.page-description {
+  font-size: px2em(14px);
+  font-weight: 300;
+  margin-top: px2em(6px);
+  color: $text-color;
+
+  @include mq(medium) {
+    font-size: px2em(16px);
+  }
+
+  @include mq(large) {
+    font-size: px2em(18px);
+  }
+
+  a {
+    color: $link-blue;
+    @include single-transition(color, $transition-speed, linear);
+
+    &:hover {
+      color: $sass-pink;
+    }
+  }
+}

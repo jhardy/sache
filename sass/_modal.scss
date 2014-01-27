@@ -1,0 +1,80 @@
+// -
+// Modal
+
+.modal-tarp {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000,0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.add-project {
+  background: darken($sass-pink, 10%);
+  display: none;
+  padding: px2em(30px);
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 60%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -30%;
+  @include border-radius($border-radius);
+
+  @include mq(medium) {
+    width: 90%;
+  }
+
+  @include mq(large) {
+    width: 80%;
+  }
+}
+
+.add-project-title {
+  margin-top: 0;
+  font-size: px2em(18px);
+  color: #fff;
+}
+
+.instruction-list {
+  padding-left: 20px;
+  color: #fff;
+}
+
+.field {
+  float: left;
+  width: 50%;
+}
+
+.add-url {
+  border: solid 1px darken($sass-pink, 10%);
+  color: #333;
+  line-height: 30px;
+  width: 100%;
+  font-size: px2em(13px);
+  padding-left: 5px;
+  @include border-left-radius($border-radius);
+
+  &:focus {
+    border: solid 1px darken($sass-pink, 25%);
+    outline: none;
+  }
+}
+
+.cancel-button {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  font-size: px2em(30px);
+  color: rgba(#fff, 0.6);
+  @include single-transition(color, $transition-speed);
+
+  &:hover,
+  &:active {
+    color: rgba(#fff, 1);
+  }
+}
