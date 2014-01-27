@@ -147,13 +147,18 @@ pre code {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+/* line 17, ../../sass/_sache_bar.scss */
+.logo img {
+  height: 32px;
+  margin-top: 5px;
+}
 
-/* line 18, ../../sass/_sache_bar.scss */
+/* line 23, ../../sass/_sache_bar.scss */
 .sache-bar-actions {
   float: right;
   height: 3.75em;
 }
-/* line 23, ../../sass/_sache_bar.scss */
+/* line 28, ../../sass/_sache_bar.scss */
 .sache-bar-actions li {
   float: left;
   margin-left: 2.5em;
@@ -165,7 +170,7 @@ pre code {
   -o-transition: color 200ms linear;
   transition: color 200ms linear;
 }
-/* line 31, ../../sass/_sache_bar.scss */
+/* line 36, ../../sass/_sache_bar.scss */
 .sache-bar-actions li a {
   color: white;
   display: inline-block;
@@ -178,31 +183,31 @@ pre code {
   -o-transition: opacity 200ms linear;
   transition: opacity 200ms linear;
 }
-/* line 40, ../../sass/_sache_bar.scss */
+/* line 45, ../../sass/_sache_bar.scss */
 .sache-bar-actions li a:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 47, ../../sass/_sache_bar.scss */
+/* line 52, ../../sass/_sache_bar.scss */
 .sache-add-extension {
   border-left: solid 1px rgba(255, 255, 255, 0.1);
 }
-/* line 50, ../../sass/_sache_bar.scss */
+/* line 55, ../../sass/_sache_bar.scss */
 .sache-add-extension a {
   background: url("../img/icons.svg") 40px -105px no-repeat;
   position: relative;
   padding-left: 4.375em;
 }
 
-/* line 58, ../../sass/_sache_bar.scss */
+/* line 63, ../../sass/_sache_bar.scss */
 .sache-search a {
   background: url("../img/icons.svg") 0 -62px no-repeat;
   position: relative;
   left: 270px;
   padding-left: 1.875em;
 }
-/* line 65, ../../sass/_sache_bar.scss */
+/* line 70, ../../sass/_sache_bar.scss */
 .sache-search input {
   background-color: #c6538c;
   border: 0;
@@ -223,12 +228,12 @@ pre code {
   -o-transition: left 200ms ease-in-out, background-color 200ms ease-in-out, color 200ms linear;
   transition: left 200ms ease-in-out, background-color 200ms ease-in-out, color 200ms linear;
 }
-/* line 78, ../../sass/_sache_bar.scss */
+/* line 83, ../../sass/_sache_bar.scss */
 .sache-search input.activated {
   left: 0;
   background-color: #d98cb2;
 }
-/* line 83, ../../sass/_sache_bar.scss */
+/* line 88, ../../sass/_sache_bar.scss */
 .sache-search input:focus {
   outline: none;
   background-color: #f2d9e6;

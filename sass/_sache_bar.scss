@@ -13,6 +13,11 @@
   color: #fff;
   float: left;
   @include vertical-align;
+
+  img {
+    height: 32px;
+    margin-top: 5px;
+  }
 }
 
 .sache-bar-actions {
