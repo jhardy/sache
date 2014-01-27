@@ -203,10 +203,10 @@ pre code {
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
-  -webkit-transition: left 200ms ease-in-out, background-color 200ms ease-in-out;
-  -moz-transition: left 200ms ease-in-out, background-color 200ms ease-in-out;
-  -o-transition: left 200ms ease-in-out, background-color 200ms ease-in-out;
-  transition: left 200ms ease-in-out, background-color 200ms ease-in-out;
+  -webkit-transition: left 200ms ease-in-out, background-color 200ms ease-in-out, color 200ms linear;
+  -moz-transition: left 200ms ease-in-out, background-color 200ms ease-in-out, color 200ms linear;
+  -o-transition: left 200ms ease-in-out, background-color 200ms ease-in-out, color 200ms linear;
+  transition: left 200ms ease-in-out, background-color 200ms ease-in-out, color 200ms linear;
 }
 /* line 135, ../../sass/_design.scss */
 .sache-search input.activated {
@@ -217,7 +217,7 @@ pre code {
 .sache-search input:focus {
   outline: none;
   background-color: #f2d9e6;
-  color: #706c69;
+  color: #c6538c;
 }
 
 /* line 152, ../../sass/_design.scss */

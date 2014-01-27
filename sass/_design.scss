@@ -130,7 +130,7 @@ pre {
     left: 260px;
     color: $sass-pink;
     @include border-radius($border-radius);
-    @include transition(left $transition-speed ease-in-out, background-color $transition-speed ease-in-out);
+    @include transition(left $transition-speed ease-in-out, background-color $transition-speed ease-in-out, color $transition-speed linear);
 
     &.activated {
       left: 0;
@@ -140,7 +140,7 @@ pre {
     &:focus {
       outline: none;
       background-color: lighten($sass-pink, 35%);
-      color: $text-color;
+      color: $sass-pink;
     }
   }
 }
