@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem "sinatra"
 gem "octokit"
 gem "sass"
+gem "compass"
 gem "haml"
 gem "sinatra-assetpack", :require => 'sinatra/assetpack'
 gem "activerecord"
