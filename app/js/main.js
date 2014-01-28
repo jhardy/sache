@@ -50,7 +50,6 @@ $(function() {
         e.stopPropagation();
         $modalTarp.fadeIn(fadeSpeed);
         $projectModal.addClass('modal-open');
-        // $projectModal.fadeIn(fadeSpeed);
       });
 
       // Fade out project instruction, fade in button
@@ -58,7 +57,6 @@ $(function() {
         e.preventDefault();
         $modalTarp.fadeOut(fadeSpeed);
         $projectModal.removeClass('modal-open');
-        // $projectModal.fadeOut(fadeSpeed);
       });
 
       $('body').on('click', function(e) {
