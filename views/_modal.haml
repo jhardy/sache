@@ -1,0 +1,32 @@
+.modal-tarp
+
+  %section{:class => 'response-bar'}
+    .response-text
+
+  .add-project
+    %h4{:class => "add-project-title"} Adding a Project
+    %ol{:class => "instruction-list"}
+      %li
+        %p
+          Add
+          %code sassmanifest.json
+          to your public repo and include the required info:
+          %pre
+            %code
+              :preserve
+                {
+                  "name": "project-name",
+                  "description": "Description of project",
+                  "version": "x.y.z",
+                  "tags": ["ui", "buttons", "etc"]
+                }
+      %li
+        %p Enter your project SSH clone URL:
+        %form{:action =>"/extensions", :method => "post", :role => "form", :id => 'submit-form'}
+          .field
+            %input{:class => "add-url", :id => "extension-url", :name => "project_url", :type => "text", :placeholder => "Github SSH URL"}
+          .actions
+            %button{:class => "button", :type => "submit"} Add
+
+
+    %a{:class => "cancel-button", :title => "Cancel", :href => "#", :data => {:cancel_project => ""}} &times;

@@ -19,13 +19,13 @@ $(function() {
               $form.find(".button").attr('disabled', true);
           },
           complete: function(jqXHR, status) {
-              console.log(jqXHR, status)
-              console.log(jqXHR.responseText);
+              console.log("jqxr: ", jqXHR, " , status: ", status)
+              console.log('responseText: ', jqXHR.responseText);
               $form.removeClass('processing');
               $form.find(".button").removeAttr('disabled', false);
           },
           success: function(e) {
-            window.location.reload(true);
+            $("#main").load("/ #main");
           },
           error: function(jqXHR, textStatus, errorThrown) {
               console.log("jqXHR: ", jqXHR);
@@ -34,7 +34,6 @@ $(function() {
               //console.log("error: " + textStatus.responseText)
           }
        });
- 
   });
 
 
@@ -75,10 +74,12 @@ $(function() {
   $(document).keyup(function(e) {
     if ($modalTarp.is(':visible')) {
       if (e.keyCode == 27) { // esc
-        $modalTarp.fadeOut(fadeSpeed);
-        $projectModal.fadeOut(fadeSpeed);
+        closeModal();
+       
       }
     }
   });
+
+  //$(document).pjax('a[data-pjax]', '#pjax-container')
 
 });

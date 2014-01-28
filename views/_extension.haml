@@ -1,33 +1,34 @@
-.extension-list
-  %table
-    %thead
-      %tr
-        %td
-          Name
-        %td
-          Description
-        %td
-          Tags
-        %td
-          Author
-        %td
-          Stars
-    %tbody
-      - @extensions.each do  |e|
+#main
+  .extension-list
+    %table
+      %thead
         %tr
-          %td{:class => "card-title"}
-            %a{:class => "title-link"}
-              = e.name
-          %td{:class => "card-description"}
-            = e.description
-          %td.tag-list
-            - e.tags.each do |tag|
+          %td
+            Name
+          %td
+            Description
+          %td
+            Tags
+          %td
+            Author
+          %td
+            Stars
+      %tbody
+        - @extensions.each do  |e|
+          %tr
+            %td{:class => "card-title"}
+              %a{:class => "title-link"}
+                = e.name
+            %td{:class => "card-description"}
+              = e.description
+            %td.tag-list
+              - e.tags.each do |tag|
 
-              %a{:href => "tag/#{tag}", :class => "tag"}
-                = tag
+                %a{:href => "/tag/#{tag}", :class => "tag", :data => {:pjax => 'true'}}
+                  = tag
 
-          %td{:class => "author"}
-            %a{:href => "/user/#{e.author}", :class => "author-filter"}
-              = e.author
-          %td{:class => "ghub-stars"}
-            = e.watchers
+            %td{:class => "author"}
+              %a{:href => "/user/#{e.author}", :class => "author-filter"}
+                = e.author
+            %td{:class => "ghub-stars"}
+              = e.watchers
