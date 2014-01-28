@@ -8,24 +8,23 @@ $(function() {
             actionURL = $form.attr('action'),
             formData = $form.serialize();
 
-        console.log($form);
-        console.log(actionURL);
-        console.log(formData);
-
         $.ajax({
             url: actionURL,
             type: "POST",
             data: formData,
             beforeSend: function() {
-                $form.addClass('processing')
+                $form.addClass('processing');
+                console.log($form.find(".button"))
+                $form.find(".button").attr('disabled', true);
             },
             complete: function(jqXHR, status) {
                 console.log(jqXHR, status)
                 console.log(jqXHR.responseText);
-                $form.removeClass('processing')
+                $form.removeClass('processing');
+                $form.find(".button").removeAttr('disabled', false);
             },
-            success: function(e) { console.log("success: " + e)
-
+            success: function(e) {
+              window.location.reload(true);
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("jqXHR: ", jqXHR);

@@ -15,7 +15,7 @@
   @include vertical-align;
 
   img {
-    height: 32px;
+    height: 40px;
     margin-top: 5px;
   }
 }
@@ -37,7 +37,6 @@
       display: inline-block;
       height: 100%;
       line-height: $sache-bar-height;
-      @include opacity(0.5);
       @include opacity(0.5);
       @include single-transition(opacity, $transition-speed, linear);
 
@@ -71,7 +70,7 @@
     @include opacity(0.5);
     @include border-radius($border-radius);
     @include vertical-align;
-    @include single-transition(all, $transition-speed, linear);
+    @include transition(width $transion-speed-search  cubic-bezier(0.360, -0.270, 0.490, 1.290), background-color $transition-speed linear);
     @include placeholder-style {
       color: #fff;
     }
