@@ -20,17 +20,14 @@
               = e.name
           %td{:class => "card-description"}
             = e.description
-          %td
-            - e.tags.map do |tag|
-              %a{:href => "tags/#{tag}", :class => "tag"} 
+          %td.tag-list
+            - e.tags.each do |tag|
+
+              %a{:href => "tags/#{tag}", :class => "tag"}
                 = tag
-            -end.join(',')
 
           %td{:class => "author"}
             %a{:href => "/user/#{e.author}", :class => "author-filter"}
               = e.author
           %td{:class => "ghub-stars"}
             = e.watchers
-
-
-           

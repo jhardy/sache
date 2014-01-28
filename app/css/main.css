@@ -40,8 +40,8 @@
 
 /* line 4, ../../sass/_globals.scss */
 *, * * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -67,9 +67,9 @@ body {
   -moz-border-radius-bottomright: 2px;
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
-  -webkit-transition: background-color 200ms linear;
   -moz-transition: background-color 200ms linear;
   -o-transition: background-color 200ms linear;
+  -webkit-transition: background-color 200ms linear;
   transition: background-color 200ms linear;
 }
 /* line 25, ../../sass/_globals.scss */
@@ -78,8 +78,8 @@ body {
 }
 /* line 28, ../../sass/_globals.scss */
 .button:active {
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
   -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
@@ -101,9 +101,9 @@ p {
 /* line 9, ../../sass/_type.scss */
 a {
   text-decoration: none;
-  -webkit-transition: color 200ms linear;
   -moz-transition: color 200ms linear;
   -o-transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
   transition: color 200ms linear;
 }
 
@@ -117,10 +117,8 @@ pre {
   background-color: #a1356b;
   padding: 0.875em;
   margin-bottom: 1.875em;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 /* line 25, ../../sass/_type.scss */
@@ -128,7 +126,7 @@ pre code {
   color: #f2d9e6;
 }
 
-/* line 35, ../../sass/_type.scss */
+/* line 30, ../../sass/_type.scss */
 h1,
 h2,
 h3,
@@ -174,9 +172,9 @@ h6 {
   color: rgba(255, 255, 255, 0.6);
   overflow: hidden;
   height: 100%;
-  -webkit-transition: color 200ms linear;
   -moz-transition: color 200ms linear;
   -o-transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
   transition: color 200ms linear;
 }
 /* line 35, ../../sass/_sache_bar.scss */
@@ -189,14 +187,14 @@ h6 {
   opacity: 0.5;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  -webkit-transition: opacity 200ms linear;
   -moz-transition: opacity 200ms linear;
   -o-transition: opacity 200ms linear;
+  -webkit-transition: opacity 200ms linear;
   transition: opacity 200ms linear;
 }
 /* line 44, ../../sass/_sache_bar.scss */
 .sache-bar-actions li a:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
@@ -222,19 +220,17 @@ h6 {
   width: 150px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-transition: all 200ms linear;
   -moz-transition: all 200ms linear;
   -o-transition: all 200ms linear;
+  -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
 /* line 45, ../../sass/_helpers.scss */
@@ -263,7 +259,7 @@ h6 {
   outline: none;
   background-color: #c0407f;
   width: 250px;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
@@ -329,9 +325,9 @@ header {
 /* line 49, ../../sass/_header_title.scss */
 .page-description a {
   color: #7ca4ab;
-  -webkit-transition: color 200ms linear;
   -moz-transition: color 200ms linear;
   -o-transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
   transition: color 200ms linear;
 }
 /* line 53, ../../sass/_header_title.scss */
@@ -375,10 +371,8 @@ header {
   display: block;
   border: solid 1px #dddddd;
   padding-bottom: 0;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 
@@ -397,7 +391,7 @@ header {
   color: #c6538c;
   cursor: pointer;
 }
-/* line 58, ../../sass/_extensions.scss */
+/* line 57, ../../sass/_extensions.scss */
 .title-link:hover, .title-link:active {
   color: #862d59;
 }
@@ -408,8 +402,8 @@ header {
   padding-bottom: 1em;
   position: relative;
   padding: 0 20px 20px;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -453,7 +447,7 @@ table .card-description {
   color: #888;
   font-size: 0.875em;
 }
-/* line 106, ../../sass/_extensions.scss */
+/* line 105, ../../sass/_extensions.scss */
 .author-filter:hover, .author-filter:active {
   color: #222;
 }
@@ -511,39 +505,51 @@ table .ghub-stars {
   color: #7ca4ab;
 }
 
-/* line 161, ../../sass/_extensions.scss */
+/* line 163, ../../sass/_extensions.scss */
+.tag-list .tag:after {
+  content: ",";
+  display: inline-block;
+  color: #333;
+  margin-left: -3px;
+}
+/* line 171, ../../sass/_extensions.scss */
+.tag-list .tag:last-child:after {
+  content: "";
+}
+
+/* line 179, ../../sass/_extensions.scss */
 .tag {
   color: #7ca4ab;
   font-size: 0.875em;
-  -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;
+  -webkit-transition: color 200ms;
   transition: color 200ms;
 }
-/* line 166, ../../sass/_extensions.scss */
+/* line 184, ../../sass/_extensions.scss */
 .tag:hover {
   color: #c6538c;
 }
 
-/* line 177, ../../sass/_extensions.scss */
+/* line 195, ../../sass/_extensions.scss */
 .extension-list table {
   width: 100%;
   margin: 0 15px 100px;
 }
-/* line 181, ../../sass/_extensions.scss */
+/* line 199, ../../sass/_extensions.scss */
 .extension-list table thead {
   font-weight: bold;
 }
-/* line 184, ../../sass/_extensions.scss */
+/* line 202, ../../sass/_extensions.scss */
 .extension-list table thead tr {
   line-height: 43px;
   color: #a5a19c;
 }
-/* line 191, ../../sass/_extensions.scss */
+/* line 209, ../../sass/_extensions.scss */
 .extension-list table tbody td {
   padding: 25px 0;
 }
-/* line 196, ../../sass/_extensions.scss */
+/* line 214, ../../sass/_extensions.scss */
 .extension-list table tr {
   border-bottom: solid 1px #dddddd;
   color: #706c69;
@@ -574,20 +580,18 @@ table .ghub-stars {
   margin-left: -30%;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
-  -webkit-transition: all 200ms ease-in-out;
-  -webkit-transition-delay: 200ms;
   -moz-transition: all 200ms ease-in-out 200ms;
   -o-transition: all 200ms ease-in-out 200ms;
+  -webkit-transition: all 200ms ease-in-out;
+  -webkit-transition-delay: 200ms;
   transition: all 200ms ease-in-out 200ms;
-  -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
   -o-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
 }
 @media all and (min-width: 768px) {
@@ -604,12 +608,12 @@ table .ghub-stars {
 }
 /* line 39, ../../sass/_modal.scss */
 .add-project.modal-open {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  -webkit-transform: scale(1, 1);
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   -o-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
 
@@ -659,19 +663,19 @@ table .ghub-stars {
   right: 30px;
   font-size: 1.875em;
   color: rgba(255, 255, 255, 0.6);
-  -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;
+  -webkit-transition: color 200ms;
   transition: color 200ms;
 }
-/* line 85, ../../sass/_modal.scss */
+/* line 84, ../../sass/_modal.scss */
 .cancel-button:hover, .cancel-button:active {
   color: white;
 }
 
 /* line 4, ../../sass/_footer.scss */
 footer {
-  background: #f8f8fa url('/app/img/circle-pattern.png?1390007133') 50% 44% no-repeat;
+  background: #f8f8fa url('/app/img/circle-pattern.png?1390761487') 50% 44% no-repeat;
   padding-top: 2.5em;
   padding-bottom: 2.5em;
   text-align: center;
@@ -696,7 +700,7 @@ footer {
 footer a {
   color: inherit;
 }
-/* line 26, ../../sass/_footer.scss */
+/* line 25, ../../sass/_footer.scss */
 footer a:hover, footer a:active {
   color: #c6538c;
 }

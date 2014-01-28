@@ -158,6 +158,24 @@
   color: $link-blue;
 }
 
+.tag-list {
+  .tag {
+    &:after {
+      content: ",";
+      display: inline-block;
+      color: #333;
+      margin-left: -3px;
+    }
+
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+  }
+
+}
+
 .tag {
   color: $link-blue;
   font-size: px2em(14px);

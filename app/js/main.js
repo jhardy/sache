@@ -44,6 +44,12 @@ $(function() {
       fadeSpeed = 200;
 
 
+    var closeModal = function() {
+      $modalTarp.fadeOut(fadeSpeed);
+      $projectModal.removeClass('modal-open');
+    }
+
+
       // Fade out button, fade in add project instructions
       $addProject.on('click', function(e) {
         e.preventDefault();
@@ -55,15 +61,13 @@ $(function() {
       // Fade out project instruction, fade in button
       $cancelProject.on('click', function(e) {
         e.preventDefault();
-        $modalTarp.fadeOut(fadeSpeed);
-        $projectModal.removeClass('modal-open');
+        closeModal();
       });
 
       $('body').on('click', function(e) {
         if ($modalTarp.is(':visible')) {
           if ($(e.target).is('.modal-tarp')) {
-            $modalTarp.fadeOut(fadeSpeed);
-            $projectModal.fadeOut(fadeSpeed);
+            closeModal();
           }
         }
       });
