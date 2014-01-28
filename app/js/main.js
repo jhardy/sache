@@ -49,14 +49,16 @@ $(function() {
         e.preventDefault();
         e.stopPropagation();
         $modalTarp.fadeIn(fadeSpeed);
-        $projectModal.fadeIn(fadeSpeed);
+        $projectModal.addClass('modal-open');
+        // $projectModal.fadeIn(fadeSpeed);
       });
 
       // Fade out project instruction, fade in button
       $cancelProject.on('click', function(e) {
         e.preventDefault();
         $modalTarp.fadeOut(fadeSpeed);
-        $projectModal.fadeOut(fadeSpeed);
+        $projectModal.removeClass('modal-open');
+        // $projectModal.fadeOut(fadeSpeed);
       });
 
       $('body').on('click', function(e) {

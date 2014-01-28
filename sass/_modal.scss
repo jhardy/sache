@@ -13,7 +13,7 @@
 
 .add-project {
   background: darken($sass-pink, 10%);
-  display: none;
+  // display: none;
   padding: px2em(30px);
   position: relative;
   margin: 0 auto;
@@ -23,7 +23,10 @@
   top: 100px;
   left: 50%;
   margin-left: -30%;
+  @include opacity(0);
   @include border-radius($border-radius);
+  @include single-transition(all, $transition-speed, ease-in-out, 200ms);
+  @include scale(1.1);
 
   @include mq(medium) {
     width: 90%;
@@ -31,6 +34,11 @@
 
   @include mq(large) {
     width: 80%;
+  }
+
+  &.modal-open {
+    @include opacity(1);
+    @include scale(1);
   }
 }
 

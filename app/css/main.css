@@ -563,7 +563,6 @@ table .ghub-stars {
 /* line 14, ../../sass/_modal.scss */
 .add-project {
   background: #ad3972;
-  display: none;
   padding: 1.875em;
   position: relative;
   margin: 0 auto;
@@ -573,11 +572,23 @@ table .ghub-stars {
   top: 100px;
   left: 50%;
   margin-left: -30%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
+  -webkit-transition: all 200ms ease-in-out;
+  -webkit-transition-delay: 200ms;
+  -moz-transition: all 200ms ease-in-out 200ms;
+  -o-transition: all 200ms ease-in-out 200ms;
+  transition: all 200ms ease-in-out 200ms;
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -o-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 @media all and (min-width: 768px) {
   /* line 14, ../../sass/_modal.scss */
@@ -591,26 +602,36 @@ table .ghub-stars {
     width: 80%;
   }
 }
+/* line 39, ../../sass/_modal.scss */
+.add-project.modal-open {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
 
-/* line 37, ../../sass/_modal.scss */
+/* line 45, ../../sass/_modal.scss */
 .add-project-title {
   font-size: 1.125em;
   color: #fff;
 }
 
-/* line 43, ../../sass/_modal.scss */
+/* line 51, ../../sass/_modal.scss */
 .instruction-list {
   padding-left: 20px;
   color: #fff;
 }
 
-/* line 48, ../../sass/_modal.scss */
+/* line 56, ../../sass/_modal.scss */
 .field {
   float: left;
   width: 50%;
 }
 
-/* line 53, ../../sass/_modal.scss */
+/* line 61, ../../sass/_modal.scss */
 .add-url {
   border: solid 1px #ad3972;
   color: #333;
@@ -625,13 +646,13 @@ table .ghub-stars {
   -webkit-border-bottom-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
-/* line 62, ../../sass/_modal.scss */
+/* line 70, ../../sass/_modal.scss */
 .add-url:focus {
   border: solid 1px #73264c;
   outline: none;
 }
 
-/* line 68, ../../sass/_modal.scss */
+/* line 76, ../../sass/_modal.scss */
 .cancel-button {
   position: absolute;
   top: 18px;
@@ -643,7 +664,7 @@ table .ghub-stars {
   -o-transition: color 200ms;
   transition: color 200ms;
 }
-/* line 77, ../../sass/_modal.scss */
+/* line 85, ../../sass/_modal.scss */
 .cancel-button:hover, .cancel-button:active {
   color: white;
 }
