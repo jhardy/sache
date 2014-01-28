@@ -17,8 +17,9 @@ header {
 }
 
 .page-title {
-  margin-bottom: px2em(8px);
+  margin-bottom: px2em(4px);
   font-size: px2em(32px);
+  line-height: 1.3;
   color: $text-color;
   @extend %reset-margin-top;
 

@@ -41,7 +41,6 @@
       @include opacity(0.5);
       @include single-transition(opacity, $transition-speed, linear);
 
-
       &:hover {
         @include opacity(1.0);
       }
