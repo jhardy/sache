@@ -27,7 +27,6 @@
 
   li {
     float: left;
-    margin-left: px2em(40px);
     color: rgba(#fff, 0.6);
     overflow: hidden;
     height: 100%;
@@ -38,6 +37,7 @@
       display: inline-block;
       height: 100%;
       line-height: $sache-bar-height;
+      @include opacity(0.5);
       @include opacity(0.5);
       @include single-transition(opacity, $transition-speed, linear);
 
@@ -60,25 +60,22 @@
 }
 
 .sache-search {
-  a {
-    background: url('../img/icons.svg') 0 -62px no-repeat;
-    position: relative;
-    left: 270px;
-    padding-left: px2em(30px);
-  }
 
   input {
-    background-color: $sass-pink;
+    background: transparent url('../img/icons.svg') 20px -58px no-repeat;
     border: 0;
-    padding: 5px 5px 4px;
-    width: 250px;
-    font-size: 13px;
+    padding: 5px 5px 4px 49px;
     margin-left: 10px;
-    position: relative;
-    left: 260px;
-    color: $sass-pink;
+    height: 100%;
+    color: #fff;
+    width: 150px;
+    @include opacity(0.5);
     @include border-radius($border-radius);
-    @include transition(left $transition-speed ease-in-out, background-color $transition-speed ease-in-out, color $transition-speed linear);
+    @include vertical-align;
+    @include single-transition(all, $transition-speed, linear);
+    @include placeholder-style {
+      color: #fff;
+    }
 
     &.activated {
       left: 0;
@@ -87,8 +84,9 @@
 
     &:focus {
       outline: none;
-      background-color: lighten($sass-pink, 35%);
-      color: $sass-pink;
+      background-color: darken($sass-pink, 5%);
+      width: 250px;
+      @include opacity(1);
     }
   }
 }

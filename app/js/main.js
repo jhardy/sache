@@ -41,8 +41,6 @@ $(function() {
       $modalTarp = $('.modal-tarp'),
       $projectModal = $('.add-project'),
       $cancelProject = $('[data-cancel-project]'),
-      $searchReveal = $('[data-search-reveal]'),
-      $searchBox = $('[data-search-box]'),
       fadeSpeed = 200;
 
 
@@ -70,26 +68,9 @@ $(function() {
         }
       });
 
-      // Fade out project instruction, fade in button
-      $searchReveal.on('click', function(e) {
-        e.preventDefault();
-        $searchBox.addClass('activated');
-        setTimeout(function() {
-          $searchBox.focus();
-        }, fadeSpeed);
-      });
-
-      $searchBox.blur(function() {
-        $searchBox.removeClass('activated');
-      });
-
       // Esc functions
       $(document).keyup(function(e) {
-        if ($searchBox.hasClass('activated')) {
-          if (e.keyCode == 27) { // esc
-            $searchBox.removeClass('activated').blur();
-          }
-        } else if ($modalTarp.is(':visible')) {
+        if ($modalTarp.is(':visible')) {
           if (e.keyCode == 27) { // esc
             $modalTarp.fadeOut(fadeSpeed);
             $projectModal.fadeOut(fadeSpeed);

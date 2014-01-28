@@ -41,6 +41,13 @@ $border-style: solid 1px #ddd;
   transform: translateY(-50%);
 }
 
+@mixin placeholder-style {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder {  @content; }
+  &::-moz-placeholder {  @content; }
+  &:-ms-input-placeholder { @content; }
+}
+
 %container {
   padding: 0 $container-padding-default 0px;
   @include mq(large) { padding: 0 $container-padding-large 0px; }
