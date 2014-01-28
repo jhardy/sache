@@ -12,23 +12,29 @@
     text-align: center;
     margin-bottom: px2em(30px);
   }
+}
 
-  ul {
-    display: block;
-    @extend %list-reset;
-    @extend %clear-float;
+.featured-cards {
+  display: block;
+  @extend %list-reset;
+  @extend %clear-float;
+
+  @include mq(medium) {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
   }
 }
 
 .feature-card {
   margin: 0 0 px2em(20px);
   width: 100%;
-  height: auto;
 
-  @include mq(small) {
-    float: left;
+  @include mq(medium) {
+    // float: left;
     padding: 0 px2em(16px) 0;
     width: 33.33%;
+    flex: 1;
   }
 
   > span {
@@ -40,9 +46,8 @@
 }
 
 .card-title {
-  display: block;
   font-size: px2em(22px);
-  line-height: 1.2;
+  line-height: 1.5;
   padding: 20px 20px 0;
   @extend %reset-margin-top;
 }
@@ -81,8 +86,6 @@
 }
 
 .ghub-info {
-  margin-left: -20px;
-  margin-right: -20px;
   color: #888;
   @extend %list-reset;
   @include border-bottom-radius($border-radius);

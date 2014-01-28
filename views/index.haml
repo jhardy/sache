@@ -41,7 +41,7 @@
 
       #featured
         %h3 Featured Extensions
-        %ul
+        %ul{:class => "featured-cards"}
           %li{:class => "feature-card"}
             %span
               %h1{:class => "card-title"}
@@ -84,7 +84,7 @@
                 %li{:class => "author"}
                   %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
                 %li{:class => "ghub-stars"} 9,999
-      
+
       = haml :_extension
 
       = haml :_modal
