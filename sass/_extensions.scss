@@ -63,6 +63,10 @@
   &:active {
     color: darken($sass-pink, 20%);
   }
+
+  table & {
+    margin-top: -9px;
+  }
 }
 
 .card-description-wrapper {
@@ -81,7 +85,8 @@
   @extend %reset-margin-top;
 
   table & {
-    font-size: px2em(16px);
+    font-size: px2em(14px);
+    line-height: 1.6;
   }
 }
 
@@ -129,6 +134,10 @@
   a:hover {
     color: $sass-pink;
   }
+
+  table & {
+    line-height: 1.5;
+  }
 }
 
 .ghub-stars {
@@ -141,6 +150,7 @@
     border-left: none;
     float: none;
     color: #888 !important;
+    line-height: 2.1;
   }
 
   &:before {
@@ -177,6 +187,9 @@
     }
   }
 
+  table & {
+    line-height: 1.45;
+  }
 }
 
 .tag {
@@ -202,21 +215,32 @@
     thead {
       font-weight: bold;
 
-      tr {
+      td {
         line-height: 43px;
         color: #a5a19c;
+        padding: 0 10px;
+        &:first-child {
+          padding-left: 0
+        }
       }
     }
 
     tbody {
       td {
-        padding: 25px 0;
+        padding: 20px 10px;
+        &:first-child {
+          padding-left: 0
+        }
       }
     }
 
     tr {
       border-bottom: $border-style;
       color: $text-color;
+    }
+
+    td {
+      vertical-align: top;
     }
   }
 }

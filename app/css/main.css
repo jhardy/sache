@@ -160,7 +160,7 @@ h6 {
 /* line 17, ../../sass/_sache_bar.scss */
 .logo img {
   height: 40px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 /* line 23, ../../sass/_sache_bar.scss */
@@ -406,8 +406,12 @@ header {
 .title-link:hover, .title-link:active {
   color: #862d59;
 }
+/* line 67, ../../sass/_extensions.scss */
+table .title-link {
+  margin-top: -9px;
+}
 
-/* line 68, ../../sass/_extensions.scss */
+/* line 72, ../../sass/_extensions.scss */
 .card-description-wrapper {
   overflow: hidden;
   padding-bottom: 1em;
@@ -418,19 +422,20 @@ header {
   box-sizing: content-box;
 }
 
-/* line 76, ../../sass/_extensions.scss */
+/* line 80, ../../sass/_extensions.scss */
 .card-description {
   font-size: 1em;
   line-height: 1.6;
   margin-bottom: 1em;
   color: #706c69;
 }
-/* line 83, ../../sass/_extensions.scss */
+/* line 87, ../../sass/_extensions.scss */
 table .card-description {
-  font-size: 1em;
+  font-size: 0.875em;
+  line-height: 1.6;
 }
 
-/* line 88, ../../sass/_extensions.scss */
+/* line 93, ../../sass/_extensions.scss */
 .ghub-info {
   color: #888;
   -moz-border-radius-bottomleft: 2px;
@@ -440,7 +445,7 @@ table .card-description {
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* line 93, ../../sass/_extensions.scss */
+/* line 98, ../../sass/_extensions.scss */
 .ghub-info li {
   background-color: #fbfbfc;
   float: left;
@@ -450,23 +455,23 @@ table .card-description {
   padding: 12px 0;
 }
 
-/* line 103, ../../sass/_extensions.scss */
+/* line 108, ../../sass/_extensions.scss */
 .author-filter {
   display: inline-block;
   color: #888;
   font-size: 0.875em;
 }
-/* line 109, ../../sass/_extensions.scss */
+/* line 114, ../../sass/_extensions.scss */
 .author-filter:hover, .author-filter:active {
   color: #222;
 }
 
-/* line 114, ../../sass/_extensions.scss */
+/* line 119, ../../sass/_extensions.scss */
 .author {
   position: relative;
   cursor: pointer;
 }
-/* line 118, ../../sass/_extensions.scss */
+/* line 123, ../../sass/_extensions.scss */
 .author:before {
   content: " ";
   background: url("../img/icons.svg") 0 -42px no-repeat;
@@ -477,25 +482,30 @@ table .card-description {
   position: relative;
   top: 2px;
 }
-/* line 129, ../../sass/_extensions.scss */
+/* line 134, ../../sass/_extensions.scss */
 .author a:hover {
   color: #c6538c;
 }
+/* line 138, ../../sass/_extensions.scss */
+table .author {
+  line-height: 1.5;
+}
 
-/* line 134, ../../sass/_extensions.scss */
+/* line 143, ../../sass/_extensions.scss */
 .ghub-stars {
   float: right;
   border-left: solid 1px #eee;
   position: relative;
   font-size: 0.8125em;
 }
-/* line 140, ../../sass/_extensions.scss */
+/* line 149, ../../sass/_extensions.scss */
 table .ghub-stars {
   border-left: none;
   float: none;
   color: #888 !important;
+  line-height: 2.1;
 }
-/* line 146, ../../sass/_extensions.scss */
+/* line 156, ../../sass/_extensions.scss */
 .ghub-stars:before {
   content: " ";
   background: url("../img/icons.svg") 0 0 no-repeat;
@@ -507,26 +517,30 @@ table .ghub-stars {
   top: 2px;
 }
 
-/* line 158, ../../sass/_extensions.scss */
+/* line 168, ../../sass/_extensions.scss */
 .tags {
   padding-bottom: 0;
   margin-bottom: 5px;
   color: #7ca4ab;
 }
 
-/* line 166, ../../sass/_extensions.scss */
+/* line 176, ../../sass/_extensions.scss */
 .tag-list .tag:after {
   content: ",";
   display: inline-block;
   color: #333;
   margin-left: -3px;
 }
-/* line 174, ../../sass/_extensions.scss */
+/* line 184, ../../sass/_extensions.scss */
 .tag-list .tag:last-child:after {
   content: "";
 }
+/* line 190, ../../sass/_extensions.scss */
+table .tag-list {
+  line-height: 1.45;
+}
 
-/* line 182, ../../sass/_extensions.scss */
+/* line 195, ../../sass/_extensions.scss */
 .tag {
   color: #7ca4ab;
   font-size: 0.875em;
@@ -535,33 +549,46 @@ table .ghub-stars {
   -o-transition: color 200ms;
   transition: color 200ms;
 }
-/* line 187, ../../sass/_extensions.scss */
+/* line 200, ../../sass/_extensions.scss */
 .tag:hover {
   color: #c6538c;
 }
 
-/* line 198, ../../sass/_extensions.scss */
+/* line 211, ../../sass/_extensions.scss */
 .extension-list table {
   width: 100%;
   margin: 0 15px 100px;
 }
-/* line 202, ../../sass/_extensions.scss */
+/* line 215, ../../sass/_extensions.scss */
 .extension-list table thead {
   font-weight: bold;
 }
-/* line 205, ../../sass/_extensions.scss */
-.extension-list table thead tr {
+/* line 218, ../../sass/_extensions.scss */
+.extension-list table thead td {
   line-height: 43px;
   color: #a5a19c;
+  padding: 0 10px;
 }
-/* line 212, ../../sass/_extensions.scss */
+/* line 222, ../../sass/_extensions.scss */
+.extension-list table thead td:first-child {
+  padding-left: 0;
+}
+/* line 229, ../../sass/_extensions.scss */
 .extension-list table tbody td {
-  padding: 25px 0;
+  padding: 20px 10px;
 }
-/* line 217, ../../sass/_extensions.scss */
+/* line 231, ../../sass/_extensions.scss */
+.extension-list table tbody td:first-child {
+  padding-left: 0;
+}
+/* line 237, ../../sass/_extensions.scss */
 .extension-list table tr {
   border-bottom: solid 1px #dddddd;
   color: #706c69;
+}
+/* line 242, ../../sass/_extensions.scss */
+.extension-list table td {
+  vertical-align: top;
 }
 
 /* line 4, ../../sass/_modal.scss */
