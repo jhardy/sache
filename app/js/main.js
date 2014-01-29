@@ -62,7 +62,21 @@ $(function() {
     closeModal();
   });
 
+  // Clear search icon on small devices
+  $('.sache-search').on('click', function(e) {
+    if ($(window).width() < 768) {
+      e.stopPropagation();
+      $(this).addClass('clicked');
+      $(this).children('input').focus();
+    }
+  });
+
   $('body').on('click', function(e) {
+
+    if ($('.sache-search').hasClass('clicked')) {
+      $('.sache-search').removeClass('clicked');
+    }
+
     if ($modalTarp.is(':visible')) {
       if ($(e.target).is('.modal-tarp')) {
         closeModal();
@@ -75,7 +89,6 @@ $(function() {
     if ($modalTarp.is(':visible')) {
       if (e.keyCode == 27) { // esc
         closeModal();
-       
       }
     }
   });

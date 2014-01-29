@@ -52,7 +52,6 @@
       display: inline-block;
       height: 100%;
       line-height: $sache-bar-height;
-      @include opacity(0.5);
       @include single-transition(opacity, $transition-speed, linear);
 
       &:hover {
@@ -61,6 +60,7 @@
 
       @include mq(medium) {
         color: rgba(#fff, 1);
+        @include opacity(0.5);
       }
     }
 
@@ -79,37 +79,55 @@
   border-left: solid 1px rgba(#fff, 0.1);
 
   a {
-    background: url('../img/icons.svg') 50% -105px no-repeat;
     position: relative;
     width: 100%;
     padding-left: px2em(70px);
     padding-right: px2em(25px);
 
     @include mq(medium) {
-      background-position: 40px -105px;
+      background: url('../img/icons.svg') 40px -105px no-repeat;
       width: auto;
     }
 
     @include mq(large) {
       padding-right: 0;
     }
+
+    &:before {
+      background: transparent url('../img/icons.svg') 0 -123px no-repeat;
+      content: " ";
+      display: block;
+      width: 20px;
+      height: 24px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -12px;
+      margin-left: -10px;
+
+      @include mq(medium) {
+        display: none;
+      }
+    }
+
+    &.clicked:before {
+      display: none;
+    }
   }
 }
 
 .sache-search {
+  cursor: text;
+  position: relative;
 
   input {
-    background: transparent url('../img/icons.svg') 50% -58px no-repeat;
+    background-color: darken($sass-pink, 5%);
     border: 0;
-    padding: 5px 5px 4px 5px;
     height: 100%;
     color: #fff;
     width: 100%;
     text-align: center;
-    @include opacity(0.5);
-    @include border-radius($border-radius);
     @include vertical-align;
-    @include transition(width $transion-speed-search  cubic-bezier(0.360, -0.270, 0.490, 1.290), background-color $transition-speed linear);
     @include placeholder-style {
       color: transparent;
     }
@@ -121,23 +139,53 @@
 
     &:focus {
       outline: none;
-      background-color: darken($sass-pink, 5%);
+      background-color: darken($sass-pink, 10%);
       @include opacity(1);
+
       @include mq(medium) {
         width: 250px;
+        background-color: darken($sass-pink, 5%);
+
+        &:before {
+          display: none;
+        }
       }
     }
 
     @include mq(medium) {
-      background-position: 20px -58px;
+      background: transparent url('../img/icons.svg') 20px -58px no-repeat;
       width: 150px;
       margin-left: 10px;
-      padding-left: 49px;
+      padding: 5px 5px 4px 49px;
       text-align: left;
       color: #fff;
+      @include transition(width $transion-speed-search  cubic-bezier(0.360, -0.270, 0.490, 1.290), background-color $transition-speed linear);
+      @include opacity(0.5);
       @include placeholder-style {
         color: #fff;
       }
     }
+  }
+
+  &:before {
+    background: transparent url('../img/icons.svg') 0 -80px no-repeat;
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -10px;
+    z-index: 1;
+
+    @include mq(medium) {
+      display: none;
+    }
+  }
+
+  &.clicked:before {
+    display: none;
   }
 }
