@@ -3,26 +3,40 @@
 
 .sache-bar {
   background: $sass-pink url('../img/wave-pattern.png') 0 0 repeat-x;
+  padding: 0;
   overflow: hidden;
-  padding: 0 px2em(80px);
-  height: px2em($sache-bar-height);
+  height: px2em($sache-bar-height * 2);
+
+  @include mq(medium) {
+    height: px2em($sache-bar-height);
+    padding: 0 px2em(15px);
+  }
+
+  @include mq(large) {
+    padding: 0 px2em(80px);
+  }
 }
 
 .logo {
   margin: 0;
   color: #fff;
-  float: left;
-  @include vertical-align;
+  text-align: center;
 
   img {
     height: 40px;
     margin-top: 10px;
   }
+
+  @include mq(medium) {
+    float: left;
+    text-align: left;
+    @include vertical-align;
+  }
 }
 
 .sache-bar-actions {
-  float: right;
   height: px2em($sache-bar-height);
+  background-color: darken($sass-pink, 5%);
   @extend %list-reset;
 
   li {
@@ -30,10 +44,11 @@
     color: rgba(#fff, 0.6);
     overflow: hidden;
     height: 100%;
+    width: 50%;
     @include single-transition(color, $transition-speed, linear);
 
     a {
-      color: rgba(#fff, 1);
+      color: transparent;
       display: inline-block;
       height: 100%;
       line-height: $sache-bar-height;
@@ -43,7 +58,20 @@
       &:hover {
         @include opacity(1.0);
       }
+
+      @include mq(medium) {
+        color: rgba(#fff, 1);
+      }
     }
+
+    @include mq(medium) {
+      width: auto;
+    }
+  }
+
+  @include mq(medium) {
+    float: right;
+    background-color: transparent;
   }
 }
 
@@ -51,28 +79,39 @@
   border-left: solid 1px rgba(#fff, 0.1);
 
   a {
-    background: url('../img/icons.svg') 40px -105px no-repeat;
+    background: url('../img/icons.svg') 50% -105px no-repeat;
     position: relative;
+    width: 100%;
     padding-left: px2em(70px);
+    padding-right: px2em(25px);
+
+    @include mq(medium) {
+      background-position: 40px -105px;
+      width: auto;
+    }
+
+    @include mq(large) {
+      padding-right: 0;
+    }
   }
 }
 
 .sache-search {
 
   input {
-    background: transparent url('../img/icons.svg') 20px -58px no-repeat;
+    background: transparent url('../img/icons.svg') 50% -58px no-repeat;
     border: 0;
-    padding: 5px 5px 4px 49px;
-    margin-left: 10px;
+    padding: 5px 5px 4px 5px;
     height: 100%;
     color: #fff;
-    width: 150px;
+    width: 100%;
+    text-align: center;
     @include opacity(0.5);
     @include border-radius($border-radius);
     @include vertical-align;
     @include transition(width $transion-speed-search  cubic-bezier(0.360, -0.270, 0.490, 1.290), background-color $transition-speed linear);
     @include placeholder-style {
-      color: #fff;
+      color: transparent;
     }
 
     &.activated {
@@ -83,8 +122,22 @@
     &:focus {
       outline: none;
       background-color: darken($sass-pink, 5%);
-      width: 250px;
       @include opacity(1);
+      @include mq(medium) {
+        width: 250px;
+      }
+    }
+
+    @include mq(medium) {
+      background-position: 20px -58px;
+      width: 150px;
+      margin-left: 10px;
+      padding-left: 49px;
+      text-align: left;
+      color: #fff;
+      @include placeholder-style {
+        color: #fff;
+      }
     }
   }
 }
