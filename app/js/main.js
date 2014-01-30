@@ -41,29 +41,32 @@ $(function() {
     $modalTarp = $('.modal-tarp'),
     $projectModal = $('.add-project'),
     $cancelProject = $('[data-cancel-project]'),
+    $sachesearch = $('.sache-search'),
     fadeSpeed = 200;
 
   var closeModal = function() {
     $modalTarp.fadeOut(fadeSpeed);
     $projectModal.removeClass('modal-open');
+    $('body').css('position','static');
   }
 
-  // Fade out button, fade in add project instructions
+  // Fade in add project instructions
   $addProject.on('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
     $modalTarp.fadeIn(fadeSpeed);
     $projectModal.addClass('modal-open');
+    $('body').css('position','fixed');
   });
 
-  // Fade out project instruction, fade in button
+  // Fade out project instruction
   $cancelProject.on('click', function(e) {
     e.preventDefault();
     closeModal();
   });
 
   // Clear search icon on small devices
-  $('.sache-search').on('click', function(e) {
+  $sachesearch.on('click', function(e) {
     if ($(window).width() < 768) {
       e.stopPropagation();
       $(this).addClass('clicked');
@@ -71,10 +74,11 @@ $(function() {
     }
   });
 
+  // Handle clicking outside of elements
   $('body').on('click', function(e) {
 
-    if ($('.sache-search').hasClass('clicked')) {
-      $('.sache-search').removeClass('clicked');
+    if ($sachesearch.hasClass('clicked')) {
+      $sachesearch.removeClass('clicked');
     }
 
     if ($modalTarp.is(':visible')) {
