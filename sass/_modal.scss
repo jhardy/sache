@@ -80,10 +80,10 @@ form.processing .button {
   background-image: url('../img/spinner.gif');
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: 20%;
+  background-size: 15%;
   cursor: default;
   &:hover {
-    background-color: darken($sass-pink, 20%);
+    background-color: darken($sass-pink, 10%);
   }
 }
 

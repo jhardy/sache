@@ -939,12 +939,12 @@ form.processing .button {
   background-image: url("../img/spinner.gif");
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: 20%;
+  background-size: 15%;
   cursor: default;
 }
 /* line 85, ../../sass/_modal.scss */
 form.processing .button:hover {
-  background-color: #862d59;
+  background-color: #ad3972;
 }
 
 /* line 91, ../../sass/_modal.scss */
