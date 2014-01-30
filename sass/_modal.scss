@@ -116,3 +116,33 @@
     color: rgba(#fff, 1);
   }
 }
+
+.response-bar {
+  width: 100%;
+  padding: 20px;
+  font-size: px2em(18px);
+  position: absolute;
+  top: -100px;
+  @include transition(all 300ms 100ms linear);
+
+  .response-text {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &.error {
+    background: #d55844;
+    color: #ffe9e6;
+  }
+
+  &.success {
+    background: #a8dc56;
+    color: #f6fdec;
+
+  }
+
+  &.show {
+    top: 0;
+  }
+}

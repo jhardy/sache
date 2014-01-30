@@ -901,6 +901,40 @@ table .tag-list {
   color: white;
 }
 
+/* line 91, ../../sass/_modal.scss */
+.response-bar {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.125em;
+  position: absolute;
+  top: -100px;
+  -moz-transition: all 300ms 100ms linear;
+  -o-transition: all 300ms 100ms linear;
+  -webkit-transition: all 300ms 100ms;
+  -webkit-transition-delay: linear;
+  transition: all 300ms 100ms linear;
+}
+/* line 99, ../../sass/_modal.scss */
+.response-bar .response-text {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 105, ../../sass/_modal.scss */
+.response-bar.error {
+  background: #d55844;
+  color: #ffe9e6;
+}
+/* line 110, ../../sass/_modal.scss */
+.response-bar.success {
+  background: #a8dc56;
+  color: #f6fdec;
+}
+/* line 116, ../../sass/_modal.scss */
+.response-bar.show {
+  top: 0;
+}
+
 /* line 4, ../../sass/_footer.scss */
 footer {
   background: #f8f8fa url('/app/img/circle-pattern.png?1390007133') 50% 44% no-repeat;
