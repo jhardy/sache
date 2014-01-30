@@ -141,6 +141,9 @@
       outline: none;
       background-color: darken($sass-pink, 10%);
       @include opacity(1);
+      @include placeholder-style {
+        color: rgba(255,255,255,0.5);
+      }
 
       @include mq(medium) {
         width: 250px;
