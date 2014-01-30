@@ -33,7 +33,12 @@
     height: 100%;
     display: table-cell;
     position: relative;
-
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
   }
 
    > span {
@@ -236,7 +241,8 @@
 
   table {
     width: 100%;
-    margin: 0 15px 100px;
+    margin: 0 0 100px;
+    padding: 0 15px;
 
     thead {
       font-weight: bold;
