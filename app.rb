@@ -14,6 +14,7 @@ enable :sessions
 class Extension < ActiveRecord::Base
     #serialize :tags
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has allready been added.'}
+    #validates_presence_of :url, {:message => 'You have to actually enter a URL!'}
 end
 
 # helpers do
@@ -66,13 +67,13 @@ post '/extensions' do
     begin
         repo_info = Octokit.repo("#{username}/#{reponame}")
     rescue Octokit::NotFound => e
-        halt 404, "Slow dont turbo! Double check that URL because the repo doesn't exist"
+        halt 404, "Slow dont turbo! Double check that URL because the repo doesn't exist."
     end
 
     begin
         manifest_data = Octokit.contents("#{username}/#{reponame}", :path => 'sache.json', :accept => "application/vnd.github-blob.raw")
     rescue Octokit::NotFound => e
-        halt 404, "Dang! Make sure you have a sache.json file in your repo"
+        halt 404, "Dang! Make sure you have a sache.json file in your repo."
     end
 
     parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers}
@@ -90,9 +91,6 @@ post '/extensions' do
     else
         status 409
         flash.now[:error] = @extension.errors.first[1]
-        #render :success => false, :errors => @extension.errors.full_messages
-        #redirect "/", :error => @extension.errors.first[1]
-
     end
 end
 

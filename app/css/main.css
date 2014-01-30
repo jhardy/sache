@@ -45,8 +45,8 @@ p, .response-bar .response-text {
 
 /* line 4, ../../sass/_globals.scss */
 *, * * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -72,9 +72,9 @@ body {
   -moz-border-radius-bottomright: 2px;
   -webkit-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
-  -webkit-transition: background-color 200ms linear;
   -moz-transition: background-color 200ms linear;
   -o-transition: background-color 200ms linear;
+  -webkit-transition: background-color 200ms linear;
   transition: background-color 200ms linear;
 }
 /* line 25, ../../sass/_globals.scss */
@@ -89,9 +89,9 @@ body {
 /* line 1, ../../sass/_type.scss */
 a {
   text-decoration: none;
-  -webkit-transition: color 200ms linear;
   -moz-transition: color 200ms linear;
   -o-transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
   transition: color 200ms linear;
 }
 
@@ -106,10 +106,8 @@ pre {
   padding: 0.875em;
   margin-bottom: 1.875em;
   overflow: scroll;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 /* line 18, ../../sass/_type.scss */
@@ -119,7 +117,7 @@ pre code {
   white-space: pre;
 }
 
-/* line 30, ../../sass/_type.scss */
+/* line 25, ../../sass/_type.scss */
 h1,
 h2,
 h3,
@@ -180,9 +178,9 @@ h6 {
   overflow: hidden;
   height: 100%;
   width: 50%;
-  -webkit-transition: color 200ms linear;
   -moz-transition: color 200ms linear;
   -o-transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
   transition: color 200ms linear;
 }
 /* line 46, ../../sass/_sache_bar.scss */
@@ -191,14 +189,14 @@ h6 {
   display: inline-block;
   height: 100%;
   line-height: 60px;
-  -webkit-transition: opacity 200ms linear;
   -moz-transition: opacity 200ms linear;
   -o-transition: opacity 200ms linear;
+  -webkit-transition: opacity 200ms linear;
   transition: opacity 200ms linear;
 }
 /* line 53, ../../sass/_sache_bar.scss */
 .sache-bar-actions li a:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 @media all and (min-width: 768px) {
@@ -309,7 +307,7 @@ h6 {
 .sache-search input:focus {
   outline: none;
   background-color: #ad3972;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 /* line 47, ../../sass/_helpers.scss */
@@ -348,9 +346,9 @@ h6 {
     padding: 5px 5px 4px 49px;
     text-align: left;
     color: #fff;
-    -webkit-transition: width 350ms cubic-bezier(0.36, -0.27, 0.49, 1.29), background-color 200ms linear;
     -moz-transition: width 350ms cubic-bezier(0.36, -0.27, 0.49, 1.29), background-color 200ms linear;
     -o-transition: width 350ms cubic-bezier(0.36, -0.27, 0.49, 1.29), background-color 200ms linear;
+    -webkit-transition: width 350ms cubic-bezier(0.36, -0.27, 0.49, 1.29), background-color 200ms linear;
     transition: width 350ms cubic-bezier(0.36, -0.27, 0.49, 1.29), background-color 200ms linear;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
     opacity: 0.5;
@@ -499,9 +497,9 @@ header {
 /* line 82, ../../sass/_header_title.scss */
 .page-description a {
   color: #7ca4ab;
-  -webkit-transition: color 200ms linear;
   -moz-transition: color 200ms linear;
   -o-transition: color 200ms linear;
+  -webkit-transition: color 200ms linear;
   transition: color 200ms linear;
 }
 /* line 86, ../../sass/_header_title.scss */
@@ -559,10 +557,8 @@ header {
   position: relative;
   border: solid 1px #dddddd;
   height: 100%;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 
@@ -580,7 +576,7 @@ header {
   color: #c6538c;
   cursor: pointer;
 }
-/* line 68, ../../sass/_extensions.scss */
+/* line 67, ../../sass/_extensions.scss */
 .title-link:hover, .title-link:active {
   color: #862d59;
 }
@@ -594,8 +590,8 @@ table .title-link {
   overflow: hidden;
   padding-bottom: 1em;
   padding: 0 20px 20px;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 @media all and (min-width: 768px) {
@@ -677,7 +673,7 @@ table .card-description {
   color: #888;
   font-size: 0.875em;
 }
-/* line 145, ../../sass/_extensions.scss */
+/* line 144, ../../sass/_extensions.scss */
 .author-filter:hover, .author-filter:active {
   color: #222;
 }
@@ -760,9 +756,9 @@ table .tag-list {
 .tag {
   color: #7ca4ab;
   font-size: 0.875em;
-  -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;
+  -webkit-transition: color 200ms;
   transition: color 200ms;
 }
 /* line 231, ../../sass/_extensions.scss */
@@ -834,15 +830,15 @@ table .tag-list {
   margin-left: -50%;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: all 200ms ease-in-out;
-  -webkit-transition-delay: 200ms;
   -moz-transition: all 200ms ease-in-out 200ms;
   -o-transition: all 200ms ease-in-out 200ms;
+  -webkit-transition: all 200ms ease-in-out;
+  -webkit-transition-delay: 200ms;
   transition: all 200ms ease-in-out 200ms;
-  -webkit-transform: scale(1.1, 1.1);
   -moz-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
   -o-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
 }
 @media all and (min-width: 768px) {
@@ -852,10 +848,8 @@ table .tag-list {
     width: 80%;
     margin-left: -40%;
     position: absolute;
-    -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    -webkit-border-radius: 2px;
     border-radius: 2px;
   }
 }
@@ -868,12 +862,12 @@ table .tag-list {
 }
 /* line 43, ../../sass/_modal.scss */
 .add-project.modal-open {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  -webkit-transform: scale(1, 1);
   -moz-transform: scale(1, 1);
   -ms-transform: scale(1, 1);
   -o-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
 }
 
@@ -923,10 +917,8 @@ form.processing .button:hover {
   font-size: 1em;
   font-weight: normal;
   width: 100%;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 @media all and (min-width: 520px) {
@@ -951,10 +943,8 @@ form.processing .button:hover {
   font-size: 1em;
   padding-left: 5px;
   margin-bottom: 10px;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
   border-radius: 2px;
 }
 @media all and (min-width: 520px) {
@@ -981,12 +971,12 @@ form.processing .button:hover {
   right: 20px;
   font-size: 1.875em;
   color: rgba(255, 255, 255, 0.6);
-  -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -o-transition: color 200ms;
+  -webkit-transition: color 200ms;
   transition: color 200ms;
 }
-/* line 127, ../../sass/_modal.scss */
+/* line 126, ../../sass/_modal.scss */
 .cancel-button:hover, .cancel-button:active {
   color: white;
 }
@@ -998,10 +988,10 @@ form.processing .button:hover {
   font-size: 1.125em;
   position: relative;
   top: -100px;
-  -webkit-transition: top 200ms 50ms;
-  -webkit-transition-delay: cubic-bezier(0.36, -0.27, 0.49, 1.29);
   -moz-transition: top 200ms 50ms cubic-bezier(0.36, -0.27, 0.49, 1.29);
   -o-transition: top 200ms 50ms cubic-bezier(0.36, -0.27, 0.49, 1.29);
+  -webkit-transition: top 200ms 50ms;
+  -webkit-transition-delay: cubic-bezier(0.36, -0.27, 0.49, 1.29);
   transition: top 200ms 50ms cubic-bezier(0.36, -0.27, 0.49, 1.29);
 }
 /* line 141, ../../sass/_modal.scss */
@@ -1027,7 +1017,7 @@ form.processing .button:hover {
 
 /* line 4, ../../sass/_footer.scss */
 footer {
-  background: #f8f8fa url('/app/img/circle-pattern.png?1390007133') 50% 44% no-repeat;
+  background: #f8f8fa url('/app/img/circle-pattern.png?1390761487') 50% 44% no-repeat;
   padding-top: 2.5em;
   padding-bottom: 2.5em;
   text-align: center;
@@ -1052,7 +1042,7 @@ footer {
 footer a {
   color: inherit;
 }
-/* line 26, ../../sass/_footer.scss */
+/* line 25, ../../sass/_footer.scss */
 footer a:hover, footer a:active {
   color: #c6538c;
 }

@@ -25,7 +25,7 @@
         %p Enter your project SSH clone URL:
         %form{:action =>"/extensions", :method => "post", :role => "form", :id => 'submit-form'}
           .field
-            %input{:class => "add-url", :id => "extension-url", :name => "project_url", :type => "text", :placeholder => "Github SSH URL"}
+            %input{:class => "add-url", :id => "extension-url", :name => "project_url", :type => "text", :placeholder => "Github SSH URL", :required => true}
           .actions
             %button{:class => "button", :type => "submit"} Add
 
