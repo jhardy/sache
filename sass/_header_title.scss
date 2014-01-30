@@ -32,6 +32,7 @@ header {
   }
 }
 
+// Secondary page titles with a close button
 .title-wrapper {
   .page-title {
     display: inline;
@@ -44,10 +45,8 @@ header {
     display: inline;
     font-size: px2em(36px);
     font-weight: 300;
-    color: lighten($text-color, 30%);
+    color: lighten($text-color, 42%);
     margin-right: 5px;
-    position: relative;
-    top: -2px;
 
     @include mq(medium) {
       font-size: px2em(42px);
@@ -56,11 +55,10 @@ header {
     @include mq(large) {
       font-size: px2em(50px);
       margin-right: 10px;
-      top: -2px;
     }
 
     &:hover {
-      color: $text-color;
+      color: lighten($text-color, 22%);
     }
   }
 }
