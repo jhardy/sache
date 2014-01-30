@@ -11,10 +11,6 @@
     height: px2em($sache-bar-height);
     padding: 0 px2em(15px);
   }
-
-  @include mq(large) {
-    padding: 0 px2em(80px);
-  }
 }
 
 .logo {
@@ -87,10 +83,6 @@
     @include mq(medium) {
       background: url('../img/icons.svg') 40px -105px no-repeat;
       width: auto;
-    }
-
-    @include mq(large) {
-      padding-right: 0;
     }
 
     &:before {
