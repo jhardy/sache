@@ -69,3 +69,11 @@ $border-style: solid 1px #ddd;
   &:before, &:after { content: " "; display: table; }
   &:after { clear: both; }
 }
+
+%tisa-serif {
+  font-family: "ff-tisa-web-pro", serif;
+}
+
+%tisa-sans-serif {
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
+}

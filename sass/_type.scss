@@ -1,11 +1,3 @@
-%tisa-serif {
-  font-family: "ff-tisa-web-pro", serif;
-}
-
-%tisa-sans-serif {
-  font-family: "ff-tisa-sans-web-pro", sans-serif;
-}
-
 a {
   text-decoration: none;
   @include single-transition(color, $transition-speed, linear);
