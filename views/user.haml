@@ -18,16 +18,17 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     / Add your site or application content here
 
-    = haml :_sache_bar
 
     .container
-      %header
-        .title-wrapper
-          %a{:href => "/", :class => "to-home"} &times;
-          %h2{:class => "page-title"} 
-            = params[:user]
+      .main-content
+        = haml :_sache_bar
+        %header
+          .title-wrapper
+            %a{:href => "/", :class => "to-home"} &times;
+            %h2{:class => "page-title"}
+              = params[:user]
 
-    = haml :_extension
+        = haml :_extension
 
     = haml :_footer
 

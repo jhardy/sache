@@ -3,8 +3,6 @@
 
 footer {
   background: #f8f8fa image-url('circle-pattern.png') 50% 44% no-repeat;
-  padding-top: px2em(40px);
-  padding-bottom: px2em(40px);
   text-align: center;
   padding-left: $container-padding-default;
   padding-right: $container-padding-default;
@@ -29,12 +27,17 @@ footer {
   }
 }
 
+.footer-wrap {
+  @include vertical-align;
+}
+
 .footer-title {
   font-size: px2em(28px);
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .authors {
   color: #888;
+  margin: 0;
   margin-top: px2em(4px);
 }

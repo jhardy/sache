@@ -5,8 +5,26 @@
   @include box-sizing(border-box);
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-size: px2em(16px);
+}
+
+// Sticky footer 2010
+.container {
+  min-height: 100%;
+}
+.main-content {
+  padding-bottom: 150px;
+  overflow: auto;
+}
+footer {
+  height: 150px;
+  margin-top: -150px;
 }
 
 .button {

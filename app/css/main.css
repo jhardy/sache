@@ -50,12 +50,35 @@ p, .response-bar .response-text {
   box-sizing: border-box;
 }
 
-/* line 8, ../../sass/_globals.scss */
+/* line 9, ../../sass/_globals.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 13, ../../sass/_globals.scss */
 body {
   font-size: 1em;
 }
 
-/* line 12, ../../sass/_globals.scss */
+/* line 18, ../../sass/_globals.scss */
+.container {
+  min-height: 100%;
+}
+
+/* line 21, ../../sass/_globals.scss */
+.main-content {
+  padding-bottom: 150px;
+  overflow: auto;
+}
+
+/* line 25, ../../sass/_globals.scss */
+footer {
+  height: 150px;
+  margin-top: -150px;
+}
+
+/* line 30, ../../sass/_globals.scss */
 .button {
   background-color: #862d59;
   display: inline-block;
@@ -77,11 +100,11 @@ body {
   -o-transition: background-color 200ms linear;
   transition: background-color 200ms linear;
 }
-/* line 25, ../../sass/_globals.scss */
+/* line 43, ../../sass/_globals.scss */
 .button:hover {
   background-color: #9a3366;
 }
-/* line 28, ../../sass/_globals.scss */
+/* line 46, ../../sass/_globals.scss */
 .button:active {
   outline: none;
 }
@@ -1025,8 +1048,6 @@ form.processing .button:hover {
 /* line 4, ../../sass/_footer.scss */
 footer {
   background: #f8f8fa url('/app/img/circle-pattern.png?1390007133') 50% 44% no-repeat;
-  padding-top: 2.5em;
-  padding-bottom: 2.5em;
   text-align: center;
   padding-left: 20px;
   padding-right: 20px;
@@ -1045,23 +1066,33 @@ footer {
     padding-right: 15%;
   }
 }
-/* line 22, ../../sass/_footer.scss */
+/* line 20, ../../sass/_footer.scss */
 footer a {
   color: inherit;
 }
-/* line 26, ../../sass/_footer.scss */
+/* line 24, ../../sass/_footer.scss */
 footer a:hover, footer a:active {
   color: #c6538c;
 }
 
-/* line 32, ../../sass/_footer.scss */
-.footer-title {
-  font-size: 1.75em;
-  margin-bottom: 0;
+/* line 30, ../../sass/_footer.scss */
+.footer-wrap {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-/* line 37, ../../sass/_footer.scss */
+/* line 34, ../../sass/_footer.scss */
+.footer-title {
+  font-size: 1.75em;
+  margin: 0;
+}
+
+/* line 39, ../../sass/_footer.scss */
 .authors {
   color: #888;
+  margin: 0;
   margin-top: 0.25em;
 }

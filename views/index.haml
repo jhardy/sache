@@ -26,69 +26,70 @@
       %p{class: "alert alert-error"}
         = flash[:error]
 
-    = haml :_sache_bar
 
     .container
-      %header
-        .title-cta
-          %h2{:class => "page-title"} Discover Sass &amp; Compass Extensions
-          %p{:class => "page-description"}
-            Find the perfect tool for your next project
-            %a{:href => "http://www.sass-lang.com"} Sass
-            or
-            %a{:href => "http://www.compass-style.org"} Compass
-            project.
+      .main-content
+        = haml :_sache_bar
+        %header
+          .title-cta
+            %h2{:class => "page-title"} Discover Sass &amp; Compass Extensions
+            %p{:class => "page-description"}
+              Find the perfect tool for your next project
+              %a{:href => "http://www.sass-lang.com"} Sass
+              or
+              %a{:href => "http://www.compass-style.org"} Compass
+              project.
 
-      #featured
-        %h3 Featured Extensions
-        %ul{:class => "featured-cards"}
-          %li{:class => "feature-card"}
-            %span
-              %h1{:class => "card-title"}
-                %a{:href => "#", :class => "title-link"} Tool Title
-              .card-description-wrapper
-                %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
-                %p{:class => "tags"}
-                  %a{:href => "#", :class => "tag"} Animation,
-                  %a{:href => "#", :class => "tag"} Plugin,
-                  %a{:href => "#", :class => "tag"} Mixin
-              %ul{:class => "ghub-info"}
-                %li{:class => "author"}
-                  %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
-                %li{:class => "ghub-stars"} 9,999
-          %li{:class => "feature-card"}
-            %span
-              %h1{:class => "card-title"}
-                %a{:href => "#", :class => "title-link"} Tool Titlelongtitle Yeah Title Yeah Babyoooo
-              .card-description-wrapper
-                %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
-                %p{:class => "tags"}
-                  %a{:href => "#", :class => "tag"} Animation,
-                  %a{:href => "#", :class => "tag"} Plugin,
-                  %a{:href => "#", :class => "tag"} Mixin
-              %ul{:class => "ghub-info"}
-                %li{:class => "author"}
-                  %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
-                %li{:class => "ghub-stars"} 9,999
-          %li{:class => "feature-card"}
-            %span
-              %h1{:class => "card-title"}
-                %a{:href => "#", :class => "title-link"} Tool Title
-              .card-description-wrapper
-                %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
-                %p{:class => "tags"}
-                  %a{:href => "#", :class => "tag"} Animation,
-                  %a{:href => "#", :class => "tag"} Plugin,
-                  %a{:href => "#", :class => "tag"} Mixin
-              %ul{:class => "ghub-info"}
-                %li{:class => "author"}
-                  %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
-                %li{:class => "ghub-stars"} 9,999
+        #featured
+          %h3 Featured Extensions
+          %ul{:class => "featured-cards"}
+            %li{:class => "feature-card"}
+              %span
+                %h1{:class => "card-title"}
+                  %a{:href => "#", :class => "title-link"} Tool Title
+                .card-description-wrapper
+                  %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
+                  %p{:class => "tags"}
+                    %a{:href => "#", :class => "tag"} Animation,
+                    %a{:href => "#", :class => "tag"} Plugin,
+                    %a{:href => "#", :class => "tag"} Mixin
+                %ul{:class => "ghub-info"}
+                  %li{:class => "author"}
+                    %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
+                  %li{:class => "ghub-stars"} 9,999
+            %li{:class => "feature-card"}
+              %span
+                %h1{:class => "card-title"}
+                  %a{:href => "#", :class => "title-link"} Tool Titlelongtitle Yeah Title Yeah Babyoooo
+                .card-description-wrapper
+                  %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
+                  %p{:class => "tags"}
+                    %a{:href => "#", :class => "tag"} Animation,
+                    %a{:href => "#", :class => "tag"} Plugin,
+                    %a{:href => "#", :class => "tag"} Mixin
+                %ul{:class => "ghub-info"}
+                  %li{:class => "author"}
+                    %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
+                  %li{:class => "ghub-stars"} 9,999
+            %li{:class => "feature-card"}
+              %span
+                %h1{:class => "card-title"}
+                  %a{:href => "#", :class => "title-link"} Tool Title
+                .card-description-wrapper
+                  %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
+                  %p{:class => "tags"}
+                    %a{:href => "#", :class => "tag"} Animation,
+                    %a{:href => "#", :class => "tag"} Plugin,
+                    %a{:href => "#", :class => "tag"} Mixin
+                %ul{:class => "ghub-info"}
+                  %li{:class => "author"}
+                    %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
+                  %li{:class => "ghub-stars"} 9,999
 
-      = haml :_extension
+        = haml :_extension
 
-      = haml :_footer
+    = haml :_footer
 
-      = haml :_modal
+    = haml :_modal
 
     = haml :_bottom_assets
