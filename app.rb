@@ -12,9 +12,9 @@ require './config/environments' #database configuration
 enable :sessions
 
 class Extension < ActiveRecord::Base
-    #serialize :tags
+
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has allready been added.'}
-    #validates_presence_of :url, {:message => 'You have to actually enter a URL!'}
+
 end
 
 # helpers do
@@ -89,7 +89,6 @@ post '/extensions' do
     if @extension.save
 
         flash.now[:notice] = 'Sweeeeet! Thanks for adding your awesome exension!'
-        #redirect "/", :notice => 'Thanks for adding your awesome exension!'
     else
         status 409
         flash.now[:error] = @extension.errors.first[1]
@@ -105,13 +104,6 @@ get '/user/:user' do
     @extensions = Extension.where(:author => params[:user]);
     haml :user
 end
-
-
-error Octokit::NotFound do
-    puts "*****************"
-    puts "yo"
-    status 404
-end 
 
 
 
