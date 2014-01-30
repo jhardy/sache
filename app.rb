@@ -63,12 +63,24 @@ post '/extensions' do
     username = project_url[1]
     reponame = project_url[2]
 
-    repo_info = Octokit.repo("#{username}/#{reponame}")
+    begin
+        repo_info = Octokit.repo("#{username}/#{reponame}")
+    rescue Octokit::NotFound => e
+        halt 404, "Slow dont turbo! Double check that URL because the repo doesn't exist"
+    end
 
-    parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers}
 
+    begin
+        manifest_data = Octokit.contents("#{username}/#{reponame}", :path => 'sache.json', :accept => "application/vnd.github-blob.raw")
+    rescue Octokit::NotFound => e
+        #puts e
+        halt 404, "Dang! Make sure you have a sache.json file in your repo"
+        #flash.now[:error] = {:message => "Not found in repo"}
+        #{:message => 'Not found in repo'}  
+    end
 
-    manifest_data = Octokit.contents("#{username}/#{reponame}", :path => 'sassmanifest.json', :accept => "application/vnd.github-blob.raw")
+     parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers}
+
     manifest_hash = JSON.parse(manifest_data)
 
     manifest_hash.merge!(parsed_params)
@@ -87,6 +99,7 @@ post '/extensions' do
         flash.now[:error] = @extension.errors.first[1]
         #render :success => false, :errors => @extension.errors.full_messages
         #redirect "/", :error => @extension.errors.first[1]
+
     end
 end
 
@@ -99,6 +112,13 @@ get '/user/:user' do
     @extensions = Extension.where(:author => params[:user]);
     haml :user
 end
+
+
+error Octokit::NotFound do
+    puts "*****************"
+    puts "yo"
+    status 404
+end 
 
 
 
