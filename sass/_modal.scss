@@ -14,7 +14,7 @@
 }
 
 .add-project {
-  background: darken($sass-pink, 10%);
+  background: $sass-pink;
   padding: px2em(30px);
   margin: 0 auto;
   width: 100%;
@@ -57,6 +57,13 @@
 .instruction-list {
   padding-left: 20px;
   color: #fff;
+
+  li p code {
+    background-color: darken($sass-pink, 5%);
+    color: #f2d9e6;
+    padding: 2px 5px;
+    @include border-radius(2px);
+  }
 }
 
 .field {
@@ -82,11 +89,12 @@ form.processing .button {
 
 .actions {
   .button {
-    line-height: 43px;
+    line-height: 38px;
     font-size: px2em(16px);
     font-weight: normal;
     width: 100%;
     @include border-radius($border-radius);
+    @extend %tisa-serif;
 
     @include mq(small) {
       width: 20%;

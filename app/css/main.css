@@ -34,7 +34,7 @@ h2,
 h3,
 h4,
 h5,
-h6, .title-link {
+h6, .title-link, .actions .button {
   font-family: "ff-tisa-web-pro", serif;
 }
 
@@ -80,14 +80,13 @@ footer {
 
 /* line 30, ../../sass/_globals.scss */
 .button {
-  background-color: #862d59;
+  background-color: #ad3972;
   display: inline-block;
-  padding: 0 1.375em;
   margin-bottom: 1.25em;
   font-size: 0.875em;
   font-weight: bold;
   color: #fff;
-  line-height: 2.4375em;
+  line-height: 2.1875em;
   border: none;
   -moz-border-radius-topright: 2px;
   -webkit-border-top-right-radius: 2px;
@@ -100,11 +99,11 @@ footer {
   -o-transition: background-color 200ms linear;
   transition: background-color 200ms linear;
 }
-/* line 43, ../../sass/_globals.scss */
+/* line 42, ../../sass/_globals.scss */
 .button:hover {
   background-color: #9a3366;
 }
-/* line 46, ../../sass/_globals.scss */
+/* line 45, ../../sass/_globals.scss */
 .button:active {
   outline: none;
 }
@@ -125,7 +124,7 @@ p {
 
 /* line 11, ../../sass/_type.scss */
 pre {
-  background-color: #a1356b;
+  background-color: #c0407f;
   padding: 0.875em;
   margin-bottom: 1.875em;
   overflow: scroll;
@@ -843,7 +842,7 @@ table .tag-list {
 
 /* line 16, ../../sass/_modal.scss */
 .add-project {
-  background: #ad3972;
+  background: #c6538c;
   padding: 1.875em;
   margin: 0 auto;
   width: 100%;
@@ -910,20 +909,31 @@ table .tag-list {
   padding-left: 20px;
   color: #fff;
 }
+/* line 61, ../../sass/_modal.scss */
+.instruction-list li p code {
+  background-color: #c0407f;
+  color: #f2d9e6;
+  padding: 2px 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
 
-/* line 62, ../../sass/_modal.scss */
+/* line 69, ../../sass/_modal.scss */
 .field {
   width: 100%;
 }
 @media all and (min-width: 520px) {
-  /* line 62, ../../sass/_modal.scss */
+  /* line 69, ../../sass/_modal.scss */
   .field {
     float: left;
     width: 80%;
   }
 }
 
-/* line 71, ../../sass/_modal.scss */
+/* line 78, ../../sass/_modal.scss */
 form.processing .button {
   text-indent: -9999px;
   background-image: url("../img/spinner.gif");
@@ -932,14 +942,14 @@ form.processing .button {
   background-size: 20%;
   cursor: default;
 }
-/* line 78, ../../sass/_modal.scss */
+/* line 85, ../../sass/_modal.scss */
 form.processing .button:hover {
   background-color: #862d59;
 }
 
-/* line 84, ../../sass/_modal.scss */
+/* line 91, ../../sass/_modal.scss */
 .actions .button {
-  line-height: 43px;
+  line-height: 38px;
   font-size: 1em;
   font-weight: normal;
   width: 100%;
@@ -950,7 +960,7 @@ form.processing .button:hover {
   border-radius: 2px;
 }
 @media all and (min-width: 520px) {
-  /* line 84, ../../sass/_modal.scss */
+  /* line 91, ../../sass/_modal.scss */
   .actions .button {
     width: 20%;
     -moz-border-radius-topleft: 0;
@@ -962,7 +972,7 @@ form.processing .button:hover {
   }
 }
 
-/* line 98, ../../sass/_modal.scss */
+/* line 106, ../../sass/_modal.scss */
 .add-url {
   border: none;
   color: #333;
@@ -978,7 +988,7 @@ form.processing .button:hover {
   border-radius: 2px;
 }
 @media all and (min-width: 520px) {
-  /* line 98, ../../sass/_modal.scss */
+  /* line 106, ../../sass/_modal.scss */
   .add-url {
     margin-bottom: 0px;
     -moz-border-radius-topright: 0;
@@ -989,12 +999,12 @@ form.processing .button:hover {
     border-bottom-right-radius: 0;
   }
 }
-/* line 113, ../../sass/_modal.scss */
+/* line 121, ../../sass/_modal.scss */
 .add-url:focus {
   outline: none;
 }
 
-/* line 118, ../../sass/_modal.scss */
+/* line 126, ../../sass/_modal.scss */
 .cancel-button {
   position: absolute;
   top: 12px;
@@ -1006,12 +1016,12 @@ form.processing .button:hover {
   -o-transition: color 200ms;
   transition: color 200ms;
 }
-/* line 127, ../../sass/_modal.scss */
+/* line 135, ../../sass/_modal.scss */
 .cancel-button:hover, .cancel-button:active {
   color: white;
 }
 
-/* line 133, ../../sass/_modal.scss */
+/* line 141, ../../sass/_modal.scss */
 .response-bar {
   width: 100%;
   padding: 20px;
@@ -1024,23 +1034,23 @@ form.processing .button:hover {
   -o-transition: top 200ms 50ms cubic-bezier(0.36, -0.27, 0.49, 1.29);
   transition: top 200ms 50ms cubic-bezier(0.36, -0.27, 0.49, 1.29);
 }
-/* line 141, ../../sass/_modal.scss */
+/* line 149, ../../sass/_modal.scss */
 .response-bar .response-text {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
-/* line 148, ../../sass/_modal.scss */
+/* line 156, ../../sass/_modal.scss */
 .response-bar.error {
   background: #a20237;
   color: #fff;
 }
-/* line 153, ../../sass/_modal.scss */
+/* line 161, ../../sass/_modal.scss */
 .response-bar.success {
   background: #3b620c;
   color: #fff;
 }
-/* line 158, ../../sass/_modal.scss */
+/* line 166, ../../sass/_modal.scss */
 .response-bar.show {
   top: 0;
 }

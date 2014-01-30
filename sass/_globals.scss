@@ -28,14 +28,13 @@ footer {
 }
 
 .button {
-  background-color: darken($sass-pink, 20%);
+  background-color: darken($sass-pink, 10%);
   display: inline-block;
-  padding: 0 px2em(22px);
   margin-bottom: px2em(20px);
   font-size: px2em(14px);
   font-weight: bold;
   color: #fff;
-  line-height: px2em(39px);
+  line-height: px2em(35px);
   border: none;
   @include border-right-radius($border-radius);
   @include single-transition(background-color, $transition-speed, linear);
