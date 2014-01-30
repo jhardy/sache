@@ -5,6 +5,7 @@
   margin-bottom: 50px;
   @extend %container;
 
+
   h3 {
     color: $text-color;
     font-size: px2em(16px);
@@ -15,34 +16,38 @@
 }
 
 .featured-cards {
-  display: block;
+
   @extend %list-reset;
-  @extend %clear-float;
+
 
   @include mq(medium) {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    display: table;
+    height: 100%;
   }
 }
 
 .feature-card {
   margin: 0 0 px2em(20px);
   width: 100%;
-
+ 
   @include mq(medium) {
-    // float: left;
+
     padding: 0 px2em(16px) 0;
-    width: 33.33%;
-    flex: 1;
+    width: 33.333%;
+    height: 100%;
+    display: table-cell;
+    position: relative;
+
   }
 
-  > span {
-    display: block;
-    border: $border-style;
-    padding-bottom: 0;
-    @include border-radius($border-radius);
-  }
+   > span {
+      display: block;
+      position: relative;
+      border: $border-style;
+      height: 100%;
+  
+      @include border-radius($border-radius);
+   }
 }
 
 .card-title {
@@ -72,9 +77,13 @@
 .card-description-wrapper {
   overflow: hidden;
   padding-bottom: px2em(16px);
-  position: relative;
   padding: 0 20px 20px;
+
   @include box-sizing(content-box);
+
+  @include mq(medium) {
+    margin-bottom: 50px;
+  }
 }
 
 .card-description {
@@ -102,6 +111,12 @@
     width: 50%;
     text-align: center;
     padding: 12px 0;
+  }
+
+  @include mq(medium) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 
