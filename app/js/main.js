@@ -23,9 +23,10 @@ $(function() {
           complete: function(jqXHR, status) {
               $responseBar.find('.response-text').html(jqXHR.responseText);
               $responseBar.addClass('show');
-              //console.log("complete")
-              //console.log("jqxr: ", jqXHR, " , status: ", status)
-              //console.log('responseText: ', jqXHR.responseText);
+             
+              console.log("complete")
+              console.log("jqxr: ", jqXHR, " , status: ", status)
+              console.log('responseText: ', jqXHR.responseText);
               $form.removeClass('processing');
               $form.find(".button").removeAttr('disabled', false);
 
@@ -33,7 +34,10 @@ $(function() {
           success: function(e) {
             $responseBar.removeClass('error').addClass('success');
             //console.log("success")
-            //$("#main").load("/ #main");
+            if(window.location.pathname === "/") {
+              $("#main").load("/ #main");
+            }
+      
           },
           error: function(jqXHR, textStatus, errorThrown) {
               $responseBar.removeClass('success').addClass('error');
