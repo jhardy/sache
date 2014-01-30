@@ -24,7 +24,8 @@
       %header
         .title-wrapper
           %a{:href => "/", :class => "to-home"} &times;
-          %h2{:class => "page-title"} User Name
+          %h2{:class => "page-title"} 
+            = params[:user]
 
     = haml :_extension
 
