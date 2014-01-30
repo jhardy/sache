@@ -12,9 +12,9 @@ require './config/environments' #database configuration
 enable :sessions
 
 class Extension < ActiveRecord::Base
-    #serialize :tags
+
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has allready been added.'}
-    #validates_presence_of :url, {:message => 'You have to actually enter a URL!'}
+
 end
 
 # helpers do
