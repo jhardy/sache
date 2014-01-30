@@ -437,7 +437,47 @@ header {
   }
 }
 
-/* line 35, ../../sass/_header_title.scss */
+/* line 36, ../../sass/_header_title.scss */
+.title-wrapper .page-title {
+  display: inline;
+  margin-left: 5px;
+}
+@media all and (min-width: 1024px) {
+  /* line 36, ../../sass/_header_title.scss */
+  .title-wrapper .page-title {
+    margin-left: 10px;
+  }
+}
+/* line 43, ../../sass/_header_title.scss */
+.title-wrapper .to-home {
+  display: inline;
+  font-size: 2.25em;
+  font-weight: 300;
+  color: #bbb9b7;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+}
+@media all and (min-width: 768px) {
+  /* line 43, ../../sass/_header_title.scss */
+  .title-wrapper .to-home {
+    font-size: 2.625em;
+  }
+}
+@media all and (min-width: 1024px) {
+  /* line 43, ../../sass/_header_title.scss */
+  .title-wrapper .to-home {
+    font-size: 3.125em;
+    margin-right: 10px;
+    top: -2px;
+  }
+}
+/* line 62, ../../sass/_header_title.scss */
+.title-wrapper .to-home:hover {
+  color: #706c69;
+}
+
+/* line 68, ../../sass/_header_title.scss */
 .page-description {
   font-size: 0.875em;
   color: #706c69;
@@ -445,18 +485,18 @@ header {
   line-height: 1.5;
 }
 @media all and (min-width: 768px) {
-  /* line 35, ../../sass/_header_title.scss */
+  /* line 68, ../../sass/_header_title.scss */
   .page-description {
     font-size: 1em;
   }
 }
 @media all and (min-width: 1024px) {
-  /* line 35, ../../sass/_header_title.scss */
+  /* line 68, ../../sass/_header_title.scss */
   .page-description {
     font-size: 1.125em;
   }
 }
-/* line 49, ../../sass/_header_title.scss */
+/* line 82, ../../sass/_header_title.scss */
 .page-description a {
   color: #7ca4ab;
   -webkit-transition: color 200ms linear;
@@ -464,7 +504,7 @@ header {
   -o-transition: color 200ms linear;
   transition: color 200ms linear;
 }
-/* line 53, ../../sass/_header_title.scss */
+/* line 86, ../../sass/_header_title.scss */
 .page-description a:hover {
   color: #c6538c;
 }

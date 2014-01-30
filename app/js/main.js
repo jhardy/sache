@@ -67,7 +67,9 @@ $(function() {
     e.stopPropagation();
     $modalTarp.fadeIn(fadeSpeed);
     $projectModal.addClass('modal-open');
-    $('body').css('position','fixed');
+    if ($(window).width() < 768) {
+      $('body').css('position','fixed');
+    }
   });
 
   // Fade out project instruction
