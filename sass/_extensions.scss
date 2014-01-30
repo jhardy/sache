@@ -5,7 +5,6 @@
   margin-bottom: 50px;
   @extend %container;
 
-
   h3 {
     color: $text-color;
     font-size: px2em(16px);
@@ -16,9 +15,7 @@
 }
 
 .featured-cards {
-
   @extend %list-reset;
-
 
   @include mq(medium) {
     display: table;
@@ -29,15 +26,19 @@
 .feature-card {
   margin: 0 0 px2em(20px);
   width: 100%;
- 
-  @include mq(medium) {
 
+  @include mq(medium) {
     padding: 0 px2em(16px) 0;
     width: 33.333%;
     height: 100%;
     display: table-cell;
     position: relative;
-
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
   }
 
    > span {
@@ -45,7 +46,6 @@
       position: relative;
       border: $border-style;
       height: 100%;
-  
       @include border-radius($border-radius);
    }
 }
@@ -78,10 +78,13 @@
   overflow: hidden;
   padding-bottom: px2em(16px);
   padding: 0 20px 20px;
-
   @include box-sizing(content-box);
 
   @include mq(medium) {
+    margin-bottom: 90px;
+  }
+
+  @include mq(large) {
     margin-bottom: 50px;
   }
 }
@@ -101,6 +104,7 @@
 
 .ghub-info {
   color: #888;
+  background-color: #fbfbfc;
   @extend %list-reset;
   @include border-bottom-radius($border-radius);
 
@@ -108,9 +112,21 @@
     background-color: #fbfbfc;
     float: left;
     border-top: solid 1px #eee;
-    width: 50%;
+    width: 100%;
     text-align: center;
     padding: 12px 0;
+
+    @include mq(small) {
+      width: 50%;
+    }
+
+    @include mq(medium) {
+      width: 100%;
+    }
+
+    @include mq(large) {
+      width: 50%;
+    }
   }
 
   @include mq(medium) {
@@ -225,7 +241,8 @@
 
   table {
     width: 100%;
-    margin: 0 15px 100px;
+    margin: 0 0 100px;
+    padding: 0 15px;
 
     thead {
       font-weight: bold;

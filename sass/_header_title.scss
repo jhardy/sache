@@ -32,6 +32,39 @@ header {
   }
 }
 
+.title-wrapper {
+  .page-title {
+    display: inline;
+    margin-left: 5px;
+    @include mq(large) {
+      margin-left: 10px;
+    }
+  }
+  .to-home {
+    display: inline;
+    font-size: px2em(36px);
+    font-weight: 300;
+    color: lighten($text-color, 30%);
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+
+    @include mq(medium) {
+      font-size: px2em(42px);
+    }
+
+    @include mq(large) {
+      font-size: px2em(50px);
+      margin-right: 10px;
+      top: -2px;
+    }
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}
+
 .page-description {
   font-size: px2em(14px);
   color: $text-color;

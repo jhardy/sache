@@ -11,10 +11,6 @@
     height: px2em($sache-bar-height);
     padding: 0 px2em(15px);
   }
-
-  @include mq(large) {
-    padding: 0 px2em(80px);
-  }
 }
 
 .logo {
@@ -89,10 +85,6 @@
       width: auto;
     }
 
-    @include mq(large) {
-      padding-right: 0;
-    }
-
     &:before {
       background: transparent url('../img/icons.svg') 0 -123px no-repeat;
       content: " ";
@@ -141,6 +133,9 @@
       outline: none;
       background-color: darken($sass-pink, 10%);
       @include opacity(1);
+      @include placeholder-style {
+        color: rgba(255,255,255,0.5);
+      }
 
       @include mq(medium) {
         width: 250px;

@@ -1,6 +1,6 @@
 $base-size: 16px;
 $container-padding-default: 20px;
-$container-padding-large: 10%;
+$container-padding-large: 5%;
 $container-padding-xlarge: 15%;
 $transition-speed: 200ms;
 $transion-speed-search: 350ms;
@@ -19,6 +19,7 @@ $border-style: solid 1px #ddd;
   @return ($target/$context) + 0em;
 }
 
+// Mobile-first media query mixin
 @mixin mq($min-value) {
   @if $min-value == small {
     @media all and (min-width: $mq-small) { @content; }
@@ -67,4 +68,12 @@ $border-style: solid 1px #ddd;
 %clear-float {
   &:before, &:after { content: " "; display: table; }
   &:after { clear: both; }
+}
+
+%tisa-serif {
+  font-family: "ff-tisa-web-pro", serif;
+}
+
+%tisa-sans-serif {
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
 }

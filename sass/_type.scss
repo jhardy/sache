@@ -1,11 +1,3 @@
-%tisa-serif {
-  font-family: "ff-tisa-web-pro", serif;
-}
-
-%tisa-sans-serif {
-  font-family: "ff-tisa-sans-web-pro", sans-serif;
-}
-
 a {
   text-decoration: none;
   @include single-transition(color, $transition-speed, linear);
@@ -20,10 +12,13 @@ pre {
   background-color: darken($sass-pink, 13%);
   padding: px2em(14px);
   margin-bottom: px2em(30px);
+  overflow: scroll;
   @include border-radius($border-radius);
 
   code {
+    display: block;
     color: lighten($sass-pink, 35%);
+    white-space: pre;
   }
 }
 

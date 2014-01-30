@@ -10,31 +10,34 @@
   top: 0;
   left: 0;
   z-index: 999;
+  overflow: scroll;
 }
 
 .add-project {
   background: darken($sass-pink, 10%);
-  // display: none;
   padding: px2em(30px);
-  position: relative;
   margin: 0 auto;
   width: 100%;
-  max-width: 60%;
-  position: absolute;
-  top: 100px;
+  max-width: 100%;
+  position: relative;
+  top: 0;
   left: 50%;
-  margin-left: -30%;
+  margin-left: -50%;
   @include opacity(0);
-  @include border-radius($border-radius);
   @include single-transition(all, $transition-speed, ease-in-out, 200ms);
   @include scale(1.1);
 
   @include mq(medium) {
-    width: 90%;
+    top: 100px;
+    width: 80%;
+    margin-left: -40%;
+    position: absolute;
+    @include border-radius($border-radius);
   }
 
   @include mq(large) {
-    width: 80%;
+    width: 60%;
+    margin-left: -30%;
   }
 
   &.modal-open {
@@ -44,7 +47,9 @@
 }
 
 .add-project-title {
-  font-size: px2em(18px);
+  font-size: px2em(20px);
+  line-height: 1.2;
+  padding-right: 20px;
   color: #fff;
   @extend %reset-margin-top;
 }
@@ -55,29 +60,65 @@
 }
 
 .field {
-  float: left;
-  width: 50%;
+  width: 100%;
+
+  @include mq(small) {
+    float: left;
+    width: 80%;
+  }
+}
+
+form.processing .button {
+  text-indent: -9999px;
+  background-image: url('../img/spinner.gif');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 20%;
+  cursor: default;
+  &:hover {
+    background-color: darken($sass-pink, 20%);
+  }
+}
+
+.actions {
+  .button {
+    line-height: 43px;
+    font-size: px2em(16px);
+    font-weight: normal;
+    width: 100%;
+    @include border-radius($border-radius);
+
+    @include mq(small) {
+      width: 20%;
+      @include border-left-radius(0);
+    }
+  }
 }
 
 .add-url {
-  border: solid 1px darken($sass-pink, 10%);
+  border: none;
   color: #333;
-  line-height: 30px;
+  line-height: 40px;
   width: 100%;
-  font-size: px2em(13px);
+  font-size: px2em(16px);
   padding-left: 5px;
-  @include border-left-radius($border-radius);
+  margin-bottom: 10px;
+  @include border-radius($border-radius);
+
+  @include mq(small) {
+    margin-bottom: 0px;
+    @include border-right-radius(0);
+  }
 
   &:focus {
-    border: solid 1px darken($sass-pink, 25%);
     outline: none;
   }
 }
 
 .cancel-button {
   position: absolute;
-  top: 18px;
-  right: 30px;
+  top: 12px;
+  right: 20px;
   font-size: px2em(30px);
   color: rgba(#fff, 0.6);
   @include single-transition(color, $transition-speed);
@@ -88,29 +129,30 @@
   }
 }
 
+// Global error messaging
 .response-bar {
   width: 100%;
   padding: 20px;
   font-size: px2em(18px);
-  position: absolute;
+  position: relative;
   top: -100px;
-  @include transition(all 300ms 100ms linear);
+  @include transition(top 200ms 50ms cubic-bezier(0.360, -0.270, 0.490, 1.290));
 
   .response-text {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    @extend %tisa-sans-serif;
   }
 
   &.error {
-    background: #d55844;
-    color: #ffe9e6;
+    background: #a20237;
+    color: #fff;
   }
 
   &.success {
-    background: #a8dc56;
-    color: #f6fdec;
-
+    background: #3b620c;
+    color: #fff;
   }
 
   &.show {
