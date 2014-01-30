@@ -58,16 +58,18 @@ get '/extensions' do
 end
 
 post '/extensions' do
-
-    project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])
-
-    username = project_url[1]
-    reponame = project_url[2]
+    unless params[:project_url].empty?
+        project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])
+        username = project_url[1]
+        reponame = project_url[2]
+    else 
+        halt 404, "We appreciate minimalism, but you still actually have to provide a URL!"
+    end
 
     begin
         repo_info = Octokit.repo("#{username}/#{reponame}")
     rescue Octokit::NotFound => e
-        halt 404, "Slow dont turbo! Double check that URL because the repo doesn't exist."
+        halt 404, "Slow down turbo! Double check that URL because the repo doesn't exist."
     end
 
     begin

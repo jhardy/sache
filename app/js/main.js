@@ -16,8 +16,8 @@ $(function() {
           type: "POST",
           data: formData,
           beforeSend: function() {
+              $responseBar.removeClass('show')
               $form.addClass('processing');
-              console.log($form.find(".button"))
               $form.find(".button").attr('disabled', true);
           },
           complete: function(jqXHR, status) {
