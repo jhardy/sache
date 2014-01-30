@@ -69,22 +69,15 @@ post '/extensions' do
         halt 404, "Slow dont turbo! Double check that URL because the repo doesn't exist"
     end
 
-
     begin
         manifest_data = Octokit.contents("#{username}/#{reponame}", :path => 'sache.json', :accept => "application/vnd.github-blob.raw")
     rescue Octokit::NotFound => e
-        #puts e
         halt 404, "Dang! Make sure you have a sache.json file in your repo"
-        #flash.now[:error] = {:message => "Not found in repo"}
-        #{:message => 'Not found in repo'}  
     end
 
-     parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers}
-
+    parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers}
     manifest_hash = JSON.parse(manifest_data)
-
     manifest_hash.merge!(parsed_params)
-
 
     @extension = Extension.new(manifest_hash)
 
