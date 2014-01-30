@@ -1,5 +1,6 @@
 $(function() {
 
+  var $responseBar = $(".response-bar");
 
   $("#submit-form").submit(function(event) {
 
@@ -8,6 +9,7 @@ $(function() {
       var $form = $(this),
           actionURL = $form.attr('action'),
           formData = $form.serialize();
+
 
       $.ajax({
           url: actionURL,
@@ -19,18 +21,26 @@ $(function() {
               $form.find(".button").attr('disabled', true);
           },
           complete: function(jqXHR, status) {
-              console.log("jqxr: ", jqXHR, " , status: ", status)
-              console.log('responseText: ', jqXHR.responseText);
+              $responseBar.find('.response-text').html(jqXHR.responseText);
+              $responseBar.addClass('show');
+              //console.log("complete")
+              //console.log("jqxr: ", jqXHR, " , status: ", status)
+              //console.log('responseText: ', jqXHR.responseText);
               $form.removeClass('processing');
               $form.find(".button").removeAttr('disabled', false);
+
           },
           success: function(e) {
-            $("#main").load("/ #main");
+            $responseBar.removeClass('error').addClass('success');
+            //console.log("success")
+            //$("#main").load("/ #main");
           },
           error: function(jqXHR, textStatus, errorThrown) {
-              console.log("jqXHR: ", jqXHR);
-              console.log("textStatus: ", textStatus);
-              console.log("errorThrown: ", errorThrown);
+              $responseBar.removeClass('success').addClass('error');
+              //console.log("error")
+              //console.log("jqXHR: ", jqXHR);
+              //console.log("textStatus: ", textStatus);
+              //console.log("errorThrown: ", errorThrown);
               //console.log("error: " + textStatus.responseText)
           }
        });
@@ -46,6 +56,7 @@ $(function() {
   var closeModal = function() {
     $modalTarp.fadeOut(fadeSpeed);
     $projectModal.removeClass('modal-open');
+    $responseBar.removeClass('show');
   }
 
   // Fade out button, fade in add project instructions

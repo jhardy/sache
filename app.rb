@@ -13,7 +13,7 @@ enable :sessions
 
 class Extension < ActiveRecord::Base
     #serialize :tags
-    validates_uniqueness_of :url, {:message => 'This extension already exists.'}
+    validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has allready been added.'}
 end
 
 # helpers do
@@ -80,7 +80,7 @@ post '/extensions' do
 
     if @extension.save
 
-        flash.now[:notice] = 'Thanks for adding your awesome exension!'
+        flash.now[:notice] = 'Sweeeeet! Thanks for adding your awesome exension!'
         #redirect "/", :notice => 'Thanks for adding your awesome exension!'
     else
         status 409
