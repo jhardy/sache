@@ -31,7 +31,7 @@
 }
 
 .sache-bar-actions {
-  height: px2em($sache-bar-height);
+  height: px2em($sache-bar-height + 2px);
   background-color: darken($sass-pink, 5%);
   @extend %list-reset;
 
@@ -81,7 +81,7 @@
     padding-right: px2em(25px);
 
     @include mq(medium) {
-      background: url('../img/icons.svg') 40px -105px no-repeat;
+      background: url('../img/icons.svg') 40px -104px no-repeat;
       width: auto;
     }
 
@@ -152,7 +152,7 @@
     }
 
     @include mq(medium) {
-      background: transparent url('../img/icons.svg') 20px -58px no-repeat;
+      background: transparent url('../img/icons.svg') 20px -57px no-repeat;
       width: 150px;
       margin-left: 10px;
       padding: 5px 5px 4px 49px;
