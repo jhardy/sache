@@ -75,49 +75,27 @@
   border-left: solid 1px rgba(#fff, 0.1);
 
   a {
+    background: url('../img/icons.svg') 50% -102px no-repeat;
     position: relative;
     width: 100%;
     padding-left: px2em(70px);
     padding-right: px2em(25px);
 
     @include mq(medium) {
-      background: url('../img/icons.svg') 40px -104px no-repeat;
+      background-position: 40px -104px !important;
       width: auto;
-    }
-
-    &:before {
-      background: transparent url('../img/icons.svg') 0 -123px no-repeat;
-      content: " ";
-      display: block;
-      width: 20px;
-      height: 24px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -12px;
-      margin-left: -10px;
-
-      @include mq(medium) {
-        display: none;
-      }
-    }
-
-    &.clicked:before {
-      display: none;
     }
   }
 }
 
 .sache-search {
-  cursor: text;
-  position: relative;
 
   form {
     height: 100%;
   }
 
   input {
-    background-color: darken($sass-pink, 5%);
+    background: darken($sass-pink, 5%) url('../img/icons.svg') 50% -58px no-repeat;
     border: 0;
     height: 100%;
     color: #fff;
@@ -135,7 +113,7 @@
 
     &:focus {
       outline: none;
-      background-color: darken($sass-pink, 10%);
+      background-image: none !important;
       @include opacity(1);
       @include placeholder-style {
         color: rgba(255,255,255,0.5);
@@ -152,7 +130,7 @@
     }
 
     @include mq(medium) {
-      background: transparent url('../img/icons.svg') 20px -57px no-repeat;
+      background-position: 20px -57px !important;
       width: 150px;
       margin-left: 10px;
       padding: 5px 5px 4px 49px;
@@ -164,27 +142,5 @@
         color: #fff;
       }
     }
-  }
-
-  &:before {
-    background: transparent url('../img/icons.svg') 0 -80px no-repeat;
-    content: " ";
-    display: block;
-    width: 20px;
-    height: 24px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -12px;
-    margin-left: -10px;
-    z-index: 1;
-
-    @include mq(medium) {
-      display: none;
-    }
-  }
-
-  &.clicked:before {
-    display: none;
   }
 }
