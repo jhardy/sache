@@ -5,6 +5,7 @@
       %img{:src => "/img/logo.png", :alt => "Sache", :title => "Sache"}
   %ul{:class => "sache-bar-actions"}
     %li{:class => "sache-search"}
-      %input{:type => "search", :placeholder => "Find extensions"}
+      %form{:action => '/search'}
+        %input{:type => "search", :placeholder => "Find extensions"}
     %li{:class => "sache-add-extension"}
       %a{:href => "#", :data => {:add_project => ""}} Add Extension

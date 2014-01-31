@@ -82,6 +82,13 @@ post '/extensions' do
     manifest_hash = JSON.parse(manifest_data)
     manifest_hash.merge!(parsed_params)
 
+
+    puts "***********************"
+    puts "***********************"
+    puts manifest_hash
+    puts "***********************"
+    puts "***********************"
+
     @extension = Extension.new(manifest_hash)
 
     puts @extension
@@ -107,3 +114,6 @@ end
 
 
 
+get '/search/:query' do 
+    #@extensions = Extension.where("? = ANY LIKE (tags)", '%' + params[:tag] '%')
+end
