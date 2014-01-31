@@ -1,3 +1,7 @@
+body {
+  @extend %tisa-sans-serif;
+}
+
 a {
   text-decoration: none;
   @include single-transition(color, $transition-speed, linear);
@@ -5,7 +9,6 @@ a {
 
 p {
   font-weight: 400;
-  @extend %tisa-sans-serif;
 }
 
 pre {

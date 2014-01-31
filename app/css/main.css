@@ -39,7 +39,7 @@ h6, .title-link, .actions .button {
 }
 
 /* line 82, ../../sass/_helpers.scss */
-p, .response-bar .response-text {
+body, .response-bar .response-text {
   font-family: "ff-tisa-sans-web-pro", sans-serif;
 }
 
@@ -108,7 +108,7 @@ footer {
   outline: none;
 }
 
-/* line 1, ../../sass/_type.scss */
+/* line 5, ../../sass/_type.scss */
 a {
   text-decoration: none;
   -moz-transition: color 200ms linear;
@@ -117,12 +117,12 @@ a {
   transition: color 200ms linear;
 }
 
-/* line 6, ../../sass/_type.scss */
+/* line 10, ../../sass/_type.scss */
 p {
   font-weight: 400;
 }
 
-/* line 11, ../../sass/_type.scss */
+/* line 14, ../../sass/_type.scss */
 pre {
   background-color: #c0407f;
   padding: 0.875em;
@@ -132,14 +132,14 @@ pre {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 18, ../../sass/_type.scss */
+/* line 21, ../../sass/_type.scss */
 pre code {
   display: block;
   color: #f2d9e6;
   white-space: pre;
 }
 
-/* line 25, ../../sass/_type.scss */
+/* line 28, ../../sass/_type.scss */
 h1,
 h2,
 h3,
@@ -149,7 +149,7 @@ h6 {
   font-weight: normal;
 }
 
-/* line 35, ../../sass/_type.scss */
+/* line 38, ../../sass/_type.scss */
 h3 {
   color: #706c69;
   font-size: 1em;
