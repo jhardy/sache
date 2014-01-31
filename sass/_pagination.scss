@@ -5,7 +5,6 @@
   top: 50%;
   background-color: lighten($sass-pink, 15%);
   margin: 0 !important;
-  padding: 3px 10px;
   font-size: px2em(13px);
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -24,16 +23,16 @@
 
   &.disabled {
     background-color: lighten($sass-pink, 20%);
+    background-image: none !important;
     color: rgba(#fff, 0.5);
     cursor: default;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
 %pagination-link-style {
   color: #fff;
-  padding: 3px 10px;
   margin: 0 3px;
   font-size: px2em(13px);
   @include border-radius($border-radius);
@@ -52,6 +51,7 @@
 
   a {
     background-color: lighten($sass-pink, 15%);
+    padding: 3px 10px;
     @extend %pagination-link-style;
 
     &:hover {
@@ -61,6 +61,7 @@
   .current {
     background-color: lighten($sass-pink, 25%);
     cursor: default;
+    padding: 3px 10px;
     font-style: normal;
     @extend %pagination-link-style;
   }
@@ -68,6 +69,10 @@
 
 .previous_page {
   left: $container-padding-default;
+  background-image: url('../img/icons.svg');
+  background-position: 9px -161px;
+  background-repeat: no-repeat;
+  padding: 3px 10px 3px 25px !important;
   @extend %next-prev;
 
   @include mq(large) {
@@ -81,6 +86,10 @@
 
 .next_page {
   right: $container-padding-default;
+  background-image: url('../img/icons.svg');
+  background-position: 44px -192px;
+  background-repeat: no-repeat;
+  padding: 3px 26px 3px 10px !important;
   @extend %next-prev;
 
   @include mq(large) {
