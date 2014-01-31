@@ -293,6 +293,7 @@
         border: $border-style;
         padding: 20px;
         margin-bottom: 20px;
+        @include border-radius($border-radius);
       }
     }
 

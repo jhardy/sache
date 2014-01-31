@@ -869,14 +869,19 @@ table .tag-list {
     border: solid 1px #dddddd;
     padding: 20px;
     margin-bottom: 20px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
   }
 }
-/* line 299, ../../sass/_extensions.scss */
+/* line 300, ../../sass/_extensions.scss */
 .extension-list table td {
   vertical-align: top;
 }
 @media all and (max-width: 767px) {
-  /* line 299, ../../sass/_extensions.scss */
+  /* line 300, ../../sass/_extensions.scss */
   .extension-list table td {
     display: block;
   }
