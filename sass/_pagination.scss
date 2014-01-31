@@ -1,0 +1,91 @@
+%next-prev {
+  display: none;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  background-color: lighten($sass-pink, 15%);
+  margin: 0 !important;
+  padding: 3px 10px;
+  font-size: px2em(13px);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2;
+  @include border-radius($border-radius);
+  @include single-transition(background-color, $transition-speed, linear);
+
+  @include mq(small) {
+    display: inline;
+  }
+
+  &:hover {
+    background-color: lighten($sass-pink, 10%);
+  }
+
+  &.disabled {
+    background-color: lighten($sass-pink, 20%);
+    color: rgba(#fff, 0.5);
+    cursor: default;
+  }
+}
+
+%pagination-link-style {
+  color: #fff;
+  padding: 3px 10px;
+  margin: 0 3px;
+  font-size: px2em(13px);
+  @include border-radius($border-radius);
+}
+
+.pagination {
+  background-color: lighten($sass-pink, 20%);
+  border-bottom: solid 2px lighten($sass-pink, 10%);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  @extend %container;
+
+  a {
+    background-color: lighten($sass-pink, 15%);
+    @extend %pagination-link-style;
+
+    &:hover {
+      background-color: lighten($sass-pink, 10%);
+    }
+  }
+  .current {
+    background-color: lighten($sass-pink, 25%);
+    cursor: default;
+    font-style: normal;
+    @extend %pagination-link-style;
+  }
+}
+
+.previous_page {
+  left: $container-padding-default;
+  @extend %next-prev;
+
+  @include mq(large) {
+    left: $container-padding-large;
+  }
+
+  @include mq(xlarge) {
+    left: $container-padding-xlarge;
+  }
+}
+
+.next_page {
+  right: $container-padding-default;
+  @extend %next-prev;
+
+  @include mq(large) {
+    right: $container-padding-large;
+  }
+
+  @include mq(xlarge) {
+    right: $container-padding-xlarge;
+  }
+}

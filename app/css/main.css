@@ -1,16 +1,16 @@
 /* line 59, ../../sass/_helpers.scss */
-#featured, .extension-list {
+#featured, .extension-list, .pagination {
   padding: 0 20px 0px;
 }
 @media all and (min-width: 1024px) {
   /* line 59, ../../sass/_helpers.scss */
-  #featured, .extension-list {
+  #featured, .extension-list, .pagination {
     padding: 0 5% 0px;
   }
 }
 @media all and (min-width: 1500px) {
   /* line 59, ../../sass/_helpers.scss */
-  #featured, .extension-list {
+  #featured, .extension-list, .pagination {
     padding: 0 15% 0px;
   }
 }
@@ -68,17 +68,43 @@ body {
 
 /* line 21, ../../sass/_globals.scss */
 .main-content {
-  padding-bottom: 200px;
+  padding-bottom: 280px;
   overflow: auto;
 }
-
-/* line 25, ../../sass/_globals.scss */
-footer {
-  height: 200px;
-  margin-top: -200px;
+@media all and (min-width: 520px) {
+  /* line 21, ../../sass/_globals.scss */
+  .main-content {
+    padding-bottom: 250px;
+  }
+}
+@media all and (min-width: 768px) {
+  /* line 21, ../../sass/_globals.scss */
+  .main-content {
+    padding-bottom: 200px;
+  }
 }
 
-/* line 30, ../../sass/_globals.scss */
+/* line 33, ../../sass/_globals.scss */
+footer {
+  height: 280px;
+  margin-top: -280px;
+}
+@media all and (min-width: 520px) {
+  /* line 33, ../../sass/_globals.scss */
+  footer {
+    height: 250px;
+    margin-top: -250px;
+  }
+}
+@media all and (min-width: 768px) {
+  /* line 33, ../../sass/_globals.scss */
+  footer {
+    height: 200px;
+    margin-top: -200px;
+  }
+}
+
+/* line 48, ../../sass/_globals.scss */
 .button {
   background-color: #ad3972;
   display: inline-block;
@@ -99,11 +125,11 @@ footer {
   -o-transition: background-color 200ms linear;
   transition: background-color 200ms linear;
 }
-/* line 42, ../../sass/_globals.scss */
+/* line 60, ../../sass/_globals.scss */
 .button:hover {
   background-color: #9a3366;
 }
-/* line 45, ../../sass/_globals.scss */
+/* line 63, ../../sass/_globals.scss */
 .button:active {
   outline: none;
 }
@@ -910,6 +936,120 @@ table .tag-list {
   }
 }
 
+/* line 1, ../../sass/_pagination.scss */
+.previous_page, .next_page {
+  display: none;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  background-color: #d98cb2;
+  margin: 0 !important;
+  padding: 3px 10px;
+  font-size: 0.8125em;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: background-color 200ms linear;
+  -moz-transition: background-color 200ms linear;
+  -o-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+@media all and (min-width: 520px) {
+  /* line 1, ../../sass/_pagination.scss */
+  .previous_page, .next_page {
+    display: inline;
+  }
+}
+/* line 21, ../../sass/_pagination.scss */
+.previous_page:hover, .next_page:hover {
+  background-color: #d379a6;
+}
+/* line 25, ../../sass/_pagination.scss */
+.disabled.previous_page, .disabled.next_page {
+  background-color: #dfa0bf;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+
+/* line 32, ../../sass/_pagination.scss */
+.pagination a, .pagination .current {
+  color: #fff;
+  padding: 3px 10px;
+  margin: 0 3px;
+  font-size: 0.8125em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* line 40, ../../sass/_pagination.scss */
+.pagination {
+  background-color: #dfa0bf;
+  border-bottom: solid 2px #d379a6;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+/* line 51, ../../sass/_pagination.scss */
+.pagination a {
+  background-color: #d98cb2;
+}
+/* line 55, ../../sass/_pagination.scss */
+.pagination a:hover {
+  background-color: #d379a6;
+}
+/* line 59, ../../sass/_pagination.scss */
+.pagination .current {
+  background-color: #e6b3cc;
+  cursor: default;
+  font-style: normal;
+}
+
+/* line 67, ../../sass/_pagination.scss */
+.previous_page {
+  left: 20px;
+}
+@media all and (min-width: 1024px) {
+  /* line 67, ../../sass/_pagination.scss */
+  .previous_page {
+    left: 5%;
+  }
+}
+@media all and (min-width: 1500px) {
+  /* line 67, ../../sass/_pagination.scss */
+  .previous_page {
+    left: 15%;
+  }
+}
+
+/* line 80, ../../sass/_pagination.scss */
+.next_page {
+  right: 20px;
+}
+@media all and (min-width: 1024px) {
+  /* line 80, ../../sass/_pagination.scss */
+  .next_page {
+    right: 5%;
+  }
+}
+@media all and (min-width: 1500px) {
+  /* line 80, ../../sass/_pagination.scss */
+  .next_page {
+    right: 15%;
+  }
+}
+
 /* line 4, ../../sass/_modal.scss */
 .modal-tarp {
   display: none;
@@ -1169,8 +1309,15 @@ footer a {
 footer a:hover, footer a:active {
   color: #c6538c;
 }
+@media all and (min-width: 520px) {
+  /* line 29, ../../sass/_footer.scss */
+  footer .note {
+    width: 340px;
+    margin: 0 auto;
+  }
+}
 
-/* line 30, ../../sass/_footer.scss */
+/* line 37, ../../sass/_footer.scss */
 .footer-wrap {
   position: relative;
   top: 50%;
@@ -1179,13 +1326,13 @@ footer a:hover, footer a:active {
   transform: translateY(-50%);
 }
 
-/* line 34, ../../sass/_footer.scss */
+/* line 41, ../../sass/_footer.scss */
 .footer-title {
   font-size: 1.75em;
   margin: 0;
 }
 
-/* line 39, ../../sass/_footer.scss */
+/* line 46, ../../sass/_footer.scss */
 .authors {
   color: #888;
   margin: 0;

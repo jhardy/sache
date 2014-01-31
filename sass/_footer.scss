@@ -25,6 +25,13 @@ footer {
       color: $sass-pink;
     }
   }
+
+  .note {
+    @include mq(small) {
+      width: 340px;
+      margin: 0 auto;
+    }
+  }
 }
 
 .footer-wrap {

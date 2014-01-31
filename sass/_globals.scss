@@ -19,12 +19,30 @@ body {
   min-height: 100%;
 }
 .main-content {
-  padding-bottom: $footer-height;
+  padding-bottom: $footer-height + 80;
   overflow: auto;
+
+  @include mq(small) {
+    padding-bottom: $footer-height + 50;
+  }
+
+  @include mq(medium) {
+    padding-bottom: $footer-height;
+  }
 }
 footer {
-  height: $footer-height;
-  margin-top: -$footer-height;
+  height: $footer-height + 80;
+  margin-top: -($footer-height + 80);
+
+  @include mq(small) {
+    height: $footer-height + 50;
+    margin-top: -($footer-height + 50);
+  }
+
+  @include mq(medium) {
+    height: $footer-height;
+    margin-top: -$footer-height;
+  }
 }
 
 .button {
