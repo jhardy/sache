@@ -9,12 +9,23 @@ a {
 
 p {
   font-weight: 400;
+
+  &.note {
+    font-size: px2em(12px);
+    margin-bottom: px2em(30px);
+
+    a {
+      color: rgba(#fff, 0.60);
+      &:hover {
+        color: rgba(#fff, 1);
+      }
+    }
+  }
 }
 
 pre {
   background-color: darken($sass-pink, 5%);
   padding: px2em(14px);
-  margin-bottom: px2em(30px);
   overflow: auto;
   @include border-radius($border-radius);
 

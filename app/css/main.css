@@ -121,12 +121,24 @@ a {
 p {
   font-weight: 400;
 }
+/* line 13, ../../sass/_type.scss */
+p.note {
+  font-size: 0.75em;
+  margin-bottom: 1.875em;
+}
+/* line 17, ../../sass/_type.scss */
+p.note a {
+  color: rgba(255, 255, 255, 0.6);
+}
+/* line 19, ../../sass/_type.scss */
+p.note a:hover {
+  color: white;
+}
 
-/* line 14, ../../sass/_type.scss */
+/* line 26, ../../sass/_type.scss */
 pre {
   background-color: #c0407f;
   padding: 0.875em;
-  margin-bottom: 1.875em;
   overflow: auto;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -134,14 +146,14 @@ pre {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 21, ../../sass/_type.scss */
+/* line 32, ../../sass/_type.scss */
 pre code {
   display: block;
   color: #f2d9e6;
   white-space: pre;
 }
 
-/* line 33, ../../sass/_type.scss */
+/* line 44, ../../sass/_type.scss */
 h1,
 h2,
 h3,
@@ -151,7 +163,7 @@ h6 {
   font-weight: normal;
 }
 
-/* line 38, ../../sass/_type.scss */
+/* line 49, ../../sass/_type.scss */
 h3 {
   color: #706c69;
   font-size: 1em;
