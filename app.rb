@@ -110,3 +110,13 @@ get '/search' do
     @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%')
     haml :search
 end
+
+
+
+helpers do
+
+    def truncate word
+        return word[0..180].gsub(/\s\w+\s*$/, '...')
+    end
+
+end
