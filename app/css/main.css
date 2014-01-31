@@ -864,55 +864,67 @@ table .tag-list {
 .extension-list h3 {
   margin-top: 80px;
 }
-/* line 253, ../../sass/_extensions.scss */
+/* line 252, ../../sass/_extensions.scss */
+.extension-list h3 small {
+  color: #d4d2d1;
+  display: block;
+}
+@media all and (min-width: 768px) {
+  /* line 252, ../../sass/_extensions.scss */
+  .extension-list h3 small {
+    display: inline;
+    margin-left: 10px;
+  }
+}
+/* line 263, ../../sass/_extensions.scss */
 .extension-list table {
   width: 100%;
   margin: 0 0 100px;
   padding: 0 15px;
 }
-/* line 258, ../../sass/_extensions.scss */
+/* line 268, ../../sass/_extensions.scss */
 .extension-list table thead {
   font-weight: bold;
 }
 @media all and (max-width: 767px) {
-  /* line 258, ../../sass/_extensions.scss */
+  /* line 268, ../../sass/_extensions.scss */
   .extension-list table thead {
     display: none;
   }
 }
-/* line 264, ../../sass/_extensions.scss */
+/* line 274, ../../sass/_extensions.scss */
 .extension-list table thead td {
   line-height: 43px;
   color: #a5a19c;
   padding: 0 10px;
 }
-/* line 268, ../../sass/_extensions.scss */
+/* line 278, ../../sass/_extensions.scss */
 .extension-list table thead td:first-child {
   padding-left: 0;
 }
-/* line 275, ../../sass/_extensions.scss */
+/* line 285, ../../sass/_extensions.scss */
 .extension-list table tbody td {
   padding: 20px 10px;
 }
 @media all and (min-width: 768px) {
-  /* line 278, ../../sass/_extensions.scss */
+  /* line 288, ../../sass/_extensions.scss */
   .extension-list table tbody td:first-child {
     padding-left: 0;
   }
 }
 @media all and (max-width: 767px) {
-  /* line 275, ../../sass/_extensions.scss */
+  /* line 285, ../../sass/_extensions.scss */
   .extension-list table tbody td {
     padding: 0;
   }
 }
-/* line 288, ../../sass/_extensions.scss */
+/* line 298, ../../sass/_extensions.scss */
 .extension-list table tr {
   border-bottom: solid 1px #dddddd;
   color: #706c69;
 }
 @media all and (max-width: 767px) {
-  /* line 288, ../../sass/_extensions.scss */
+  /* line 298, ../../sass/_extensions.scss */
   .extension-list table tr {
     display: block;
     border: solid 1px #dddddd;
@@ -925,12 +937,12 @@ table .tag-list {
     border-radius: 2px;
   }
 }
-/* line 300, ../../sass/_extensions.scss */
+/* line 310, ../../sass/_extensions.scss */
 .extension-list table td {
   vertical-align: top;
 }
 @media all and (max-width: 767px) {
-  /* line 300, ../../sass/_extensions.scss */
+  /* line 310, ../../sass/_extensions.scss */
   .extension-list table td {
     display: block;
   }
@@ -975,9 +987,11 @@ table .tag-list {
   background-color: #dfa0bf;
   color: rgba(255, 255, 255, 0.5);
   cursor: default;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* line 32, ../../sass/_pagination.scss */
+/* line 34, ../../sass/_pagination.scss */
 .pagination a, .pagination .current {
   color: #fff;
   padding: 3px 10px;
@@ -990,7 +1004,7 @@ table .tag-list {
   border-radius: 2px;
 }
 
-/* line 40, ../../sass/_pagination.scss */
+/* line 42, ../../sass/_pagination.scss */
 .pagination {
   background-color: #dfa0bf;
   border-bottom: solid 2px #d379a6;
@@ -1001,50 +1015,50 @@ table .tag-list {
   position: relative;
   z-index: 1;
 }
-/* line 51, ../../sass/_pagination.scss */
+/* line 53, ../../sass/_pagination.scss */
 .pagination a {
   background-color: #d98cb2;
 }
-/* line 55, ../../sass/_pagination.scss */
+/* line 57, ../../sass/_pagination.scss */
 .pagination a:hover {
   background-color: #d379a6;
 }
-/* line 59, ../../sass/_pagination.scss */
+/* line 61, ../../sass/_pagination.scss */
 .pagination .current {
   background-color: #e6b3cc;
   cursor: default;
   font-style: normal;
 }
 
-/* line 67, ../../sass/_pagination.scss */
+/* line 69, ../../sass/_pagination.scss */
 .previous_page {
   left: 20px;
 }
 @media all and (min-width: 1024px) {
-  /* line 67, ../../sass/_pagination.scss */
+  /* line 69, ../../sass/_pagination.scss */
   .previous_page {
     left: 5%;
   }
 }
 @media all and (min-width: 1500px) {
-  /* line 67, ../../sass/_pagination.scss */
+  /* line 69, ../../sass/_pagination.scss */
   .previous_page {
     left: 15%;
   }
 }
 
-/* line 80, ../../sass/_pagination.scss */
+/* line 82, ../../sass/_pagination.scss */
 .next_page {
   right: 20px;
 }
 @media all and (min-width: 1024px) {
-  /* line 80, ../../sass/_pagination.scss */
+  /* line 82, ../../sass/_pagination.scss */
   .next_page {
     right: 5%;
   }
 }
 @media all and (min-width: 1500px) {
-  /* line 80, ../../sass/_pagination.scss */
+  /* line 82, ../../sass/_pagination.scss */
   .next_page {
     right: 15%;
   }

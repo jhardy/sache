@@ -248,6 +248,16 @@
 
   h3 {
     margin-top: 80px;
+
+    small {
+      color: lighten($text-color, 40%);
+      display: block;
+
+      @include mq(medium) {
+        display: inline;
+        margin-left: 10px;
+      }
+    }
   }
 
   table {

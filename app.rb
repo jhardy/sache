@@ -13,6 +13,32 @@ require './config/environments' #database configuration
 
 enable :sessions
 
+
+WillPaginate::ViewHelpers.pagination_options[:previous_label] = 'Prev'
+WillPaginate::ViewHelpers.pagination_options[:next_label] = 'Next'
+
+module WillPaginate
+    module ViewHelpers
+        def page_entries_info(collection, options = {})
+            entry_name = options[:entry_name] || (collection.empty?? 'entry' : collection.first.class.name.underscore.sub('_', ' '))
+
+            if collection.total_pages < 2
+                case collection.size
+                    when 0; "(No Extensions)"
+                    when 1; "(1 Extension Available)"
+                    else;   " "
+                end
+            else
+                %{(%d&nbsp;-&nbsp;%d of %d)} % [
+                    collection.offset + 1,
+                    collection.offset + collection.length,
+                    collection.total_entries
+                  ]
+            end
+        end
+    end
+end
+
 class Extension < ActiveRecord::Base
 
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has already been added.'}
@@ -113,8 +139,6 @@ get '/search' do
     @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
 end
-
-
 
 helpers do
 

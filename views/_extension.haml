@@ -1,6 +1,9 @@
 #main
   .extension-list
-    %h3 All Extensions
+    %h3
+      All Extensions
+      %small
+        = page_entries_info @extensions, {:html => false}
     %table
       %thead
         %tr
