@@ -62,11 +62,12 @@
   }
 
   table & {
-    margin-top: -4px;
+    // margin-top: -4px;
+    font-size: px2em(14px);
     margin-bottom: 12px;
 
     @include mq(medium) {
-      margin-top: -9px;
+      margin-top: -6px;
       margin-bottom: 0px;
     }
   }
@@ -112,7 +113,9 @@
     border-top: solid 1px #eee;
     width: 100%;
     text-align: center;
+    color: #888 !important;
     padding: 12px 0;
+    font-size: px2em(14px);
 
     @include mq(small) {
       width: 50%;
@@ -137,7 +140,6 @@
 .author-filter {
   display: inline-block;
   color: #888;
-  font-size: px2em(14px);
 
   &:hover,
   &:active {
@@ -166,20 +168,19 @@
   }
 
   table & {
-    line-height: 1.5;
+    // line-height: 1.5;
     border-right: none;
+    font-size: 13px;
   }
 }
 
 .ghub-stars {
   float: right;
   position: relative;
-  font-size: px2em(13px);
 
   table & {
     float: none;
-    color: #888 !important;
-    line-height: 2.1;
+    font-size: 13px;
   }
 
   &:before {
@@ -297,7 +298,7 @@
 
     tr {
       border-bottom: $border-style;
-      color: $text-color;
+      color: #888;
       @include mq-max($mq-medium - 1) {
         display: block;
         border: $border-style;
