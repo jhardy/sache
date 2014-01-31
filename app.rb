@@ -43,7 +43,7 @@ end
 
 
 get '/' do
-    @extensions = Extension.all
+    @extensions = Extension.all(:order => "updated_at desc")
     haml :index
 
 end
