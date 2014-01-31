@@ -7,7 +7,7 @@ require 'sinatra/redirect_with_flash'
 require 'sinatra/activerecord'
 require 'sinatra/assetpack'
 require 'will_paginate'
-require 'will_paginate/active_record' 
+require 'will_paginate/active_record'
 require './config/environments' #database configuration
 
 
@@ -15,7 +15,7 @@ enable :sessions
 
 class Extension < ActiveRecord::Base
 
-    validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has allready been added.'}
+    validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has already been added.'}
     self.per_page = 1
 end
 
@@ -84,7 +84,7 @@ post '/extensions' do
     manifest_hash = JSON.parse(manifest_data)
 
     parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers, keywords: manifest_hash["tags"].join(', ')}
-    
+
     manifest_hash.merge!(parsed_params)
     @extension = Extension.new(manifest_hash)
 
@@ -109,7 +109,7 @@ get '/user/:user' do
     haml :user
 end
 
-get '/search' do 
+get '/search' do
     @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
 end
