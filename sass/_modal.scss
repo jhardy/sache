@@ -89,7 +89,8 @@ form.processing .button {
 
 .actions {
   .button {
-    line-height: 38px;
+    line-height: 35px;
+    height: 40px;
     font-size: px2em(16px);
     font-weight: normal;
     width: 100%;
@@ -107,6 +108,7 @@ form.processing .button {
   border: none;
   color: #333;
   line-height: 40px;
+  height: 40px;
   width: 100%;
   font-size: px2em(16px);
   padding-left: 5px;

@@ -23,7 +23,7 @@ $(function() {
           complete: function(jqXHR, status) {
               $responseBar.find('.response-text').html(jqXHR.responseText);
               $responseBar.addClass('show');
-             
+
               console.log("complete")
               console.log("jqxr: ", jqXHR, " , status: ", status)
               console.log('responseText: ', jqXHR.responseText);
@@ -37,7 +37,7 @@ $(function() {
             if(window.location.pathname === "/") {
               $("#main").load("/ #main");
             }
-      
+
           },
           error: function(jqXHR, textStatus, errorThrown) {
               $responseBar.removeClass('success').addClass('error');
@@ -96,6 +96,7 @@ $(function() {
 
     if ($sachesearch.hasClass('clicked')) {
       $sachesearch.removeClass('clicked');
+      $sachesearch.children('input').blur();
     }
 
     if ($modalTarp.is(':visible')) {
