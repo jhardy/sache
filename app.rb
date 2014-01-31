@@ -16,7 +16,7 @@ enable :sessions
 class Extension < ActiveRecord::Base
 
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has allready been added.'}
-
+    self.per_page = 1
 end
 
 # helpers do
@@ -46,7 +46,7 @@ end
 
 get '/' do
 
-    @extensions = Extension.paginate(:page => params[:page], :per_page => 1) #Extension.all(:order => "updated_at desc")
+    @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC') #Extension.all(:order => "updated_at desc")
     haml :index
 
 end
@@ -100,17 +100,17 @@ post '/extensions' do
 end
 
 get '/tag/:tag' do
-    @extensions = Extension.where("? = ANY (tags)", params[:tag]);
+    @extensions = Extension.where("? = ANY (tags)", params[:tag]).paginate(:page => params[:page], :order => 'created_at DESC')
     haml :tag
 end
 
 get '/user/:user' do
-    @extensions = Extension.where(:author => params[:user]);
+    @extensions = Extension.where(:author => params[:user]).paginate(:page => params[:page], :order => 'created_at DESC')
     haml :user
 end
 
 get '/search' do 
-    @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%')
+    @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
 end
 
