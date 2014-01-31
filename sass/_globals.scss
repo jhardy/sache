@@ -14,17 +14,17 @@ body {
   font-size: px2em(16px);
 }
 
-// Sticky footer 2010
+// Sticky footer
 .container {
   min-height: 100%;
 }
 .main-content {
-  padding-bottom: 150px;
+  padding-bottom: $footer-height;
   overflow: auto;
 }
 footer {
-  height: 150px;
-  margin-top: -150px;
+  height: $footer-height;
+  margin-top: -$footer-height;
 }
 
 .button {

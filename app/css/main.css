@@ -1,21 +1,21 @@
-/* line 58, ../../sass/_helpers.scss */
+/* line 59, ../../sass/_helpers.scss */
 #featured, .extension-list {
   padding: 0 20px 0px;
 }
 @media all and (min-width: 1024px) {
-  /* line 58, ../../sass/_helpers.scss */
+  /* line 59, ../../sass/_helpers.scss */
   #featured, .extension-list {
     padding: 0 5% 0px;
   }
 }
 @media all and (min-width: 1500px) {
-  /* line 58, ../../sass/_helpers.scss */
+  /* line 59, ../../sass/_helpers.scss */
   #featured, .extension-list {
     padding: 0 15% 0px;
   }
 }
 
-/* line 64, ../../sass/_helpers.scss */
+/* line 65, ../../sass/_helpers.scss */
 .sache-bar-actions, .featured-cards, .ghub-info {
   list-style: none;
   margin: 0;
@@ -23,12 +23,12 @@
   overflow: hidden;
 }
 
-/* line 71, ../../sass/_helpers.scss */
+/* line 72, ../../sass/_helpers.scss */
 .page-title, .card-title, .card-description, .add-project-title {
   margin-top: 0;
 }
 
-/* line 78, ../../sass/_helpers.scss */
+/* line 79, ../../sass/_helpers.scss */
 h1,
 h2,
 h3,
@@ -38,7 +38,7 @@ h6, .title-link, .actions .button {
   font-family: "ff-tisa-web-pro", serif;
 }
 
-/* line 82, ../../sass/_helpers.scss */
+/* line 83, ../../sass/_helpers.scss */
 body, .response-bar .response-text {
   font-family: "ff-tisa-sans-web-pro", sans-serif;
 }
@@ -68,14 +68,14 @@ body {
 
 /* line 21, ../../sass/_globals.scss */
 .main-content {
-  padding-bottom: 150px;
+  padding-bottom: 200px;
   overflow: auto;
 }
 
 /* line 25, ../../sass/_globals.scss */
 footer {
-  height: 150px;
-  margin-top: -150px;
+  height: 200px;
+  margin-top: -200px;
 }
 
 /* line 30, ../../sass/_globals.scss */
@@ -121,21 +121,28 @@ a {
 p {
   font-weight: 400;
 }
-/* line 13, ../../sass/_type.scss */
-p.note {
+
+/* line 15, ../../sass/_type.scss */
+.note {
   font-size: 0.75em;
   margin-bottom: 1.875em;
 }
-/* line 17, ../../sass/_type.scss */
-p.note a {
+/* line 19, ../../sass/_type.scss */
+.instruction-list .note a {
   color: rgba(255, 255, 255, 0.6);
 }
-/* line 19, ../../sass/_type.scss */
-p.note a:hover {
+/* line 21, ../../sass/_type.scss */
+.instruction-list .note a:hover {
   color: white;
 }
-
 /* line 26, ../../sass/_type.scss */
+.footer-wrap .note {
+  color: #bbbbbb;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* line 33, ../../sass/_type.scss */
 pre {
   background-color: #c0407f;
   padding: 0.875em;
@@ -146,14 +153,14 @@ pre {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 32, ../../sass/_type.scss */
+/* line 39, ../../sass/_type.scss */
 pre code {
   display: block;
   color: #f2d9e6;
   white-space: pre;
 }
 
-/* line 44, ../../sass/_type.scss */
+/* line 51, ../../sass/_type.scss */
 h1,
 h2,
 h3,
@@ -163,7 +170,7 @@ h6 {
   font-weight: normal;
 }
 
-/* line 49, ../../sass/_type.scss */
+/* line 56, ../../sass/_type.scss */
 h3 {
   color: #706c69;
   font-size: 1em;
@@ -331,19 +338,19 @@ h3 {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 52, ../../sass/_helpers.scss */
+/* line 53, ../../sass/_helpers.scss */
 .sache-search input::-webkit-input-placeholder {
   color: transparent;
 }
-/* line 53, ../../sass/_helpers.scss */
+/* line 54, ../../sass/_helpers.scss */
 .sache-search input:-moz-placeholder {
   color: transparent;
 }
-/* line 54, ../../sass/_helpers.scss */
+/* line 55, ../../sass/_helpers.scss */
 .sache-search input::-moz-placeholder {
   color: transparent;
 }
-/* line 55, ../../sass/_helpers.scss */
+/* line 56, ../../sass/_helpers.scss */
 .sache-search input:-ms-input-placeholder {
   color: transparent;
 }
@@ -359,19 +366,19 @@ h3 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 52, ../../sass/_helpers.scss */
+/* line 53, ../../sass/_helpers.scss */
 .sache-search input:focus::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-/* line 53, ../../sass/_helpers.scss */
+/* line 54, ../../sass/_helpers.scss */
 .sache-search input:focus:-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-/* line 54, ../../sass/_helpers.scss */
+/* line 55, ../../sass/_helpers.scss */
 .sache-search input:focus::-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-/* line 55, ../../sass/_helpers.scss */
+/* line 56, ../../sass/_helpers.scss */
 .sache-search input:focus:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -402,19 +409,19 @@ h3 {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
     opacity: 0.5;
   }
-  /* line 52, ../../sass/_helpers.scss */
+  /* line 53, ../../sass/_helpers.scss */
   .sache-search input::-webkit-input-placeholder {
     color: #fff;
   }
-  /* line 53, ../../sass/_helpers.scss */
+  /* line 54, ../../sass/_helpers.scss */
   .sache-search input:-moz-placeholder {
     color: #fff;
   }
-  /* line 54, ../../sass/_helpers.scss */
+  /* line 55, ../../sass/_helpers.scss */
   .sache-search input::-moz-placeholder {
     color: #fff;
   }
-  /* line 55, ../../sass/_helpers.scss */
+  /* line 56, ../../sass/_helpers.scss */
   .sache-search input:-ms-input-placeholder {
     color: #fff;
   }
@@ -1183,4 +1190,5 @@ footer a:hover, footer a:active {
   color: #888;
   margin: 0;
   margin-top: 0.25em;
+  margin-bottom: 0.625em;
 }

@@ -9,17 +9,24 @@ a {
 
 p {
   font-weight: 400;
+}
 
-  &.note {
-    font-size: px2em(12px);
-    margin-bottom: px2em(30px);
+// Note texts
+.note {
+  font-size: px2em(12px);
+  margin-bottom: px2em(30px);
 
-    a {
-      color: rgba(#fff, 0.60);
-      &:hover {
-        color: rgba(#fff, 1);
-      }
+  .instruction-list & a {
+    color: rgba(#fff, 0.60);
+    &:hover {
+      color: rgba(#fff, 1);
     }
+  }
+
+  .footer-wrap & {
+    color: lighten(#888, 20%);
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 
