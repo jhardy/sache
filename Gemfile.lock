@@ -81,6 +81,7 @@ GEM
       ripl-rack (>= 0.2.0)
       sinatra (>= 1.2.1)
     tzinfo (0.3.38)
+    will_paginate (3.0.5)
 
 PLATFORMS
   ruby
@@ -98,3 +99,4 @@ DEPENDENCIES
   sinatra-flash
   sinatra-redirect-with-flash
   tux
+  will_paginate

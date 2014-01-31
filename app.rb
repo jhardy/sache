@@ -6,6 +6,8 @@ require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require 'sinatra/activerecord'
 require 'sinatra/assetpack'
+require 'will_paginate'
+require 'will_paginate/active_record' 
 require './config/environments' #database configuration
 
 
@@ -43,7 +45,8 @@ end
 
 
 get '/' do
-    @extensions = Extension.all(:order => "updated_at desc")
+
+    @extensions = Extension.paginate(:page => params[:page], :per_page => 1) #Extension.all(:order => "updated_at desc")
     haml :index
 
 end
