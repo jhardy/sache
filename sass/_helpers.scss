@@ -35,6 +35,11 @@ $border-style: solid 1px #ddd;
   }
 }
 
+// Max media query mixin
+@mixin mq-max($max-value) {
+  @media all and (max-width: $max-value) { @content; }
+}
+
 @mixin vertical-align {
   position: relative;
   top: 50%;

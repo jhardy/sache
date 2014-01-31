@@ -31,3 +31,11 @@ h6 {
   font-weight: normal;
   @extend %tisa-serif;
 }
+
+h3 {
+  color: $text-color;
+  font-size: px2em(16px);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: px2em(30px);
+}
