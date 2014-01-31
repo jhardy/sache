@@ -56,8 +56,6 @@ $(function() {
     $projectModal = $('.add-project'),
     $cancelProject = $('[data-cancel-project]'),
     $sachesearch = $('.sache-search'),
-    // host = window.location.host,
-    // pathname = window.location.search,
     fadeSpeed = 200;
 
   var closeModal = function() {
@@ -66,12 +64,6 @@ $(function() {
     $('body').css('position','static');
     $responseBar.removeClass('show');
   }
-
-  // console.log(pathname);
-
-  // if (pathname.length() == 0 || pathname != "?page=1") {
-  //   $('#featured').hide();
-  // }
 
   // Fade in add project instructions
   $addProject.on('click', function(e) {
