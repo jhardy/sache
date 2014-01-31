@@ -730,8 +730,9 @@ table .card-description {
 .author {
   position: relative;
   cursor: pointer;
+  border-right: solid 1px #eee;
 }
-/* line 152, ../../sass/_extensions.scss */
+/* line 153, ../../sass/_extensions.scss */
 .author:before {
   content: " ";
   background: url("../img/icons.svg") 0 -42px no-repeat;
@@ -742,25 +743,24 @@ table .card-description {
   position: relative;
   top: 2px;
 }
-/* line 163, ../../sass/_extensions.scss */
+/* line 164, ../../sass/_extensions.scss */
 .author a:hover {
   color: #c6538c;
 }
-/* line 167, ../../sass/_extensions.scss */
+/* line 168, ../../sass/_extensions.scss */
 table .author {
   line-height: 1.5;
+  border-right: none;
 }
 
-/* line 172, ../../sass/_extensions.scss */
+/* line 174, ../../sass/_extensions.scss */
 .ghub-stars {
   float: right;
-  border-left: solid 1px #eee;
   position: relative;
   font-size: 0.8125em;
 }
-/* line 178, ../../sass/_extensions.scss */
+/* line 179, ../../sass/_extensions.scss */
 table .ghub-stars {
-  border-left: none;
   float: none;
   color: #888 !important;
   line-height: 2.1;

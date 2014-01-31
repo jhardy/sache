@@ -148,6 +148,7 @@
 .author {
   position: relative;
   cursor: pointer;
+  border-right: solid 1px #eee;
 
   &:before {
     content: " ";
@@ -166,17 +167,16 @@
 
   table & {
     line-height: 1.5;
+    border-right: none;
   }
 }
 
 .ghub-stars {
   float: right;
-  border-left: solid 1px #eee;
   position: relative;
   font-size: px2em(13px);
 
   table & {
-    border-left: none;
     float: none;
     color: #888 !important;
     line-height: 2.1;
