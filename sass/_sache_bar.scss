@@ -106,6 +106,10 @@
       color: transparent;
     }
 
+    @include mq(medium) {
+      background-color: $sass-pink;
+    }
+
     &.activated {
       left: 0;
       background-color: lighten($sass-pink, 15%);
@@ -114,6 +118,7 @@
     &:focus {
       outline: none;
       background-image: none !important;
+      background-color: darken($sass-pink, 5%);
       @include opacity(1);
       @include placeholder-style {
         color: rgba(255,255,255,0.5);
@@ -121,7 +126,6 @@
 
       @include mq(medium) {
         width: 250px;
-        background-color: darken($sass-pink, 5%);
 
         &:before {
           display: none;

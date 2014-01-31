@@ -353,15 +353,22 @@ h3 {
 .sache-search input:-ms-input-placeholder {
   color: transparent;
 }
-/* line 109, ../../sass/_sache_bar.scss */
+@media all and (min-width: 768px) {
+  /* line 97, ../../sass/_sache_bar.scss */
+  .sache-search input {
+    background-color: #c6538c;
+  }
+}
+/* line 113, ../../sass/_sache_bar.scss */
 .sache-search input.activated {
   left: 0;
   background-color: #d98cb2;
 }
-/* line 114, ../../sass/_sache_bar.scss */
+/* line 118, ../../sass/_sache_bar.scss */
 .sache-search input:focus {
   outline: none;
   background-image: none !important;
+  background-color: #c0407f;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
@@ -382,12 +389,11 @@ h3 {
   color: rgba(255, 255, 255, 0.5);
 }
 @media all and (min-width: 768px) {
-  /* line 114, ../../sass/_sache_bar.scss */
+  /* line 118, ../../sass/_sache_bar.scss */
   .sache-search input:focus {
     width: 250px;
-    background-color: #c0407f;
   }
-  /* line 126, ../../sass/_sache_bar.scss */
+  /* line 130, ../../sass/_sache_bar.scss */
   .sache-search input:focus:before {
     display: none;
   }
