@@ -19,7 +19,7 @@
   text-align: center;
 
   img {
-    height: 40px;
+    height: 35px;
     margin-top: 10px;
   }
 
@@ -111,6 +111,10 @@
 .sache-search {
   cursor: text;
   position: relative;
+
+  form {
+    height: 100%;
+  }
 
   input {
     background-color: darken($sass-pink, 5%);

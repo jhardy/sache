@@ -78,17 +78,11 @@ post '/extensions' do
         halt 404, "Dang! Make sure you have a sache.json file in your repo."
     end
 
-    parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers}
     manifest_hash = JSON.parse(manifest_data)
+
+    parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers, keywords: manifest_hash["tags"].join(', ')}
+    
     manifest_hash.merge!(parsed_params)
-
-
-    puts "***********************"
-    puts "***********************"
-    puts manifest_hash
-    puts "***********************"
-    puts "***********************"
-
     @extension = Extension.new(manifest_hash)
 
     puts @extension
@@ -112,8 +106,7 @@ get '/user/:user' do
     haml :user
 end
 
-
-
-get '/search/:query' do 
-    #@extensions = Extension.where("? = ANY LIKE (tags)", '%' + params[:tag] '%')
+get '/search' do 
+    @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%')
+    haml :search
 end
