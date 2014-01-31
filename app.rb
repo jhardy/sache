@@ -62,7 +62,7 @@ post '/extensions' do
         project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])
         username = project_url[1]
         reponame = project_url[2]
-    else 
+    else
         halt 404, "We appreciate minimalism, but you still actually have to provide a URL!"
     end
 
@@ -88,7 +88,7 @@ post '/extensions' do
 
     if @extension.save
 
-        flash.now[:notice] = 'Sweeeeet! Thanks for adding your awesome exension!'
+        flash.now[:notice] = 'Sweeeeet! Thanks for adding your exension!'
     else
         status 409
         flash.now[:error] = @extension.errors.first[1]
