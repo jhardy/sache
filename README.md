@@ -33,4 +33,4 @@ Now you can visit `localhost:4567` and edit to your hearts desire.
 
 --
 
-Made by (@hatefulcrawdad)[https://github.com/hatefulcrawdad] and (@jhardy)[https://github.com/jhardy] for the love of the amazing Sass Community. We love communicating via Github, but if you want to email us, please send it [sassy@sache.in](mailto:sassy@sache.in).
+Made by [@hatefulcrawdad](https://github.com/hatefulcrawdad) and [@jhardy](https://github.com/jhardy) for the love of the amazing Sass Community. We love communicating via Github, but if you want to email us, please send it [sassy@sache.in](mailto:sassy@sache.in).
