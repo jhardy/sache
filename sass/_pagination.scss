@@ -1,9 +1,13 @@
 %next-prev {
   display: none;
+  height: 22px;
   color: #fff;
   position: absolute;
   top: 50%;
   background-color: lighten($sass-pink, 15%);
+  background-image: url('../img/icons.svg');
+  background-repeat: no-repeat;
+  padding: 13px !important;
   margin: 0 !important;
   font-size: px2em(13px);
   -webkit-transform: translateY(-50%);
@@ -69,10 +73,7 @@
 
 .previous_page {
   left: $container-padding-default;
-  background-image: url('../img/icons.svg');
-  background-position: 9px -161px;
-  background-repeat: no-repeat;
-  padding: 3px 10px 3px 25px !important;
+  background-position: 7px -161px;
   @extend %next-prev;
 
   @include mq(large) {
@@ -86,10 +87,9 @@
 
 .next_page {
   right: $container-padding-default;
-  background-image: url('../img/icons.svg');
-  background-position: 44px -192px;
-  background-repeat: no-repeat;
-  padding: 3px 26px 3px 10px !important;
+
+  background-position: 6px -192px;
+
   @extend %next-prev;
 
   @include mq(large) {

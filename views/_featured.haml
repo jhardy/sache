@@ -1,46 +1,25 @@
+
+
 #featured
   %h3 Featured Extensions
   %ul{:class => "featured-cards"}
-    %li{:class => "feature-card"}
-      %span
-        %h1{:class => "card-title"}
-          %a{:href => "#", :class => "title-link"} Tool Title
-        .card-description-wrapper
-          %p{:class => "card-description"}
-            = truncate("Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.")
-          %p{:class => "tags"}
-            %a{:href => "#", :class => "tag"} Animation,
-            %a{:href => "#", :class => "tag"} Plugin,
-            %a{:href => "#", :class => "tag"} Mixin
-        %ul{:class => "ghub-info"}
-          %li{:class => "author"}
-            %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
-          %li{:class => "ghub-stars"} 9,999
-    %li{:class => "feature-card"}
-      %span
-        %h1{:class => "card-title"}
-          %a{:href => "#", :class => "title-link"} Tool Titlelongtitle Yeah Title Yeah Babyoooo
-        .card-description-wrapper
-          %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
-          %p{:class => "tags"}
-            %a{:href => "#", :class => "tag"} Animation,
-            %a{:href => "#", :class => "tag"} Plugin,
-            %a{:href => "#", :class => "tag"} Mixin
-        %ul{:class => "ghub-info"}
-          %li{:class => "author"}
-            %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
-          %li{:class => "ghub-stars"} 9,999
-    %li{:class => "feature-card"}
-      %span
-        %h1{:class => "card-title"}
-          %a{:href => "#", :class => "title-link"} Tool Title
-        .card-description-wrapper
-          %p{:class => "card-description"} Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui.
-          %p{:class => "tags"}
-            %a{:href => "#", :class => "tag"} Animation,
-            %a{:href => "#", :class => "tag"} Plugin,
-            %a{:href => "#", :class => "tag"} Mixin
-        %ul{:class => "ghub-info"}
-          %li{:class => "author"}
-            %a{:href => "#", :class => "author-filter"} @hatefulcrawdad
-          %li{:class => "ghub-stars"} 9,999
+    - @featured.each do |e|
+      %li{:class => "feature-card"}
+        %span
+          %h1{:class => "card-title"}
+            %a{:href => "https://www.github.com/#{e.author}/#{e.name}", :class => "title-link"} 
+              =e.name
+          .card-description-wrapper
+            %p{:class => "card-description"}
+              = truncate e.description
+            %p{:class => "tags"}
+              - e.tags.each do |tag|
+                %a{:href => "/tag/#{tag}", :class => "tag", :data => {:pjax => 'true'}}
+                  = tag
+          %ul{:class => "ghub-info"}
+            %li{:class => "author"}
+              %a{:href => "/user/#{e.author}", :class => "author-filter"}
+                = e.author
+            %li{:class => "ghub-stars"}
+              = e.watchers
+    

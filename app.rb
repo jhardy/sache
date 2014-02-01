@@ -14,8 +14,7 @@ require './config/environments' #database configuration
 enable :sessions
 
 
-WillPaginate::ViewHelpers.pagination_options[:previous_label] = 'Prev'
-WillPaginate::ViewHelpers.pagination_options[:next_label] = 'Next'
+
 
 module WillPaginate
     module ViewHelpers
@@ -42,7 +41,7 @@ end
 class Extension < ActiveRecord::Base
 
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has already been added.'}
-    self.per_page = 1
+    self.per_page = 20
 end
 
 # helpers do
@@ -72,7 +71,10 @@ end
 
 get '/' do
 
-    @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC') #Extension.all(:order => "updated_at desc")
+    
+    @featured = Extension.where(:featured => true)
+ 
+    @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC')
     haml :index
 
 end
@@ -142,8 +144,10 @@ end
 
 helpers do
 
-    def truncate word
-        return word[0..180].gsub(/\s\w+\s*$/, '...')
+    def truncate w
+        words = w.split()
+        return words[0..180].join(' ') + (words.length > 180 ? '...' : '')
+
     end
 
 end
