@@ -28,7 +28,7 @@
 
 
     .container
-      .main-content
+      .main-content{:class => "img-404"}
         = haml :_sache_bar
         %header
           .title-cta
@@ -37,7 +37,7 @@
               Oops, something went wrong. Try heading back
               %a{:href => "/"} Home
               to start over
-        %p If the problem persist, please send an email to the contacts in the footer below.
+        %img{:src => "img/404.gif"}
 
     = haml :_footer
 
