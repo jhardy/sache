@@ -8,9 +8,7 @@
   %head
     %meta{charset: "utf-8"}/
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
-    %title
-      Searched Sache for:
-      = params[:query]
+    %title Sache: 404 Page Not Found
     %meta{content: "Find Sass and Compass Extensions for your next project", name: "description"}/
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     %link{:rel => "icon", :type => "image/x-icon", :href => "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVQ4T2M8FtzznwENiNppwUVeH7qGLg3mW64pBtOM6AaQohnDAFI1Hw/pRbiAHM1wF5CrGWzA7Ynb4IFIKMBAGkDORgZwA8jRDHcBuZqxRiPMebB4xuZsmBpQ2GGkA+REQkgzVhcQazPMFSguIFUzKOzgBpCjGe4FcjWDDfgPBDD/oCcS5NCGsdGjHG4AOZpBhgIA+uR/eG/y0GQAAAAASUVORK5CYII="}/
@@ -20,15 +18,26 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     / Add your site or application content here
 
+    / - if flash[:notice]
+    /   %p{class: "alert alert-success"}
+    /     = flash[:notice]
+
+    / - if flash[:error]
+    /   %p{class: "alert alert-error"}
+    /     = flash[:error]
+
 
     .container
       .main-content
         = haml :_sache_bar
         %header
-          .title-wrapper
-            %a{:href => "/", :class => "to-home"} &times;
-            %h2{:class => "page-title"}
-
+          .title-cta
+            %h2{:class => "page-title"} 404
+            %p{:class => "page-description"}
+              Oops, something went wrong. Try heading back
+              %a{:href => "/"} Home
+              to start over
+            %p If the problem persist, please send an email to the contacts in the footer below.
 
     = haml :_footer
 
