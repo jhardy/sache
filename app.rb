@@ -1,3 +1,4 @@
+require "bundler/setup"
 require 'sinatra'
 require 'octokit'
 require 'Haml'
@@ -9,6 +10,7 @@ require 'sinatra/assetpack'
 require 'will_paginate'
 require 'will_paginate/active_record'
 require './config/environments' #database configuration
+
 
 
 enable :sessions
