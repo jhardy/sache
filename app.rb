@@ -71,9 +71,9 @@ end
 
 get '/' do
 
-    
+
     @featured = Extension.where(:featured => true)
- 
+
     @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC')
     haml :index
 
@@ -140,6 +140,12 @@ end
 get '/search' do
     @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
+end
+
+
+not_found do
+    status 404
+    haml :404
 end
 
 helpers do
