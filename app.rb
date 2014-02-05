@@ -1,7 +1,7 @@
 require "bundler/setup"
 require 'sinatra'
 require 'octokit'
-require 'Haml'
+require 'haml'
 require 'json'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
