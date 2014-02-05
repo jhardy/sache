@@ -143,10 +143,7 @@ get '/search' do
 end
 
 
-not_found do
-    status 404
-    haml :404
-end
+not_found { haml :'404' }
 
 helpers do
 
