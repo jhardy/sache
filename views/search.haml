@@ -28,6 +28,7 @@
           .title-wrapper
             %a{:href => "/", :class => "to-home"} &times;
             %h2{:class => "page-title"}
+              = params[:query]
 
 
     = haml :_footer
