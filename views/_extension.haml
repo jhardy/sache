@@ -19,7 +19,7 @@
             Stars
       %tbody
         - @extensions.each do  |e|
-          %tr
+          %tr{:class => "id-#{e.id}"}
             %td{:class => "card-title"}
               %a{:href => "https://www.github.com/#{e.author}/#{e.name}", :class => "title-link"}
                 = e.name
