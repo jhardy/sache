@@ -69,7 +69,7 @@ end
 
 
 get '/' do
-
+    #hacky, TODO make this more robust
     ids = [7, 4, 21]
     @featured = Extension.find(ids)
     
