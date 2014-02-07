@@ -70,7 +70,7 @@ end
 
 get '/' do
     #hacky, TODO make this more robust
-    ids = [7, 4, 21]
+    ids = [7, 4, 22]
     @featured = Extension.find(ids)
     
     @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC')
