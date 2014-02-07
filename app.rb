@@ -12,10 +12,7 @@ require 'will_paginate/active_record'
 require './config/environments' #database configuration
 
 
-
 enable :sessions
-
-
 
 
 module WillPaginate
