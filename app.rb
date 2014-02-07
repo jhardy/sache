@@ -70,9 +70,9 @@ end
 
 get '/' do
 
-
-    @featured = Extension.where(:featured => true)
-
+    ids = [7, 4, 21]
+    @featured = Extension.find(ids)
+    
     @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC')
     haml :index
 
