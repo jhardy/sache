@@ -97,19 +97,19 @@ post '/extensions' do
         username = project_url[1]
         reponame = project_url[2]
     else
-        halt 404, "We appreciate minimalism, but you still actually have to provide a URL!"
+        halt 400, "We appreciate minimalism, but you still actually have to provide a URL!"
     end
 
     begin
         repo_info = Octokit.repo("#{username}/#{reponame}")
     rescue Octokit::NotFound => e
-        halt 404, "Slow down turbo! Double check that URL because the repo doesn't exist."
+        halt 400, "Slow down turbo! Double check that URL because the repo doesn't exist."
     end
 
     begin
         manifest_data = Octokit.contents("#{username}/#{reponame}", :path => 'sache.json', :accept => "application/vnd.github-blob.raw")
     rescue Octokit::NotFound => e
-        halt 404, "Dang! Make sure you have a sache.json file in your repo."
+        halt 400, "Dang! Make sure you have a sache.json file in your repo."
     end
 
     manifest_hash = JSON.parse(manifest_data)
