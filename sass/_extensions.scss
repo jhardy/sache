@@ -329,6 +329,10 @@
     position: relative;
     cursor: pointer;
 
+    &:hover {
+      color: darken(#a5a19c, 10%);
+    }
+
     &:after {
       display: block;
       content: "";
@@ -336,9 +340,10 @@
       height: 15px;
       position: absolute;
       right: 8px;
-      top: 13px;
+      top: 15px;
       background: url('../img/arrows.svg') #fff -36px -2px no-repeat;
       background-size: 50px auto;
+      @include opacity(0.4);
     }
 
 
@@ -346,15 +351,17 @@
       &.asc {
         &:after {
           background-position: -2px -1px;
+          @include opacity(1);
         }
-        
+
       }
 
       &.desc {
         &:after {
-          background-position: -20px 0px;
+          background-position: -20px -1px;
+          @include opacity(1);
         }
-        
+
       }
     }
 
