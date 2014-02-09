@@ -101,7 +101,6 @@ $(function() {
     var el = $(this),
         data = {sort: el.data('sort'), direction: el.data('direction')};
  
-        
         $.ajax({
           url: '/',
           data: data,
