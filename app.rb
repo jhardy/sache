@@ -41,6 +41,7 @@ class Extension < ActiveRecord::Base
 
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has already been added.'}
     self.per_page = 20
+
 end
 
 # helpers do
@@ -77,7 +78,7 @@ get '/' do
         @featured = nil
     end
     
-    @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC')
+    @extensions = Extension.paginate(:page => params[:page], :order => sort_column + ' ' + sort_direction)
     haml :index
 
 end
@@ -153,7 +154,21 @@ helpers do
     def truncate w
         words = w.split()
         return words[0..180].join(' ') + (words.length > 180 ? '...' : '')
+    end
 
+    def sort_column
+        Extension.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    end
+
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+    end
+
+    def sortable(column, title)
+        css_class = column == sort_column ? "current #{sort_direction}" : nil
+        direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
+
+        "<a data-sort='#{column}' data-direction='#{direction}' class='#{css_class}'>" + title + "</a>"
     end
 
 end

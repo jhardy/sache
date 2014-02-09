@@ -272,7 +272,11 @@
         display: none;
       }
 
-      td {
+      th {
+        text-align: left;
+      }
+
+      td, th {
         line-height: 43px;
         color: #a5a19c;
         padding: 0 10px;

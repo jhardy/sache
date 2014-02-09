@@ -41,11 +41,6 @@ $(function() {
           },
           error: function(jqXHR, textStatus, errorThrown) {
               $responseBar.removeClass('success').addClass('error');
-              //console.log("error")
-              //console.log("jqXHR: ", jqXHR);
-              //console.log("textStatus: ", textStatus);
-              //console.log("errorThrown: ", errorThrown);
-              //console.log("error: " + textStatus.responseText)
           }
        });
   });
@@ -101,6 +96,20 @@ $(function() {
     }
   });
 
-  //$(document).pjax('a[data-pjax]', '#pjax-container')
+  $("#main").on('click', 'th a', function() {
+
+    var el = $(this),
+        data = {sort: el.data('sort'), direction: el.data('direction')};
+ 
+        
+        $.ajax({
+          url: '/',
+          data: data,
+          success: function(data) {
+            var table = $(data).find(".extensions")
+            $("#main").html(table);
+          }
+        });
+  })
 
 });
