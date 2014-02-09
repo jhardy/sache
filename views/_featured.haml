@@ -12,7 +12,7 @@
                 =e.name
             .card-description-wrapper
               %p{:class => "card-description"}
-                = truncate e.description
+                = truncate(e.description)
               %p{:class => "tags"}
                 - e.tags.each do |tag|
                   %a{:href => "/tag/#{tag}", :class => "tag", :data => {:pjax => 'true'}}
