@@ -21,7 +21,7 @@
         - @extensions.each do  |e|
           %tr{:class => "id-#{e.id}"}
             %td{:class => "card-title"}
-              %a{:href => "https://www.github.com/#{e.author}/#{e.name}", :class => "title-link"}
+              %a{:href => "https://www.github.com/#{e.author}/#{e.project_name}", :class => "title-link"}
                 = e.name
             %td{:class => "card-description"}
               = e.description

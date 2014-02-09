@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140131140856) do
+ActiveRecord::Schema.define(version: 20140209055744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140131140856) do
     t.datetime "last_commit"
     t.string   "keywords"
     t.boolean  "featured"
+    t.string   "project_name"
   end
 
 end

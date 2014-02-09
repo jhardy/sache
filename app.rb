@@ -114,7 +114,7 @@ post '/extensions' do
 
     manifest_hash = JSON.parse(manifest_data)
 
-    parsed_params = { name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers, keywords: manifest_hash["tags"].join(', ')}
+    parsed_params = { project_name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, watchers: repo_info.watchers, keywords: manifest_hash["tags"].join(', ')}
 
     manifest_hash.merge!(parsed_params)
     @extension = Extension.new(manifest_hash)
