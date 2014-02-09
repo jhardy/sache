@@ -8,15 +8,15 @@
       %table
         %thead
           %tr
-            %th{:width => "250"}
+            %th{:width => "250", :class => 'sortable'}
               = sortable "name", "Name"
             %th{:width => "300"}
               Description
             %th{:width => "200"}
               Tags
-            %th{:width => "150"}
+            %th{:width => "150", :class => 'sortable'}
               = sortable "author", "Author"
-            %th{:width => "100", :class => 'stars'}
+            %th{:width => "100", :class => 'stars sortable'}
               = sortable "stars", "Stars"
         %tbody
           - @extensions.each do  |e|
