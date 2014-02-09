@@ -71,7 +71,11 @@ end
 get '/' do
     #hacky, TODO make this more robust
     ids = [7, 4, 22]
-    @featured = Extension.find(ids)
+    begin
+        @featured = Extension.find_by_id(ids)
+    rescue ActiveRecord::RecordNotFound => e
+        @featured = nil
+    end
     
     @extensions = Extension.paginate(:page => params[:page], :order => 'created_at DESC')
     haml :index

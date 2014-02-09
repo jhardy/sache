@@ -3,23 +3,24 @@
 #featured
   %h3 Featured Extensions
   %ul{:class => "featured-cards"}
-    - @featured.each do |e|
-      %li{:class => "feature-card"}
-        %span
-          %h1{:class => "card-title"}
-            %a{:href => "https://www.github.com/#{e.author}/#{e.name}", :class => "title-link"} 
-              =e.name
-          .card-description-wrapper
-            %p{:class => "card-description"}
-              = truncate e.description
-            %p{:class => "tags"}
-              - e.tags.each do |tag|
-                %a{:href => "/tag/#{tag}", :class => "tag", :data => {:pjax => 'true'}}
-                  = tag
-          %ul{:class => "ghub-info"}
-            %li{:class => "author"}
-              %a{:href => "/user/#{e.author}", :class => "author-filter"}
-                = e.author
-            %li{:class => "ghub-stars"}
-              = e.watchers
-    
+    -if @featured
+      - @featured.each do |e|
+        %li{:class => "feature-card"}
+          %span
+            %h1{:class => "card-title"}
+              %a{:href => "https://www.github.com/#{e.author}/#{e.name}", :class => "title-link"} 
+                =e.name
+            .card-description-wrapper
+              %p{:class => "card-description"}
+                = truncate e.description
+              %p{:class => "tags"}
+                - e.tags.each do |tag|
+                  %a{:href => "/tag/#{tag}", :class => "tag", :data => {:pjax => 'true'}}
+                    = tag
+            %ul{:class => "ghub-info"}
+              %li{:class => "author"}
+                %a{:href => "/user/#{e.author}", :class => "author-filter"}
+                  = e.author
+              %li{:class => "ghub-stars"}
+                = e.watchers
+      
