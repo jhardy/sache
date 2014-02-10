@@ -205,22 +205,21 @@
   color: $link-blue;
 }
 
-.tag-list {
-  .tag {
-    &:after {
-      content: ",";
-      display: inline-block;
-      color: #333;
-      margin-left: -3px;
-    }
-
-    &:last-child {
-      &:after {
-        content: "";
-      }
-    }
+.tag {
+  &:after {
+    content: ",";
+    display: inline-block;
+    color: #333;
+    margin-left: -3px;
   }
 
+  &:last-child {
+    &:after {
+      content: "";
+    }
+  }
+}
+.tag-list {
   table & {
     line-height: 1.45;
     margin-bottom: 12px;
