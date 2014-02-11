@@ -37,10 +37,10 @@
   margin-top: 20px;
   line-height: 1.3;
   height: 100px;
+  margin-bottom: 60px;
 
   @include mq-max(700px) {
     width: 100%;
-    margin-bottom: 60px;
   }
 
   &:focus {
