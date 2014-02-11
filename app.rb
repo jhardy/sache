@@ -94,9 +94,13 @@ end
 
 post '/extensions' do
     unless params[:project_url].empty?
-        project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])
-        username = project_url[1]
-        reponame = project_url[2]
+        begin
+            project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])
+            username = project_url[1]
+            reponame = project_url[2]
+        rescue NoMethodError => e
+            halt 400, "That URL looks funny, make sure you use the github SSH URL for your repo"
+        end
     else
         halt 400, "We appreciate minimalism, but you still actually have to provide a URL!"
     end
