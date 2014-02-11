@@ -77,7 +77,7 @@ get '/' do
     rescue ActiveRecord::RecordNotFound => e
         @featured = nil
     end
-    
+
     @extensions = Extension.paginate(:page => params[:page], :order => sort_column + ' ' + sort_direction)
     haml :index
 
@@ -144,6 +144,10 @@ end
 get '/search' do
     @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
+end
+
+get '/promote' do
+    haml :promote
 end
 
 

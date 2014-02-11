@@ -1,0 +1,46 @@
+!!! 5
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Sache: Promote Us!
+    %meta{content: "Find Sass and Compass Extensions for your next project", name: "description"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %link{:rel => "icon", :type => "image/x-icon", :href => "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVQ4T2M8FtzznwENiNppwUVeH7qGLg3mW64pBtOM6AaQohnDAFI1Hw/pRbiAHM1wF5CrGWzA7Ynb4IFIKMBAGkDORgZwA8jRDHcBuZqxRiPMebB4xuZsmBpQ2GGkA+REQkgzVhcQazPMFSguIFUzKOzgBpCjGe4FcjWDDfgPBDD/oCcS5NCGsdGjHG4AOZpBhgIA+uR/eG/y0GQAAAAASUVORK5CYII="}/
+    = haml :_head
+  %body
+
+    .container
+      .main-content
+        = haml :_sache_bar
+
+        %header
+          .title-cta
+            %h2{:class => "page-title"} Promote Sache on your site
+            %p{:class => "page-description"}
+              Use one of the banners below. Let us know where you put it, we love spreading the love!
+
+        #main
+          .banners
+            .img-container
+              %img{:src => "img/sache_square_ad_pink.jpg", :class => "pink"}
+              %textarea{:class => "banner-code"}
+                <a href="http://www.sache.in"><img src="http://www.sache.in/img/sache_square_ad_pink.jpg"></a>
+            .img-container
+              %img{:src => "img/sache_square_ad_grey.jpg", :class => "grey"}
+              %textarea{:class => "banner-code"}
+                <a href="http://www.sache.in"><img src="http://www.sache.in/img/sache_square_ad_grey.jpg"></a>
+
+
+
+
+    = haml :_footer
+
+    = haml :_modal
+
+    = haml :_bottom_assets
