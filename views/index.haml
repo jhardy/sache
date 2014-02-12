@@ -39,6 +39,8 @@
               or
               %a{:href => "http://www.compass-style.org"} Compass
               project.
+            %p{:class => "page-description"}
+              %a{:href => "#", :data => {:add_project => ""}, :class => "cta-button"} Add Your Own
 
         - if !params[:page] or params[:page] == "1"
           = haml :_featured

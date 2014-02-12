@@ -79,10 +79,25 @@ header {
 
   a {
     color: $link-blue;
-    @include single-transition(color, $transition-speed, linear);
+    @include single-transition(all, $transition-speed, linear);
 
     &:hover {
       color: $sass-pink;
     }
+  }
+}
+
+.cta-button {
+  background-color: darken(#F8F8FA, 7%);
+  padding: 10px 30px 11px 30px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  display: inline-block;
+  color: lighten($text-color, 15%) !important;
+  @include border-radius(2px);
+  &:hover {
+    background-color: darken(#F8F8FA, 12%);
+    color: $text-color !important;
   }
 }
