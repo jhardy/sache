@@ -146,7 +146,8 @@ get '/user/:user' do
 end
 
 get '/search' do
-    @extensions = Extension.where("keywords ILIKE ?", '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
+
+    @extensions = Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + params[:query] + '%', '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
 end
 
