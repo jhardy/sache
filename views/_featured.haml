@@ -14,9 +14,11 @@
               %p{:class => "card-description", :title => e.description}
                 = truncate(e.description)
               %p{:class => "tags"}
-                - e.tags.each do |tag|
-                  %a{:href => "/tag/#{tag}", :class => "tag", :data => {:pjax => 'true'}}
+                - e.tags.first(7).each do |tag|
+                  %a{:href => "/tag/#{tag}", :class => "tag"}
                     = tag
+
+               
             %ul{:class => "ghub-info"}
               %li{:class => "author"}
                 %a{:href => "/user/#{e.author}", :class => "author-filter"}
