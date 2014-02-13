@@ -71,7 +71,7 @@ end
 
 get '/' do
     #hacky, TODO make this more robust
-    ids = [7, 4, 22]
+    ids = [37, 28, 12]
     begin
         @featured = Extension.find(ids)
     rescue ActiveRecord::RecordNotFound => e
@@ -96,7 +96,7 @@ post '/extensions' do
     unless params[:project_url].empty?
 
         begin
-            project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git)$}i.match(params[:project_url])
+            project_url =  %r{  github\.com[:/](.+?)/(.+?)(?:\.git)$}i.match(params[:project_url])
             username = project_url[1]
             reponame = project_url[2]
         rescue NoMethodError => e
@@ -163,7 +163,7 @@ helpers do
 
     def truncate w
         words = w.split()
-        return words[0..180].join(' ') + (words.length > 180 ? '...' : '')
+        return words[0..40].join(' ') + (words.length > 40 ? '...' : '')
     end
 
     def sort_column

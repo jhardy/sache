@@ -11,7 +11,7 @@
               %a{:href => "https://www.github.com/#{e.author}/#{e.project_name}", :class => "title-link"} 
                 =e.name
             .card-description-wrapper
-              %p{:class => "card-description"}
+              %p{:class => "card-description", :title => e.description}
                 = truncate(e.description)
               %p{:class => "tags"}
                 - e.tags.each do |tag|
