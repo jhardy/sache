@@ -2,8 +2,17 @@
 // Feature cards
 
 #featured {
+  margin-top: 30px;
   margin-bottom: 50px;
   @extend %container;
+
+  @include mq(medium) {
+    margin-top: 80px;
+  }
+
+  @include mq(xlarge) {
+    margin-top: 50px;
+  }
 }
 
 .featured-cards {
@@ -20,33 +29,43 @@
   width: 100%;
 
   @include mq(medium) {
-    padding: 0 px2em(16px) 0;
     width: 33.333%;
     height: 100%;
     display: table-cell;
     position: relative;
     &:first-child {
-      padding-left: 0;
+      > span {
+        border-right: none;
+        @include border-left-radius($border-radius);
+      }
     }
     &:last-child {
-      padding-right: 0;
+      > span {
+        border-left: none;
+        @include border-right-radius($border-radius);
+      }
     }
   }
 
-   > span {
+    // The actual card
+    > span {
+      background-color: #fff;
       display: block;
       position: relative;
       border: $border-style;
       height: 100%;
-      @include border-radius($border-radius);
    }
 }
 
 .card-title {
   font-size: px2em(22px);
   line-height: 1.5;
-  padding: 20px 20px 0;
+  padding: 20px 25px 0;
   @extend %reset-margin-top;
+
+  table & {
+    padding-left: 25px;
+  }
 }
 
 .title-link {
@@ -62,7 +81,6 @@
   }
 
   table & {
-    // margin-top: -4px;
     font-size: px2em(14px);
     margin-bottom: 12px;
 
@@ -76,7 +94,7 @@
 .card-description-wrapper {
   overflow: hidden;
   padding-bottom: px2em(16px);
-  padding: 0 20px 20px;
+  padding: 0 25px 25px;
   @include box-sizing(content-box);
 
   @include mq(medium) {
@@ -150,7 +168,19 @@
 .author {
   position: relative;
   cursor: pointer;
-  border-right: solid 1px #eee;
+  border-right: none;
+
+  @include mq(small) {
+    border-right: solid 1px #eee;
+  }
+
+  @include mq(medium) {
+    border-right: none;
+  }
+
+  @include mq(large) {
+    border-right: solid 1px #eee;
+  }
 
   &:before {
     content: " ";
@@ -168,7 +198,6 @@
   }
 
   table & {
-    // line-height: 1.5;
     border-right: none;
     font-size: 13px;
   }
@@ -247,7 +276,11 @@
   @extend %container;
 
   h3 {
-    margin-top: 80px;
+    margin-top: 30px;
+
+    @include mq(medium) {
+      margin-top: 80px;
+    }
 
     small {
       color: lighten($text-color, 40%);
@@ -262,16 +295,36 @@
 
   table {
     width: 100%;
-    margin: 0 0 100px;
+    margin: 0;
     padding: 0 15px;
 
+    @include mq(medium) {
+      @include border-top-radius($border-radius);
+      @include box-shadow(0 0 0 1px #ddd);
+      background-color: #fff;
+    }
+
     thead {
+      background-color: darken(#F8F8FA, 7%);
       font-weight: bold;
+      border-bottom: $border-style;
+      border-radius: 5px !important;
       @include mq-max($mq-medium - 1) {
         display: none;
       }
 
+      tr {
+        th:first-child {
+          padding-left: 25px;
+          @include border-top-left-radius($border-radius);
+        }
+        th:last-child {
+          @include border-top-right-radius($border-radius);
+        }
+      }
+
       th {
+
         text-align: left;
       }
 
@@ -290,17 +343,31 @@
         padding: 20px 10px;
         @include mq(medium) {
           &:first-child {
-            padding-left: 0
+            padding-left: 25px;
           }
         }
         @include mq-max($mq-medium - 1) {
           padding: 0;
         }
       }
+      tr {
+        &:last-child {
+          td:first-child {
+            @include border-bottom-left-radius($border-radius);
+          }
+          td:last-child {
+            @include border-bottom-right-radius($border-radius);
+          }
+        }
+
+        &:nth-child(even) {
+          background-color: #fcfcfc;
+        }
+      }
     }
 
     tr {
-      border-bottom: $border-style;
+      border-bottom: solid 1px #eee;
       color: #888;
       @include mq-max($mq-medium - 1) {
         display: block;
@@ -308,6 +375,11 @@
         padding: 20px;
         margin-bottom: 20px;
         @include border-radius($border-radius);
+      }
+      &:last-child {
+        @include mq(medium) {
+          border-bottom: none;
+        }
       }
     }
 
@@ -340,7 +412,7 @@
       position: absolute;
       right: 8px;
       top: 15px;
-      background: url('../img/arrows.svg') #fff -36px -2px no-repeat;
+      background: url('../img/arrows.svg') -36px -2px no-repeat;
       background-size: 50px auto;
       @include opacity(0.4);
     }

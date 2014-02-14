@@ -1,39 +1,32 @@
-#main
-  .extensions
-    .extension-list
-      %h3
-        All Extensions
-        %small
-          = page_entries_info @extensions, {:html => false}
-      %table
-        %thead
-          %tr
-            %th{:width => "250", :class => 'sortable'}
-              = sortable "name", "Name"
-            %th{:width => "300"}
-              Description
-            %th{:width => "200"}
-              Tags
-            %th{:width => "150", :class => 'sortable'}
-              = sortable "author", "Author"
-            %th{:width => "100", :class => 'stars sortable'}
-              = sortable "stars", "Stars"
-        %tbody
-          - @extensions.each do  |e|
-            %tr{:class => "id-#{e.id}"}
-              %td{:class => "card-title"}
-                %a{:href => "https://www.github.com/#{e.author}/#{e.project_name}", :class => "title-link"}
-                  = e.name
-              %td{:class => "card-description"}
-                = e.description
-              %td.tag-list
-                - e.tags.each do |tag|
-                  %a{:href => "/tag/#{tag}", :class => "tag"}
-                    = tag
+%table
+  %thead
+    %tr
+      %th{:width => "250", :class => 'sortable'}
+        = sortable "name", "Name"
+      %th{:width => "300"}
+        Description
+      %th{:width => "200"}
+        Tags
+      %th{:width => "150", :class => 'sortable'}
+        = sortable "author", "Author"
+      %th{:width => "100", :class => 'stars sortable'}
+        = sortable "stars", "Stars"
+  %tbody
+    - @extensions.each do  |e|
+      %tr{:class => "id-#{e.id}"}
+        %td{:class => "card-title"}
+          %a{:href => "https://www.github.com/#{e.author}/#{e.project_name}", :class => "title-link"}
+            = e.name
+        %td{:class => "card-description"}
+          = e.description
+        %td.tag-list
+          - e.tags.each do |tag|
+            %a{:href => "/tag/#{tag}", :class => "tag"}
+              = tag
 
-              %td{:class => "author"}
-                %a{:href => "/user/#{e.author}", :class => "author-filter"}
-                  = e.author
-              %td{:class => "ghub-stars"}
-                = e.stars
-    = will_paginate @extensions, :previous_label => "", :next_label => ""
+        %td{:class => "author"}
+          %a{:href => "/user/#{e.author}", :class => "author-filter"}
+            = e.author
+        %td{:class => "ghub-stars"}
+          = e.stars
+= will_paginate @extensions, :previous_label => "", :next_label => ""
