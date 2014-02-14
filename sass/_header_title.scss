@@ -8,11 +8,11 @@ header {
   text-align: center;
 
   @include mq(medium) {
-    padding: px2em(50px) $container-padding-large px2em(60px);
+    padding: px2em(110px) $container-padding-large px2em(60px);
   }
 
   @include mq(xlarge) {
-    padding: px2em(80px) $container-padding-xlarge px2em(94px);
+    padding: px2em(140px) $container-padding-xlarge px2em(94px);
   }
 }
 

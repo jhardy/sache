@@ -53,6 +53,8 @@ $(function() {
     $sachesearch = $('.sache-search input'),
     fadeSpeed = 200;
 
+
+  // Close modaal method
   var closeModal = function() {
     $modalTarp.fadeOut(fadeSpeed);
     $projectModal.removeClass('modal-open');
@@ -96,11 +98,12 @@ $(function() {
     }
   });
 
+  // Sortability
   $("#main").on('click', 'th a', function() {
 
     var el = $(this),
         data = {sort: el.data('sort'), direction: el.data('direction')};
- 
+
         $.ajax({
           url: '/',
           data: data,
@@ -109,6 +112,6 @@ $(function() {
             $("#main").html(table);
           }
         });
-  })
+  });
 
 });
