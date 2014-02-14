@@ -94,7 +94,7 @@ end
 
 post '/extensions' do
     unless params[:project_url].empty?
-        #%r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])    
+        #%r{github\.com[:/](.+?)/(.+?)(?:\.git|)$}i.match(params[:project_url])
         begin
             project_url =  %r{github\.com[:/](.+?)/(.+?)(?:\.git)$}i.match(params[:project_url])
             username = project_url[1]
@@ -163,7 +163,7 @@ helpers do
 
     def truncate w
         words = w.split()
-        return words[0..40].join(' ') + (words.length > 40 ? '...' : '')
+        return words[0..30].join(' ') + (words.length > 40 ? '...' : '')
     end
 
     def sort_column

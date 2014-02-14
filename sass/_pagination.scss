@@ -44,14 +44,18 @@
 
 .pagination {
   background-color: lighten($sass-pink, 20%);
-  border-bottom: solid 2px lighten($sass-pink, 10%);
+  border: solid 1px lighten($sass-pink, 10%);
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
   color: #fff;
   position: relative;
   z-index: 1;
-  @extend %container;
+  @include border-radius($border-radius);
+
+  @include mq(medium) {
+    @include border-top-radius(0);
+  }
 
   a {
     background-color: lighten($sass-pink, 15%);
@@ -76,27 +80,10 @@
   background-position: 7px -161px;
   @extend %next-prev;
 
-  @include mq(large) {
-    left: $container-padding-large;
-  }
-
-  @include mq(xlarge) {
-    left: $container-padding-xlarge;
-  }
 }
 
 .next_page {
   right: $container-padding-default;
-
   background-position: 6px -192px;
-
   @extend %next-prev;
-
-  @include mq(large) {
-    right: $container-padding-large;
-  }
-
-  @include mq(xlarge) {
-    right: $container-padding-xlarge;
-  }
 }

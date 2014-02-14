@@ -1,14 +1,14 @@
 
 
 #featured
-  %h3 Featured Extensions
+  / %h3 Featured Extensions
   %ul{:class => "featured-cards"}
     -if @featured
       - @featured.each do |e|
         %li{:class => "feature-card"}
           %span
             %h1{:class => "card-title"}
-              %a{:href => "https://www.github.com/#{e.author}/#{e.project_name}", :class => "title-link"} 
+              %a{:href => "https://www.github.com/#{e.author}/#{e.project_name}", :class => "title-link"}
                 =e.name
             .card-description-wrapper
               %p{:class => "card-description", :title => e.description}
@@ -18,11 +18,10 @@
                   %a{:href => "/tag/#{tag}", :class => "tag"}
                     = tag
 
-               
+
             %ul{:class => "ghub-info"}
               %li{:class => "author"}
                 %a{:href => "/user/#{e.author}", :class => "author-filter"}
                   = e.author
               %li{:class => "ghub-stars"}
                 = e.stars
-      

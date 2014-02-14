@@ -25,13 +25,21 @@
     .container
       .main-content
         = haml :_sache_bar
-        %header
+        %header{:class => "secondary"}
           .title-wrapper
             %a{:href => "/", :class => "to-home"} &times;
             %h2{:class => "page-title"}
               = params[:user]
 
-        = haml :_extension
+        #main
+          .extensions
+            .extension-list
+              %h3
+                Extensions
+                %small
+                  = page_entries_info @extensions, {:html => false}
+
+              = haml :_extension
 
     = haml :_footer
 

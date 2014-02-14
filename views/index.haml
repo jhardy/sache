@@ -27,9 +27,10 @@
     /     = flash[:error]
 
 
+    = haml :_sache_bar
+
     .container
       .main-content
-        = haml :_sache_bar
         %header
           .title-cta
             %h2{:class => "page-title"} Discover Sass &amp; Compass Extensions
@@ -39,14 +40,20 @@
               or
               %a{:href => "http://www.compass-style.org"} Compass
               project.
-            %p{:class => "page-description"}
-              %a{:href => "#", :data => {:add_project => ""}, :class => "cta-button"} Add Your Own
+          %a{:href => "#", :data => {:add_project => ""}, :class => "cta-button"} Add Your Own
 
         - if !params[:page] or params[:page] == "1"
           = haml :_featured
 
-        = haml :_extension
+        #main
+          .extensions
+            .extension-list
+              %h3
+                All Extensions
+                %small
+                  = page_entries_info @extensions, {:html => false}
 
+              = haml :_extension
 
 
     = haml :_footer
