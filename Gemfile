@@ -15,6 +15,7 @@ gem 'sinatra-redirect-with-flash'
 gem 'will_paginate'
 gem 'pg'
 gem "tux"
+gem 'sinatra-contrib'
 
 group :development do
   

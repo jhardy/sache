@@ -1,5 +1,6 @@
 require "bundler/setup"
 require 'sinatra'
+require "sinatra/reloader"
 require 'octokit'
 require 'haml'
 require 'json'
@@ -9,6 +10,7 @@ require 'sinatra/activerecord'
 require 'sinatra/assetpack'
 require 'will_paginate'
 require 'will_paginate/active_record'
+
 require './config/environments' #database configuration
 require './env' if File.exists?('env.rb')
 
@@ -69,6 +71,11 @@ configure do
         # of the package (as matched on the public URIs, not the filesystem)
         js :app,  ['/js/main.js']
     }
+
+end
+
+configure :development do
+    register Sinatra::Reloader
 end
 
 
@@ -118,22 +125,17 @@ post '/extensions' do
         halt 400, "Slow down turbo! Double check that URL because the repo doesn't exist."
     end
 
-    manifest_data = get_manifest_data(client, username, reponame)
-    manifest_hash = set_manifest_hash(manifest_data, repo_info, username, reponame, params[:url])
-    # begin
-    #     manifest_data = client.contents("#{username}/#{reponame}", :path => 'sache.json', :accept => "application/vnd.github-blob.raw")
-    # rescue Octokit::NotFound => e
-    #     halt 400, "Dang! Make sure you have a sache.json file in your repo."
-    # end
+    begin
+        manifest_data = get_manifest_data(client, username, reponame)
+    rescue Octokit::NotFound => e
+        halt 400, "Dang! Make sure you have a sache.json file in your repo."
+    end
 
-    # manifest_hash = JSON.parse(manifest_data)
-    # parsed_params = { project_name: reponame, author: username, url: params[:project_url], last_commit: repo_info.updated_at, stars: repo_info.watchers, keywords: manifest_hash["tags"].join(', ')}
-
-    # manifest_hash.merge!(parsed_params)
+    manifest_hash = set_manifest_hash(manifest_data, repo_info, username, reponame, params[:project_url])
+   
     @extension = Extension.new(manifest_hash)
 
     if @extension.save
-
         flash.now[:notice] = 'Sweeeeet! Thanks for adding your exension!'
     else
         status 409
@@ -161,57 +163,6 @@ get '/promote' do
     haml :promote
 end
 
-get '/update_all' do
-
-    client = set_github_client()
-    puts "*****"
-    puts client
-    puts client.rate_limit();
-    @extensions = Extension.all
-    
-    @extensions.each do |e|
-        puts "****"
-        puts "****"
-        puts e.id
-        repo = client.repository("#{e.author}/#{e.project_name}")
-
-        if repo.updated_at > e.last_commit
-            puts "*****"
-            puts "*****"
-            puts "*****"
-            puts "updating repo"
-            manifest_data = get_manifest_data(client, e.author, e.project_name)
-            manifest_hash = set_manifest_hash(manifest_data, repo, e.author, e.project_name, e.url)
-
-            manifest_hash.each{|k, v|; e[k] = v}
-            e.save
-        end
-    end
-    
-
-    #     if repo.updated_at > e.last_commit
-    # @extensions.each do |e|
-    #     repo = client.respository("#{e.author}/#{e.project_name}")
-    #     if repo.updated_at > e.last_commit
-    #          manifest_data = client.contents("#{e.author}/#{e.project_name}", :path => 'sache.json', :accept => "application/vnd.github-blob.raw")
-    #          e.save
-    #     end
-
-    # end
-
-
-end
-
-get '/client_test' do
-    puts 
-    client = set_github_client
-    puts "**************"
-    puts "Client Id:  #{ENV['Github_Client_ID']}" 
-    puts "Secret: #{ENV['Github_Client_Secret']}"
-    puts client.rate_limit
-end
-
-
 not_found { haml :'404' }
 
 helpers do
@@ -237,11 +188,11 @@ helpers do
     end
 
     def get_manifest_data(client, username, reponame)
-        begin
+        #begin
             manifest_data = client.contents("#{username}/#{reponame}", :path => 'sache.json', :accept => "application/vnd.github-blob.raw")
-        rescue Octokit::NotFound => e
-            halt 400, "Dang! Make sure you have a sache.json file in your repo."
-        end
+        #rescue Octokit::NotFound => e
+            #halt 400, "Dang! Make sure you have a sache.json file in your repo."
+        #end
     end
 
     def set_manifest_hash(data, repo, username, reponame, url)
@@ -250,12 +201,35 @@ helpers do
         hash.merge!(parsed_params)
     end
 
-
     def set_github_client
         client = Octokit::Client.new \
             :client_id => ENV['Github_Client_ID'],
             :client_secret => ENV['Github_Client_Secret']
     end
 
-    
+
+    def update_all
+        @extensions = Extension.all
+        @extensions.each do |e|        
+            update(e.id)
+        end
+    end
+
+    def update id
+
+        client = set_github_client()
+        e = Extension.find(id)
+        begin
+            repo = client.repository("#{e.author}/#{e.project_name}")
+            manifest_data = get_manifest_data(client, e.author, e.project_name)
+            manifest_hash = set_manifest_hash(manifest_data, repo, e.author, e.project_name, e.url)
+
+            manifest_hash.each{|k, v|; e[k] = v; }
+            e.save        
+
+        rescue Octokit::NotFound => k
+            e.destroy
+        end
+    end
+
 end
