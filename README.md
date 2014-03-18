@@ -23,7 +23,7 @@ We love open-source projects and community so we've kept this repo open for anyo
 * Close the repo by running: `git clone git@github.com:jhardy/sache.git`.
 * Change into that directory and run: `bundle`.
 * In Terminal, type: `psql`, this opens the Postgres command line.
-* Type in: `CREATE DATABASE sachein_dev;
+* Type in: `CREATE DATABASE sachein_dev;`
 * Press `ctrl + z` to exit Postgres.
 * Now we need to migrate, run: `bundle exec rake db:migrate`.
 * Once that's done you can start up the app by running: `bundle exec ruby app.rb`.
