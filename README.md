@@ -29,7 +29,7 @@ We love open-source projects and community so we've kept this repo open for anyo
 * Once that's done you can start up the app by running: `bundle exec ruby app.rb`.
 * If you are going to be changing Sass sheets, open a new Terminal window or tab and run: `compass watch`.
 
-Now you can visit `localhost:4567` and edit to your hearts desire.
+Now you can visit <http://localhost:4567> and edit to your hearts desire.
 
 --
 
