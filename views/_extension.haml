@@ -28,8 +28,7 @@
                 = e.description
               %td.tag-list
                 - e.tags.each do |tag|
-                  %a{:href => "/tag/#{tag}", :class => "tag"}
-                    = tag
+                  %a{:href => "/tag/#{tag}", :class => "tag"}= tag
 
               %td{:class => "author"}
                 %a{:href => "/user/#{e.author}", :class => "author-filter"}

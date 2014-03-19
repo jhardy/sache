@@ -208,9 +208,7 @@
 .tag {
   &:after {
     content: ",";
-    display: inline-block;
     color: #333;
-    margin-left: -3px;
   }
 
   &:last-child {
