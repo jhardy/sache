@@ -31,7 +31,7 @@
                   %a{:href => "/tag/#{tag}", :class => "tag"}= tag
 
               %td{:class => "author"}
-                %a{:href => "/user/#{e.author}", :class => "author-filter"}
+                %a{:href => "/#{e.author}", :class => "author-filter"}
                   = e.author
               %td{:class => "ghub-stars"}
                 = e.stars

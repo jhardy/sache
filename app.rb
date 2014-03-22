@@ -148,16 +148,18 @@ get '/tag/:tag' do
     haml :tag
 end
 
-get '/user/:user' do
+get '/search' do
+    @extensions = Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + params[:query] + '%', '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
+    haml :search
+end
+
+get '/:user' do
     @extensions = Extension.where(:author => params[:user]).paginate(:page => params[:page], :order => 'created_at DESC')
     haml :user
 end
 
 
-get '/search' do
-    @extensions = Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + params[:query] + '%', '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
-    haml :search
-end
+
 
 get '/promote' do
     haml :promote
