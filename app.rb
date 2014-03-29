@@ -199,7 +199,7 @@ helpers do
 
     def set_manifest_hash(data, repo, username, reponame, url)
         hash = JSON.parse(data)
-        parsed_params = { project_name: reponame, author: username, url: url, last_commit: repo.updated_at, stars: repo.watchers, keywords: hash["tags"].join(', ')}
+        parsed_params = { project_name: reponame, author: username, url: url, last_commit: repo.updated_at, stars: repo.watchers, keywords: hash["tags"].join(', '), website: repo.website, docs: repo.docs }
         hash.merge!(parsed_params)
     end
 
