@@ -1,0 +1,73 @@
+!!! 5
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+/ [if gt IE 8]><!
+%html.no-js
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title
+      Sache:
+      = params[:user]
+      user tag
+    %meta{content: "Find Sass and Compass Extensions for your next project", name: "description"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %link{:rel => "icon", :type => "image/x-icon", :href => "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAlUlEQVQ4T2M8FtzznwENiNppwUVeH7qGLg3mW64pBtOM6AaQohnDAFI1Hw/pRbiAHM1wF5CrGWzA7Ynb4IFIKMBAGkDORgZwA8jRDHcBuZqxRiPMebB4xuZsmBpQ2GGkA+REQkgzVhcQazPMFSguIFUzKOzgBpCjGe4FcjWDDfgPBDD/oCcS5NCGsdGjHG4AOZpBhgIA+uR/eG/y0GQAAAAASUVORK5CYII="}/
+    = haml :_head
+  %body
+    /[if lt IE 7]
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    / Add your site or application content here
+
+
+    .container
+      .main-content
+        = haml :_sache_bar
+        %header
+          .title-wrapper
+            %a{:href => "/", :class => "to-home"} &times;
+            %h2{:class => "page-title"}
+              = @extensions.name
+
+        #main
+          .extensions
+            .extension-list
+              %table
+                %thead
+                  %tr
+                    %th{:width => "250", :class => 'sortable'}
+                      = sortable "name", "Name"
+                    %th{:width => "300"}
+                      Description
+                    %th{:width => "200"}
+                      Tags
+                    %th{:width => "150", :class => 'sortable'}
+                      = sortable "author", "Author"
+                    %th{:width => "100", :class => 'stars sortable'}
+                      = sortable "stars", "Stars"
+                %tbody
+
+                  %tr{:class => "id-#{@extensions.id}"}
+                    %td{:class => "card-title"}
+                      %a{:href => "https://www.github.com/#{@extensions.author}/#{@extensions.project_name}", :class => "title-link"}
+                        = @extensions.name
+                    %td{:class => "card-description"}
+                      = @extensions.description
+                    %td.tag-list
+                      - @extensions.tags.each do |tag|
+                        %a{:href => "/tag/#{tag}", :class => "tag"}= tag
+
+                    %td{:class => "author"}
+                      %a{:href => "/#{@extensions.author}", :class => "author-filter"}
+                        = @extensions.author
+                    %td{:class => "ghub-stars"}
+                      = @extensions.stars
+
+
+    = haml :_footer
+
+    = haml :_modal
+
+    = haml :_bottom_assets

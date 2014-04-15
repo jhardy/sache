@@ -29,6 +29,8 @@ GEM
       sass (~> 3.1)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    friendly_id (5.0.3)
+      activerecord (>= 4.0.0)
     fssm (0.2.10)
     haml (4.0.4)
       tilt
@@ -97,6 +99,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   compass
+  friendly_id (~> 5.0.3)
   haml
   octokit
   pg

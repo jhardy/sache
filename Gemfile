@@ -16,6 +16,7 @@ gem 'will_paginate'
 gem 'pg'
 gem "tux"
 gem 'sinatra-contrib'
+gem 'friendly_id', '~> 5.0.3'
 
 group :development do
   

@@ -10,15 +10,12 @@ require 'sinatra/activerecord'
 require 'sinatra/assetpack'
 require 'will_paginate'
 require 'will_paginate/active_record'
+require 'friendly_id'
 
 require './config/environments' #database configuration
 require './env' if File.exists?('env.rb')
 
-
 enable :sessions
-
-
-
 
 module WillPaginate
     module ViewHelpers
@@ -43,18 +40,14 @@ module WillPaginate
 end
 
 class Extension < ActiveRecord::Base
+    include FriendlyId
+    friendly_id :name, :use => :slugged
 
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has already been added.'}
     self.per_page = 20
 
 end
 
-# helpers do
-#     def is_pjax?
-#         #  headers['X-PJAX']
-#         env['HTTP_X_PJAX']
-#     end
-# end
 
 configure do
     set :root, File.dirname(__FILE__) # You must set app root
@@ -156,6 +149,11 @@ end
 get '/:user' do
     @extensions = Extension.where(:author => params[:user]).paginate(:page => params[:page], :order => 'created_at DESC')
     haml :user
+end
+
+get '/project/:project_name' do
+    @extensions = Extension.friendly.find(params[:project_name])
+    haml :project
 end
 
 
