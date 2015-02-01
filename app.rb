@@ -129,7 +129,7 @@ post '/extensions' do
     @extension = Extension.new(manifest_hash)
 
     if @extension.save
-        flash.now[:notice] = 'Sweeeeet! Thanks for adding your exension!'
+        flash.now[:notice] = 'Sweeeeet! Thanks for adding your extension!'
     else
         status 409
         flash.now[:error] = @extension.errors.first[1]
