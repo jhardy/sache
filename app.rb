@@ -151,13 +151,15 @@ get '/:user' do
     haml :user
 end
 
+get '/project/:id.json' do
+    content_type :json
+    @extension = Extension.find(params[:id]).to_json
+end
+
 get '/project/:project_name' do
     @extensions = Extension.friendly.find(params[:project_name])
     haml :project
 end
-
-
-
 
 get '/promote' do
     haml :promote
