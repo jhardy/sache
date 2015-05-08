@@ -11,5 +11,5 @@ end
 
 desc "Backup Production Database"
 task :backup_db do
-	sh "heroku pgbackups:capture"
+	sh "heroku pgbackups:capture --expire"
 end
