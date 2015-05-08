@@ -45,9 +45,7 @@ class Extension < ActiveRecord::Base
 
     validates_uniqueness_of :url, {:message => 'Ooops! It looks like this extension has already been added.'}
     self.per_page = 20
-
 end
-
 
 configure do
     set :root, File.dirname(__FILE__) # You must set app root
@@ -209,7 +207,6 @@ helpers do
             :client_secret => ENV['Github_Client_Secret']
     end
 
-
     def update_all
         @extensions = Extension.all
         @extensions.each do |e|        
@@ -233,5 +230,4 @@ helpers do
             e.destroy
         end
     end
-
 end
