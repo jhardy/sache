@@ -139,6 +139,11 @@ get '/tag/:tag' do
     haml :tag
 end
 
+get '/search.json' do
+    content_type :json
+    @extensions = Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + params[:query] + '%', '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC').to_json
+end
+
 get '/search' do
     @extensions = Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + params[:query] + '%', '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
