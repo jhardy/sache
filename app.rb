@@ -141,11 +141,11 @@ end
 
 get '/search.json' do
     content_type :json
-    @extensions = Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + params[:query] + '%', '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC').to_json
+    @extensions = serach(params[:query]).to_json
 end
 
 get '/search' do
-    @extensions = Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + params[:query] + '%', '%' + params[:query] + '%').paginate(:page => params[:page], :order => 'created_at DESC')
+    @extensions = search(params[:query]).paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
 end
 
@@ -171,6 +171,10 @@ end
 not_found { haml :'404' }
 
 helpers do
+
+    def search q
+        Extension.where("(keywords ILIKE ?) OR (name ILIKE ?)", '%' + q + '%', '%' + q + '%')
+    end
 
     def truncate w
         words = w.split()
