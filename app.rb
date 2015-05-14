@@ -8,6 +8,8 @@ require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require 'sinatra/activerecord'
 require 'sinatra/assetpack'
+require "sinatra/namespace"
+
 require 'will_paginate'
 require 'will_paginate/active_record'
 require 'friendly_id'
@@ -84,11 +86,6 @@ get '/' do
 
 end
 
-get '/extensions.json' do
-    content_type :json
-    @extensions = Extension.all.to_json
-end
-
 get '/extensions' do
     haml :index
 end
@@ -139,11 +136,6 @@ get '/tag/:tag' do
     haml :tag
 end
 
-get '/search.json' do
-    content_type :json
-    @extensions = serach(params[:query]).to_json
-end
-
 get '/search' do
     @extensions = search(params[:query]).paginate(:page => params[:page], :order => 'created_at DESC')
     haml :search
@@ -154,11 +146,6 @@ get '/:user' do
     haml :user
 end
 
-get '/project/:id.json' do
-    content_type :json
-    @extension = Extension.find(params[:id]).to_json
-end
-
 get '/project/:project_name' do
     @extensions = Extension.friendly.find(params[:project_name])
     haml :project
@@ -167,6 +154,28 @@ end
 get '/promote' do
     haml :promote
 end
+
+namespace '/api' do
+    before {content_type :json}
+    
+    get '/extensions' do
+        @extensions = Extension.all.to_json
+    end
+
+    get '/extensions/:id' do
+        @extension = Extension.find(params[:id]).to_json
+    end
+
+    get '/users/:user' do
+        @extensions = Extension.where(:author => params[:user]).to_json
+    end
+
+    get '/search' do
+        @extensions = search(params[:query]).to_json
+    end
+
+end
+
 
 not_found { haml :'404' }
 
